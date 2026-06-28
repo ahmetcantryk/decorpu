@@ -1,7 +1,14 @@
 import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 
-export const SITE_URL = "https://decorpu.com";
+/** Kanonik site adresi — env ile override edilebilir (ör. Vercel preview domaini). */
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://decorpu.com";
+
+/**
+ * Arama motoru indexlemesi. Varsayılan: KAPALI (noindex) — preview/staging
+ * yanlışlıkla indexlenmesin. Gerçek domainde açmak için NEXT_PUBLIC_ALLOW_INDEX=true.
+ */
+export const ALLOW_INDEX = process.env.NEXT_PUBLIC_ALLOW_INDEX === "true";
 
 /**
  * Meta description'ı SEO sınırına göre kelime sonunda kırpar (~155 karakter).

@@ -6,6 +6,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { SITE_URL, ALLOW_INDEX } from "@/lib/seo";
 import "../globals.css";
 
 const fraunces = Fraunces({
@@ -44,12 +45,14 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Hero" });
 
   return {
-    metadataBase: new URL("https://decorpu.com"),
+    metadataBase: new URL(SITE_URL),
     title: {
       default: "decorpu — " + t("eyebrow"),
       template: "%s · decorpu",
     },
     description: t("subtitle"),
+    // Varsayılan noindex — gerçek domainde NEXT_PUBLIC_ALLOW_INDEX=true ile açılır.
+    robots: ALLOW_INDEX ? undefined : { index: false, follow: false },
     openGraph: {
       type: "website",
       siteName: "decorpu",
@@ -58,7 +61,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
     },
-    ...(process.env.GOOGLE_SITE_VERIFICATION
+    ...(ALLOW_INDEX && process.env.GOOGLE_SITE_VERIFICATION
       ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
       : {}),
   };

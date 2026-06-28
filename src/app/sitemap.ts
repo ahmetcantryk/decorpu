@@ -2,8 +2,9 @@ import type { MetadataRoute } from "next";
 import { getSitemapProducts, getAllCategories } from "@/lib/catalog";
 import { getProjects } from "@/lib/projects";
 import { getServices } from "@/lib/services";
+import { SITE_URL } from "@/lib/seo";
 
-const BASE = "https://decorpu.com";
+const BASE = SITE_URL;
 
 /** Bir yolu TR (prefixsiz) + EN (/en) hreflang alternatifleriyle sitemap girdisine çevirir. */
 function entry(

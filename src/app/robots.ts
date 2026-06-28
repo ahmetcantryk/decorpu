@@ -1,8 +1,12 @@
 import type { MetadataRoute } from "next";
-
-const BASE = "https://decorpu.com";
+import { SITE_URL, ALLOW_INDEX } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
+  // Index kapalıyken (preview/staging) tüm botlara tamamen kapat.
+  if (!ALLOW_INDEX) {
+    return { rules: { userAgent: "*", disallow: "/" } };
+  }
+
   return {
     rules: {
       userAgent: "*",
@@ -10,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
       // Arama, yönetim, kimlik ve test sayfaları taranmasın.
       disallow: ["/admin", "/en/admin", "/giris", "/en/giris", "/ara", "/en/ara", "/test", "/test2", "/en/test", "/en/test2"],
     },
-    sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }
