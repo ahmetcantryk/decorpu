@@ -1,0 +1,982 @@
+[
+  {
+    "code": "KD-8601A",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8601A\\006-KD-8601A_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8601A\\KD8601A - DWG\\KD8601A kopya.png"
+  },
+  {
+    "code": "KD-8614A",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8614A\\013-KD-8614A_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-8614B",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8614B\\014-KD-8614B_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8614B\\KD8614B -DWG\\KD8614B PNG.png"
+  },
+  {
+    "code": "KD-8619B",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8619B\\020-KD-8619B_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8619B\\KD8619B -DWG\\KD8619B PNG.png"
+  },
+  {
+    "code": "KD-8710A",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710A\\016-KD-8710A_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710A\\KD8710A - DWG\\KD8710A PNG.png"
+  },
+  {
+    "code": "KD-8710D",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710D\\017-KD-8710D_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710D\\KD8710D - DWG\\KD8710D PNG.png"
+  },
+  {
+    "code": "KD-8710E",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710E\\011-KD-8710E_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710E\\KD8710E - DWG\\KD8710E PNG.png"
+  },
+  {
+    "code": "KD-8710LR",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710LR\\004-KD-8710LR-1_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8710LR\\KD8710LR-2 - DWG\\KD8710LR2 PNG.png"
+  },
+  {
+    "code": "KD-8711A",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711A\\010-KD-8711A_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711A\\KD8711A - DWG\\KD8711A PNG.png"
+  },
+  {
+    "code": "KD-8711B",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711B\\015-KD-8711B_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711B\\KD8711B - DWG\\KD8711B PNG.png"
+  },
+  {
+    "code": "KD-8711C",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711C\\019-KD-8711C_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711C\\KD8711C -DWG\\KD8711C PNG.png"
+  },
+  {
+    "code": "KD-8711D",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711D\\018-KD-8711D_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711D\\KD8711D - DWG\\KD8711D PNG.png"
+  },
+  {
+    "code": "KD-8711E",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711E\\007-KD-8711E_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711E\\KD8711E -DWG\\KD8711E PNG.png"
+  },
+  {
+    "code": "KD-8711H",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711H\\012-KD-8711H_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711H\\KD8711H - DWG\\KD8711H PNG.png"
+  },
+  {
+    "code": "KD-8711W",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711W\\003-KD-8711W_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8711W\\KD8711WO - DWG\\KD8711WO PNG.png"
+  },
+  {
+    "code": "KD-8712A",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8712A\\021-KD-8712A_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8712A\\KD8712A - DWG\\KD8712A PNG.png"
+  },
+  {
+    "code": "KD-8712M",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8712M\\008-KD-8712M_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\KD-8712M\\KD8712M - DWG\\KD8712M PNG.png"
+  },
+  {
+    "code": "PU-28104",
+    "category": "cita-kose",
+    "catName": "Çıta Köşe",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\PU-28104\\002-PU-28104_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\002_Köşe_Render\\02-Png\\PU-28104\\KD-28104 - DWG\\KD-28104 PNG.png"
+  },
+  {
+    "code": "KD-28330",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\001-KD-28330_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28330\\KD-28330 PNG.png"
+  },
+  {
+    "code": "KD-28550",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\002-KD-28550_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28550\\KD-28550 PNG.png"
+  },
+  {
+    "code": "KD-2822A",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\003-KD-2822A_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-2822A\\KD-2822A PNG.png"
+  },
+  {
+    "code": "KD-28298R",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\004-KD-28298R_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28298R\\KD-28298R PNG.png"
+  },
+  {
+    "code": "KD-28298L",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\005-KD-28298L_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28298L\\KD-28298L PNG.png"
+  },
+  {
+    "code": "KD-2857",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\006-KD-2857_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-2857\\KD-2857 PNG.png"
+  },
+  {
+    "code": "KD-28122A",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\007-KD-28122A_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28122A\\KD-28122A PNG.png"
+  },
+  {
+    "code": "KD-28122B",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\008-KD-28122B_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28122B\\KD-28122B PNG.png"
+  },
+  {
+    "code": "PU-28147",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\009-PU-28147_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-28630L",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\010-KD-28630L_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28630L\\KD-28630L PNG.png"
+  },
+  {
+    "code": "KD-28630R",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\011-KD-28630R_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28630R\\KD-28630R PNG.png"
+  },
+  {
+    "code": "KD-2810",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\012-KD-2810_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-28304",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\013-KD-28304_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28304\\KD-28304 PNG.png"
+  },
+  {
+    "code": "KD-28120",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\014-KD-28120_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28120\\KD-28120 PNG.png"
+  },
+  {
+    "code": "KD-28298A",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\015-KD-28298A_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28298A\\KD-28298A PNG.png"
+  },
+  {
+    "code": "KD-20771LR",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\017-KD-20771LR_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-20771LR-2",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\018-KD-20771LR-2_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-28055AB",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\019-KD-28055AB_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "PU-20630",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\023-PU-20630_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-28058",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\024-KD-28058_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28058\\KD-28058 PNG.png"
+  },
+  {
+    "code": "KD-28400",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\038-KD-28400_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\SÜS\\KD-28400\\KD-28400 PNG.png"
+  },
+  {
+    "code": "KD-28220A",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\041-KD-28220A_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-28570",
+    "category": "susleme",
+    "catName": "Süsleme",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\003_Süs_Render\\02-Png\\042-KD-28570_Final_png_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-88266",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\001_KD-88266_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88266\\KD-88266 PNG.png"
+  },
+  {
+    "code": "KD-88375",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\002_KD-88375_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88375\\KD-88375 PNG.png"
+  },
+  {
+    "code": "KD-88374",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\003_KD-88374_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88374\\KD-88374 PNG.png"
+  },
+  {
+    "code": "KD-88373",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\004_KD-88373_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88373\\KD-88373 PNG.png"
+  },
+  {
+    "code": "KD-88211",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\005_KD-88211_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88211\\KD-88211 PNG.png"
+  },
+  {
+    "code": "KD-88119",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\006_KD-88119_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88119\\KD-88119 PNG.png"
+  },
+  {
+    "code": "KD-88273",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\007_KD-88273_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88273\\KD-88273 PNG.png"
+  },
+  {
+    "code": "KD-85450",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\008_KD-85450_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85450\\KD-85450 PNG.png"
+  },
+  {
+    "code": "KD-88269",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\009_KD-88269_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-88285",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\010_KD-88285_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-88285\\KD-88285 PNG.png"
+  },
+  {
+    "code": "KD-85330",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\012_KD-85330_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85330\\KD-85330 PNG.png"
+  },
+  {
+    "code": "KD-85007",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\013_KD-85007_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85007\\KD-85007 PNG.png"
+  },
+  {
+    "code": "KD-85010",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\014_KD-85010_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85010\\KD-85010 PNG.png"
+  },
+  {
+    "code": "KD-85016",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\015_KD-85016_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85016\\KD-85016 PNG.png"
+  },
+  {
+    "code": "KD-85021",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\016_KD-85021_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85021\\KD-85021 PNG.png"
+  },
+  {
+    "code": "KD-85110",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\017_KD-85110_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85110\\KD-85110 PNG.png"
+  },
+  {
+    "code": "KD-85147",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\018_KD-85147_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-85290",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\021_KD-85290_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-85940",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\026_KD-85940_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85940\\KD-85940 PNG.png"
+  },
+  {
+    "code": "KD-6015",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\027_KD-6015_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-6015\\KD-6015 PNG.png"
+  },
+  {
+    "code": "KD-6012",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\028_KD-6012_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-6012\\KD-6012 PNG.png"
+  },
+  {
+    "code": "KD-60151",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\029_KD-60151_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-60151\\KD-60151 PNG.png"
+  },
+  {
+    "code": "KD-6010",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\030_KD-6010_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-6010\\KD-6010 PNG.png"
+  },
+  {
+    "code": "KD-6011",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\031_KD-6011_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-6011\\KD-6011 PNG.png"
+  },
+  {
+    "code": "KD-6013",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\032_KD-6013_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-6013\\KD-6013 PNG.png"
+  },
+  {
+    "code": "KD-60146",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\034_KD-60146_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-60146\\KD-60146 PNG.png"
+  },
+  {
+    "code": "KD-60150",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\035_KD-60150_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-60150\\KD-60150 PNG.png"
+  },
+  {
+    "code": "KD-85202",
+    "category": "kartonpiyer",
+    "catName": "Kartonpiyer",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\005_Kartonpiyer\\02-Png\\036_KD-85202_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KARTONPİYER\\KD-85202\\KD-85202 PNG.png"
+  },
+  {
+    "code": "KD-8719",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\001-KD-8719_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-8741",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\002-KD-8741_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-8741\\KD-8741 PNG.png"
+  },
+  {
+    "code": "KD-8742",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\003-KD-8742_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-8742\\KD-8742 PNG.png"
+  },
+  {
+    "code": "KD-8743",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\004-KD-8743_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-8641",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\006-KD-8641_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-8641\\KD-8641 PNG.png"
+  },
+  {
+    "code": "KD-86930",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\010-KD-86930_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-86930\\KD-86930 PNG.png"
+  },
+  {
+    "code": "KD-86935",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\013-KD-86935_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-86935\\KD-86935 PNG.png"
+  },
+  {
+    "code": "KD-87490",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\017-KD-87490_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-87470",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\021-KD-87470_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-87470\\KD-87470 PNG.png"
+  },
+  {
+    "code": "KD-87470B",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\023-KD-87470B_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-87470B\\KD-87470B PNG.png"
+  },
+  {
+    "code": "KD-85507",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\025-KD-85507_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-85507\\KD-85507 PNG.png"
+  },
+  {
+    "code": "KD-85505",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\026-KD-85505_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-85506",
+    "category": "bordur",
+    "catName": "Bordür",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\006_Bordür\\02-Png\\027-KD-85506_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\BORDÜR\\KD-85506\\KD-85506 PNG.png"
+  },
+  {
+    "code": "KD-82236",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\001-KD-82236_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82236\\KD-82236 PNG.png"
+  },
+  {
+    "code": "KD-82263",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\002-KD-82263_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82263\\KD-82263 PNG.png"
+  },
+  {
+    "code": "KD-82253",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\003-KD-82253_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82253\\KD-82253 PNG.png"
+  },
+  {
+    "code": "KD-82232",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\004-KD-82232_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82232\\KD-82232 PNG.png"
+  },
+  {
+    "code": "KD-82231C",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\005-KD-82231C_Final_png_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82231C\\KD-82231C PNG.png"
+  },
+  {
+    "code": "KD-82231",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\005-KD-82231_Final_Pers_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-82222",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\006-KD-82222_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82222\\KD-82222 PNG.png"
+  },
+  {
+    "code": "KD-82234",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\007-KD-82234_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82234\\KD-82234 PNG.png"
+  },
+  {
+    "code": "KD-82261",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\008-KD-82261_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82261\\KD-82261 PNG.png"
+  },
+  {
+    "code": "KD-82251",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\009-KD-82251_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82251\\KD-82251 PNG.png"
+  },
+  {
+    "code": "KD-82230",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\010-KD-82230_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82230\\KD-82230 PNG.png"
+  },
+  {
+    "code": "KD-82260",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\011-KD-82260_Final_Pers_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-82240",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\012-KD-82240_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82240\\KD-82240 PNG.png"
+  },
+  {
+    "code": "KD-82220",
+    "category": "pilaster",
+    "catName": "Pilaster",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\007_Plaster_Render\\02-Png\\013-KD-82220_Final_Pers_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PLASTER\\KD-82220\\KD-82220 PNG.png"
+  },
+  {
+    "code": "KD-8303-A24",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\001-KD-8303-A24_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KAİDELER\\KD-8303-A24\\KD-8303-A24 PNG.png"
+  },
+  {
+    "code": "KD-8303-A30",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\002-KD-8303-A30_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KAİDELER\\KD-8303-A30\\KD-8303-A30 PNG.png"
+  },
+  {
+    "code": "KD-8303-A40",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\003-KD-8303-A40_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KAİDELER\\KD-8303-A40\\KD-8303-A40 PNG.png"
+  },
+  {
+    "code": "KD-8303-A50",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\004-KD-8303-A50_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KAİDELER\\KD-8303-A50\\KD-8303-A50 PNG.png"
+  },
+  {
+    "code": "KD-8303-A60",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\005-KD-8303-A60_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KAİDELER\\KD-8303-A60\\KD-8303-A60 PNG.png"
+  },
+  {
+    "code": "KD-8303B-20",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\006-KD-8303B-20_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\KAİDELER\\KD-8303B-20\\KD-8303B-20 PNG.png"
+  },
+  {
+    "code": "KD-82334-47",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\007-KD-82334-47_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-5801-30A",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\009-KD-5801-30A_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-5801-50A",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\010-KD-5801-50A_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-5801-60A",
+    "category": "sutun-baslik",
+    "catName": "Sütun Kaidesi",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\008_Kaide_Render\\02-Png\\011-KD-5801-60A_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-20B",
+    "category": "sutun-baslik",
+    "catName": "Sütun",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\009_Sütun_Render\\02-Png\\001-PU-5801-20B_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-30B",
+    "category": "sutun-baslik",
+    "catName": "Sütun",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\009_Sütun_Render\\02-Png\\002-PU-5801-30B_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-60B",
+    "category": "sutun-baslik",
+    "catName": "Sütun",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\009_Sütun_Render\\02-Png\\004-PU-5801-60B_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-8305-30",
+    "category": "sutun-baslik",
+    "catName": "Sütun",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\009_Sütun_Render\\02-Png\\006-KD-8305-30_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-8305-40",
+    "category": "sutun-baslik",
+    "catName": "Sütun",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\009_Sütun_Render\\02-Png\\007-KD-8305-40_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-8305-60",
+    "category": "sutun-baslik",
+    "catName": "Sütun",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\009_Sütun_Render\\02-Png\\009-KD-8305-60_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "PU-5802-60B",
+    "category": "sutun-baslik",
+    "catName": "Sütun",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\009_Sütun_Render\\02-Png\\011-PU-5802-60B_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-8",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\001-KD-8_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-8\\KD-8 PNG.png"
+  },
+  {
+    "code": "KD-30",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\002-KD-30_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-30\\KD-30 PNG.png"
+  },
+  {
+    "code": "KD-60",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\003-KD-60_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-60\\KD-60 PNG.png"
+  },
+  {
+    "code": "KD-8107",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\004-KD-8107_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-8107\\KD-8107 PNG.png"
+  },
+  {
+    "code": "KD-8108",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\005-KD-8108_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-8108\\KD-8108 PNG.png"
+  },
+  {
+    "code": "KD-T152",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\006-KD-T152_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-T152\\KD-T152 PNG.png"
+  },
+  {
+    "code": "KD-B001",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\007-KD-B001_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-B001\\KD-B001 PNG.png"
+  },
+  {
+    "code": "KD-B002",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\008-KD-B002_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-B002\\KD-B002 PNG.png"
+  },
+  {
+    "code": "KD-B004",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\009-KD-B004_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-B004\\KD-B004 PNG.png"
+  },
+  {
+    "code": "KD-B005",
+    "category": "panel-kaplama",
+    "catName": "Panel",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\010_Panel_Render\\02-Png\\010-KD-B005_Final_01_A_png.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\PANELLER\\KD-B005\\KD-B005 PNG.png"
+  },
+  {
+    "code": "KD-1516",
+    "category": "kiris",
+    "catName": "Ahşap Kiriş",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\011_Ahşap_Render\\02-Png\\001-KD-1516_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\AHŞAP\\KD-1516\\KD-1516 PNG.png"
+  },
+  {
+    "code": "KD-1520",
+    "category": "kiris",
+    "catName": "Ahşap Kiriş",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\011_Ahşap_Render\\02-Png\\002-KD-1520_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\AHŞAP\\KD-1520\\KD-1520 PNG.png"
+  },
+  {
+    "code": "KD-1525",
+    "category": "kiris",
+    "catName": "Ahşap Kiriş",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\011_Ahşap_Render\\02-Png\\003-KD-1525_Final_01_P.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-1527",
+    "category": "kiris",
+    "catName": "Ahşap Kiriş",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\011_Ahşap_Render\\02-Png\\004-KD-1527_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\AHŞAP\\KD-1527\\KD-1527 PNG.png"
+  },
+  {
+    "code": "KD-1516A",
+    "category": "kiris",
+    "catName": "Ahşap Kiriş",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\011_Ahşap_Render\\02-Png\\005-KD-1516A_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\AHŞAP\\KD-1516A\\KD-1516A PNG.png"
+  },
+  {
+    "code": "KD-1520A",
+    "category": "kiris",
+    "catName": "Ahşap Kiriş",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\011_Ahşap_Render\\02-Png\\006-KD-1520A_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\AHŞAP\\KD-1520A\\KD-1520A PNG.png"
+  },
+  {
+    "code": "KD-1512A",
+    "category": "kiris",
+    "catName": "Ahşap Kiriş",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\011_Ahşap_Render\\02-Png\\007-KD-1512A_Final_01_P.png",
+    "drawing": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\DWG çizimleri\\AHŞAP\\KD-1512A\\KD-1512A PNG.png"
+  },
+  {
+    "code": "KD-GOBEK-G001",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G001\\G001.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G003",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G003\\G003.pngG.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G005",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G005\\G005.pngg.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G006",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G006\\G006.pngg.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G007",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G007\\G007.pngg.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G008",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G008\\G008.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G009",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G009\\G009.pngg.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G010",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G010\\G010.pngg.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G011",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G011\\G011-1.png",
+    "drawing": null
+  },
+  {
+    "code": "KD-GOBEK-G012",
+    "category": "gobek",
+    "catName": "Parçalı Göbek",
+    "render": "C:\\src\\decorpu\\docs\\DECORPU SİTE\\PARÇALI GÖBEK KOMBİN RENDERLARI\\G012\\G012.png",
+    "drawing": null
+  }
+]

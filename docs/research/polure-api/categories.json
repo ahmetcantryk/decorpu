@@ -1,0 +1,322 @@
+[
+  {
+    "id": 270,
+    "slug": "aplik-ve-nis",
+    "name": "Aplik ve Niş",
+    "parent_id": null,
+    "product_count": 7,
+    "sub_count": 2,
+    "image_folder": "cat-27970-aplik-ve-nis",
+    "is_extra": false
+  },
+  {
+    "id": 269,
+    "slug": "bordur",
+    "name": "Bordür",
+    "parent_id": null,
+    "product_count": 24,
+    "sub_count": 2,
+    "image_folder": "cat-27397-bordur",
+    "is_extra": false
+  },
+  {
+    "id": 257,
+    "slug": "gizli-isik-ve-armatur",
+    "name": "Gizli Işık ve Armatür",
+    "parent_id": null,
+    "product_count": 9,
+    "sub_count": 2,
+    "image_folder": "cat-27383-gizli-isik-ve-armatur",
+    "is_extra": false
+  },
+  {
+    "id": 262,
+    "slug": "gobek-ve-kubbe",
+    "name": "Göbek ve Kubbe",
+    "parent_id": null,
+    "product_count": 35,
+    "sub_count": 2,
+    "image_folder": "cat-27389-gobek-ve-kubbe",
+    "is_extra": false
+  },
+  {
+    "id": 251,
+    "slug": "hizli-yapistirci",
+    "name": "Hızlı Yapıştırcı",
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": "cat-49-hizli-yapistirci",
+    "is_extra": false
+  },
+  {
+    "id": 255,
+    "slug": "kartonpiyer",
+    "name": "Kartonpiyer",
+    "parent_id": null,
+    "product_count": 35,
+    "sub_count": 2,
+    "image_folder": "cat-27388-kartonpiyer",
+    "is_extra": false
+  },
+  {
+    "id": 263,
+    "slug": "kiris-mertek-kutuk",
+    "name": "Kiriş - Mertek - Kütük",
+    "parent_id": null,
+    "product_count": 43,
+    "sub_count": 7,
+    "image_folder": "cat-27390-kiris-mertek-kutuk",
+    "is_extra": false
+  },
+  {
+    "id": 256,
+    "slug": "kombine-modelleri",
+    "name": "Kombine Modelleri",
+    "parent_id": null,
+    "product_count": 14,
+    "sub_count": 4,
+    "image_folder": "cat-2088-kombine-modelleri",
+    "is_extra": false
+  },
+  {
+    "id": 258,
+    "slug": "kupeste-ve-badastrol",
+    "name": "Küpeşte ve Badastrol",
+    "parent_id": null,
+    "product_count": 9,
+    "sub_count": 2,
+    "image_folder": "cat-27384-kupeste-ve-badastrol",
+    "is_extra": false
+  },
+  {
+    "id": 278,
+    "slug": "kisa-roma-sutunlar",
+    "name": "Kısa Roma Sütunlar",
+    "parent_id": null,
+    "product_count": 22,
+    "sub_count": 2,
+    "image_folder": "cat-50083-kisa-roma-sutunlar",
+    "is_extra": false
+  },
+  {
+    "id": 253,
+    "slug": "macun",
+    "name": "Macun",
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": "cat-50-macun",
+    "is_extra": false
+  },
+  {
+    "id": 252,
+    "slug": "mastik-yapistirci",
+    "name": "Mastik Yapıştırcı",
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": "cat-51-mastik-yapistirci",
+    "is_extra": false
+  },
+  {
+    "id": 259,
+    "slug": "paneller",
+    "name": "Paneller",
+    "parent_id": null,
+    "product_count": 44,
+    "sub_count": 3,
+    "image_folder": "cat-27385-paneller",
+    "is_extra": false
+  },
+  {
+    "id": 227,
+    "slug": "payanda",
+    "name": "Payanda",
+    "parent_id": null,
+    "product_count": 41,
+    "sub_count": 0,
+    "image_folder": "cat-39-payanda",
+    "is_extra": false
+  },
+  {
+    "id": 264,
+    "slug": "pilaster-sutun",
+    "name": "Pilaster Sütun",
+    "parent_id": null,
+    "product_count": 75,
+    "sub_count": 8,
+    "image_folder": "cat-27391-pilaster-sutun",
+    "is_extra": false
+  },
+  {
+    "id": 254,
+    "slug": "polfix-yapistirci",
+    "name": "Polfix Yapıştırcı",
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": "cat-52-polfix-yapistirci",
+    "is_extra": false
+  },
+  {
+    "id": 277,
+    "slug": "stn",
+    "name": "STN",
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": null,
+    "is_extra": false
+  },
+  {
+    "id": 265,
+    "slug": "soveler",
+    "name": "Söveler",
+    "parent_id": null,
+    "product_count": 36,
+    "sub_count": 2,
+    "image_folder": "cat-27393-soveler",
+    "is_extra": false
+  },
+  {
+    "id": 199,
+    "slug": "supurgelik",
+    "name": "Süpürgelik",
+    "parent_id": null,
+    "product_count": 6,
+    "sub_count": 0,
+    "image_folder": "cat-58-supurgelik",
+    "is_extra": false
+  },
+  {
+    "id": 271,
+    "slug": "suslemeler",
+    "name": "Süslemeler",
+    "parent_id": null,
+    "product_count": 140,
+    "sub_count": 2,
+    "image_folder": "cat-28131-suslemeler",
+    "is_extra": false
+  },
+  {
+    "id": 266,
+    "slug": "sutun",
+    "name": "Sütun",
+    "parent_id": null,
+    "product_count": 95,
+    "sub_count": 8,
+    "image_folder": "cat-27394-sutun",
+    "is_extra": false
+  },
+  {
+    "id": 272,
+    "slug": "taclar",
+    "name": "Taçlar",
+    "parent_id": null,
+    "product_count": 34,
+    "sub_count": 3,
+    "image_folder": "cat-28213-taclar",
+    "is_extra": false
+  },
+  {
+    "id": 268,
+    "slug": "ticari-malzemeleri",
+    "name": "Ticari Malzemeleri",
+    "parent_id": null,
+    "product_count": 2,
+    "sub_count": 2,
+    "image_folder": "cat-27396-ticari-malzemeleri",
+    "is_extra": false
+  },
+  {
+    "id": 196,
+    "slug": "yuvarlak-kavis-kemer",
+    "name": "Yuvarlak Kavis Kemer",
+    "parent_id": null,
+    "product_count": 70,
+    "sub_count": 0,
+    "image_folder": "cat-81-yuvarlak-kavis-kemer",
+    "is_extra": false
+  },
+  {
+    "id": 260,
+    "slug": "cita",
+    "name": "Çıta",
+    "parent_id": null,
+    "product_count": 18,
+    "sub_count": 2,
+    "image_folder": "cat-27386-cita",
+    "is_extra": false
+  },
+  {
+    "id": 261,
+    "slug": "cita-kose",
+    "name": "Çıta Köşe",
+    "parent_id": null,
+    "product_count": 43,
+    "sub_count": 2,
+    "image_folder": "cat-27387-cita-kose",
+    "is_extra": false
+  },
+  {
+    "id": 267,
+    "slug": "somineler",
+    "name": "Şömineler",
+    "parent_id": null,
+    "product_count": 5,
+    "sub_count": 6,
+    "image_folder": "cat-27395-somineler",
+    "is_extra": false
+  },
+  {
+    "id": 219,
+    "slug": "satılamaz",
+    "name": null,
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": "cat-54-satılamaz",
+    "is_extra": false
+  },
+  {
+    "id": 191,
+    "slug": "ozel-urun",
+    "name": null,
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": null,
+    "is_extra": false
+  },
+  {
+    "id": 211,
+    "slug": "eklenecek",
+    "name": null,
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": null,
+    "is_extra": false
+  },
+  {
+    "id": 250,
+    "slug": "sarf-malzeme",
+    "name": null,
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": null,
+    "is_extra": false
+  },
+  {
+    "id": 186,
+    "slug": "mevcut-kaliplar",
+    "name": null,
+    "parent_id": null,
+    "product_count": 0,
+    "sub_count": 0,
+    "image_folder": null,
+    "is_extra": false
+  }
+]

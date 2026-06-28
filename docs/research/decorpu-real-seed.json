@@ -1,0 +1,982 @@
+[
+  {
+    "code": "PU-8601A",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8601A",
+    "image": "/real/pu-8601a.webp",
+    "drawing": "/real/pu-8601a-c.webp"
+  },
+  {
+    "code": "PU-8614A",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8614A",
+    "image": "/real/pu-8614a.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-8614B",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8614B",
+    "image": "/real/pu-8614b.webp",
+    "drawing": "/real/pu-8614b-c.webp"
+  },
+  {
+    "code": "PU-8619B",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8619B",
+    "image": "/real/pu-8619b.webp",
+    "drawing": "/real/pu-8619b-c.webp"
+  },
+  {
+    "code": "PU-8710A",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8710A",
+    "image": "/real/pu-8710a.webp",
+    "drawing": "/real/pu-8710a-c.webp"
+  },
+  {
+    "code": "PU-8710D",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8710D",
+    "image": "/real/pu-8710d.webp",
+    "drawing": "/real/pu-8710d-c.webp"
+  },
+  {
+    "code": "PU-8710E",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8710E",
+    "image": "/real/pu-8710e.webp",
+    "drawing": "/real/pu-8710e-c.webp"
+  },
+  {
+    "code": "PU-8710LR",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8710LR",
+    "image": "/real/pu-8710lr.webp",
+    "drawing": "/real/pu-8710lr-c.webp"
+  },
+  {
+    "code": "PU-8711A",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8711A",
+    "image": "/real/pu-8711a.webp",
+    "drawing": "/real/pu-8711a-c.webp"
+  },
+  {
+    "code": "PU-8711B",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8711B",
+    "image": "/real/pu-8711b.webp",
+    "drawing": "/real/pu-8711b-c.webp"
+  },
+  {
+    "code": "PU-8711C",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8711C",
+    "image": "/real/pu-8711c.webp",
+    "drawing": "/real/pu-8711c-c.webp"
+  },
+  {
+    "code": "PU-8711D",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8711D",
+    "image": "/real/pu-8711d.webp",
+    "drawing": "/real/pu-8711d-c.webp"
+  },
+  {
+    "code": "PU-8711E",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8711E",
+    "image": "/real/pu-8711e.webp",
+    "drawing": "/real/pu-8711e-c.webp"
+  },
+  {
+    "code": "PU-8711H",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8711H",
+    "image": "/real/pu-8711h.webp",
+    "drawing": "/real/pu-8711h-c.webp"
+  },
+  {
+    "code": "PU-8711W",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8711W",
+    "image": "/real/pu-8711w.webp",
+    "drawing": "/real/pu-8711w-c.webp"
+  },
+  {
+    "code": "PU-8712A",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8712A",
+    "image": "/real/pu-8712a.webp",
+    "drawing": "/real/pu-8712a-c.webp"
+  },
+  {
+    "code": "PU-8712M",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-8712M",
+    "image": "/real/pu-8712m.webp",
+    "drawing": "/real/pu-8712m-c.webp"
+  },
+  {
+    "code": "PU-28104",
+    "category": "cita-kose",
+    "name": "Poliüretan Çıta Köşe PU-28104",
+    "image": "/real/pu-28104.webp",
+    "drawing": "/real/pu-28104-c.webp"
+  },
+  {
+    "code": "PU-28330",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28330",
+    "image": "/real/pu-28330.webp",
+    "drawing": "/real/pu-28330-c.webp"
+  },
+  {
+    "code": "PU-28550",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28550",
+    "image": "/real/pu-28550.webp",
+    "drawing": "/real/pu-28550-c.webp"
+  },
+  {
+    "code": "PU-2822A",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-2822A",
+    "image": "/real/pu-2822a.webp",
+    "drawing": "/real/pu-2822a-c.webp"
+  },
+  {
+    "code": "PU-28298R",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28298R",
+    "image": "/real/pu-28298r.webp",
+    "drawing": "/real/pu-28298r-c.webp"
+  },
+  {
+    "code": "PU-28298L",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28298L",
+    "image": "/real/pu-28298l.webp",
+    "drawing": "/real/pu-28298l-c.webp"
+  },
+  {
+    "code": "PU-2857",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-2857",
+    "image": "/real/pu-2857.webp",
+    "drawing": "/real/pu-2857-c.webp"
+  },
+  {
+    "code": "PU-28122A",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28122A",
+    "image": "/real/pu-28122a.webp",
+    "drawing": "/real/pu-28122a-c.webp"
+  },
+  {
+    "code": "PU-28122B",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28122B",
+    "image": "/real/pu-28122b.webp",
+    "drawing": "/real/pu-28122b-c.webp"
+  },
+  {
+    "code": "PU-28147",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28147",
+    "image": "/real/pu-28147.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-28630L",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28630L",
+    "image": "/real/pu-28630l.webp",
+    "drawing": "/real/pu-28630l-c.webp"
+  },
+  {
+    "code": "PU-28630R",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28630R",
+    "image": "/real/pu-28630r.webp",
+    "drawing": "/real/pu-28630r-c.webp"
+  },
+  {
+    "code": "PU-2810",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-2810",
+    "image": "/real/pu-2810.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-28304",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28304",
+    "image": "/real/pu-28304.webp",
+    "drawing": "/real/pu-28304-c.webp"
+  },
+  {
+    "code": "PU-28120",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28120",
+    "image": "/real/pu-28120.webp",
+    "drawing": "/real/pu-28120-c.webp"
+  },
+  {
+    "code": "PU-28298A",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28298A",
+    "image": "/real/pu-28298a.webp",
+    "drawing": "/real/pu-28298a-c.webp"
+  },
+  {
+    "code": "PU-20771LR",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-20771LR",
+    "image": "/real/pu-20771lr.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-20771LR-2",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-20771LR-2",
+    "image": "/real/pu-20771lr-2.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-28055AB",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28055AB",
+    "image": "/real/pu-28055ab.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-20630",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-20630",
+    "image": "/real/pu-20630.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-28058",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28058",
+    "image": "/real/pu-28058.webp",
+    "drawing": "/real/pu-28058-c.webp"
+  },
+  {
+    "code": "PU-28400",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28400",
+    "image": "/real/pu-28400.webp",
+    "drawing": "/real/pu-28400-c.webp"
+  },
+  {
+    "code": "PU-28220A",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28220A",
+    "image": "/real/pu-28220a.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-28570",
+    "category": "susleme",
+    "name": "Poliüretan Süsleme PU-28570",
+    "image": "/real/pu-28570.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-88266",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88266",
+    "image": "/real/pu-88266.webp",
+    "drawing": "/real/pu-88266-c.webp"
+  },
+  {
+    "code": "PU-88375",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88375",
+    "image": "/real/pu-88375.webp",
+    "drawing": "/real/pu-88375-c.webp"
+  },
+  {
+    "code": "PU-88374",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88374",
+    "image": "/real/pu-88374.webp",
+    "drawing": "/real/pu-88374-c.webp"
+  },
+  {
+    "code": "PU-88373",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88373",
+    "image": "/real/pu-88373.webp",
+    "drawing": "/real/pu-88373-c.webp"
+  },
+  {
+    "code": "PU-88211",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88211",
+    "image": "/real/pu-88211.webp",
+    "drawing": "/real/pu-88211-c.webp"
+  },
+  {
+    "code": "PU-88119",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88119",
+    "image": "/real/pu-88119.webp",
+    "drawing": "/real/pu-88119-c.webp"
+  },
+  {
+    "code": "PU-88273",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88273",
+    "image": "/real/pu-88273.webp",
+    "drawing": "/real/pu-88273-c.webp"
+  },
+  {
+    "code": "PU-85450",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85450",
+    "image": "/real/pu-85450.webp",
+    "drawing": "/real/pu-85450-c.webp"
+  },
+  {
+    "code": "PU-88269",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88269",
+    "image": "/real/pu-88269.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-88285",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-88285",
+    "image": "/real/pu-88285.webp",
+    "drawing": "/real/pu-88285-c.webp"
+  },
+  {
+    "code": "PU-85330",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85330",
+    "image": "/real/pu-85330.webp",
+    "drawing": "/real/pu-85330-c.webp"
+  },
+  {
+    "code": "PU-85007",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85007",
+    "image": "/real/pu-85007.webp",
+    "drawing": "/real/pu-85007-c.webp"
+  },
+  {
+    "code": "PU-85010",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85010",
+    "image": "/real/pu-85010.webp",
+    "drawing": "/real/pu-85010-c.webp"
+  },
+  {
+    "code": "PU-85016",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85016",
+    "image": "/real/pu-85016.webp",
+    "drawing": "/real/pu-85016-c.webp"
+  },
+  {
+    "code": "PU-85021",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85021",
+    "image": "/real/pu-85021.webp",
+    "drawing": "/real/pu-85021-c.webp"
+  },
+  {
+    "code": "PU-85110",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85110",
+    "image": "/real/pu-85110.webp",
+    "drawing": "/real/pu-85110-c.webp"
+  },
+  {
+    "code": "PU-85147",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85147",
+    "image": "/real/pu-85147.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-85290",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85290",
+    "image": "/real/pu-85290.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-85940",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85940",
+    "image": "/real/pu-85940.webp",
+    "drawing": "/real/pu-85940-c.webp"
+  },
+  {
+    "code": "PU-6015",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-6015",
+    "image": "/real/pu-6015.webp",
+    "drawing": "/real/pu-6015-c.webp"
+  },
+  {
+    "code": "PU-6012",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-6012",
+    "image": "/real/pu-6012.webp",
+    "drawing": "/real/pu-6012-c.webp"
+  },
+  {
+    "code": "PU-60151",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-60151",
+    "image": "/real/pu-60151.webp",
+    "drawing": "/real/pu-60151-c.webp"
+  },
+  {
+    "code": "PU-6010",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-6010",
+    "image": "/real/pu-6010.webp",
+    "drawing": "/real/pu-6010-c.webp"
+  },
+  {
+    "code": "PU-6011",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-6011",
+    "image": "/real/pu-6011.webp",
+    "drawing": "/real/pu-6011-c.webp"
+  },
+  {
+    "code": "PU-6013",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-6013",
+    "image": "/real/pu-6013.webp",
+    "drawing": "/real/pu-6013-c.webp"
+  },
+  {
+    "code": "PU-60146",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-60146",
+    "image": "/real/pu-60146.webp",
+    "drawing": "/real/pu-60146-c.webp"
+  },
+  {
+    "code": "PU-60150",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-60150",
+    "image": "/real/pu-60150.webp",
+    "drawing": "/real/pu-60150-c.webp"
+  },
+  {
+    "code": "PU-85202",
+    "category": "kartonpiyer",
+    "name": "Poliüretan Kartonpiyer PU-85202",
+    "image": "/real/pu-85202.webp",
+    "drawing": "/real/pu-85202-c.webp"
+  },
+  {
+    "code": "PU-8719",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-8719",
+    "image": "/real/pu-8719.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-8741",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-8741",
+    "image": "/real/pu-8741.webp",
+    "drawing": "/real/pu-8741-c.webp"
+  },
+  {
+    "code": "PU-8742",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-8742",
+    "image": "/real/pu-8742.webp",
+    "drawing": "/real/pu-8742-c.webp"
+  },
+  {
+    "code": "PU-8743",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-8743",
+    "image": "/real/pu-8743.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-8641",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-8641",
+    "image": "/real/pu-8641.webp",
+    "drawing": "/real/pu-8641-c.webp"
+  },
+  {
+    "code": "PU-86930",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-86930",
+    "image": "/real/pu-86930.webp",
+    "drawing": "/real/pu-86930-c.webp"
+  },
+  {
+    "code": "PU-86935",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-86935",
+    "image": "/real/pu-86935.webp",
+    "drawing": "/real/pu-86935-c.webp"
+  },
+  {
+    "code": "PU-87490",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-87490",
+    "image": "/real/pu-87490.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-87470",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-87470",
+    "image": "/real/pu-87470.webp",
+    "drawing": "/real/pu-87470-c.webp"
+  },
+  {
+    "code": "PU-87470B",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-87470B",
+    "image": "/real/pu-87470b.webp",
+    "drawing": "/real/pu-87470b-c.webp"
+  },
+  {
+    "code": "PU-85507",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-85507",
+    "image": "/real/pu-85507.webp",
+    "drawing": "/real/pu-85507-c.webp"
+  },
+  {
+    "code": "PU-85505",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-85505",
+    "image": "/real/pu-85505.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-85506",
+    "category": "bordur",
+    "name": "Poliüretan Bordür PU-85506",
+    "image": "/real/pu-85506.webp",
+    "drawing": "/real/pu-85506-c.webp"
+  },
+  {
+    "code": "PU-82236",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82236",
+    "image": "/real/pu-82236.webp",
+    "drawing": "/real/pu-82236-c.webp"
+  },
+  {
+    "code": "PU-82263",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82263",
+    "image": "/real/pu-82263.webp",
+    "drawing": "/real/pu-82263-c.webp"
+  },
+  {
+    "code": "PU-82253",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82253",
+    "image": "/real/pu-82253.webp",
+    "drawing": "/real/pu-82253-c.webp"
+  },
+  {
+    "code": "PU-82232",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82232",
+    "image": "/real/pu-82232.webp",
+    "drawing": "/real/pu-82232-c.webp"
+  },
+  {
+    "code": "PU-82231C",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82231C",
+    "image": "/real/pu-82231c.webp",
+    "drawing": "/real/pu-82231c-c.webp"
+  },
+  {
+    "code": "PU-82231",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82231",
+    "image": "/real/pu-82231.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-82222",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82222",
+    "image": "/real/pu-82222.webp",
+    "drawing": "/real/pu-82222-c.webp"
+  },
+  {
+    "code": "PU-82234",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82234",
+    "image": "/real/pu-82234.webp",
+    "drawing": "/real/pu-82234-c.webp"
+  },
+  {
+    "code": "PU-82261",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82261",
+    "image": "/real/pu-82261.webp",
+    "drawing": "/real/pu-82261-c.webp"
+  },
+  {
+    "code": "PU-82251",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82251",
+    "image": "/real/pu-82251.webp",
+    "drawing": "/real/pu-82251-c.webp"
+  },
+  {
+    "code": "PU-82230",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82230",
+    "image": "/real/pu-82230.webp",
+    "drawing": "/real/pu-82230-c.webp"
+  },
+  {
+    "code": "PU-82260",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82260",
+    "image": "/real/pu-82260.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-82240",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82240",
+    "image": "/real/pu-82240.webp",
+    "drawing": "/real/pu-82240-c.webp"
+  },
+  {
+    "code": "PU-82220",
+    "category": "pilaster",
+    "name": "Poliüretan Pilaster PU-82220",
+    "image": "/real/pu-82220.webp",
+    "drawing": "/real/pu-82220-c.webp"
+  },
+  {
+    "code": "PU-8303-A24",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8303-A24",
+    "image": "/real/pu-8303-a24.webp",
+    "drawing": "/real/pu-8303-a24-c.webp"
+  },
+  {
+    "code": "PU-8303-A30",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8303-A30",
+    "image": "/real/pu-8303-a30.webp",
+    "drawing": "/real/pu-8303-a30-c.webp"
+  },
+  {
+    "code": "PU-8303-A40",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8303-A40",
+    "image": "/real/pu-8303-a40.webp",
+    "drawing": "/real/pu-8303-a40-c.webp"
+  },
+  {
+    "code": "PU-8303-A50",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8303-A50",
+    "image": "/real/pu-8303-a50.webp",
+    "drawing": "/real/pu-8303-a50-c.webp"
+  },
+  {
+    "code": "PU-8303-A60",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8303-A60",
+    "image": "/real/pu-8303-a60.webp",
+    "drawing": "/real/pu-8303-a60-c.webp"
+  },
+  {
+    "code": "PU-8303B-20",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8303B-20",
+    "image": "/real/pu-8303b-20.webp",
+    "drawing": "/real/pu-8303b-20-c.webp"
+  },
+  {
+    "code": "PU-82334-47",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-82334-47",
+    "image": "/real/pu-82334-47.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-30A",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-5801-30A",
+    "image": "/real/pu-5801-30a.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-50A",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-5801-50A",
+    "image": "/real/pu-5801-50a.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-60A",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-5801-60A",
+    "image": "/real/pu-5801-60a.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-20B",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-5801-20B",
+    "image": "/real/pu-5801-20b.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-30B",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-5801-30B",
+    "image": "/real/pu-5801-30b.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-5801-60B",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-5801-60B",
+    "image": "/real/pu-5801-60b.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-8305-30",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8305-30",
+    "image": "/real/pu-8305-30.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-8305-40",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8305-40",
+    "image": "/real/pu-8305-40.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-8305-60",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-8305-60",
+    "image": "/real/pu-8305-60.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-5802-60B",
+    "category": "sutun-baslik",
+    "name": "Poliüretan Sütun & Başlık PU-5802-60B",
+    "image": "/real/pu-5802-60b.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-8",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-8",
+    "image": "/real/pu-8.webp",
+    "drawing": "/real/pu-8-c.webp"
+  },
+  {
+    "code": "PU-30",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-30",
+    "image": "/real/pu-30.webp",
+    "drawing": "/real/pu-30-c.webp"
+  },
+  {
+    "code": "PU-60",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-60",
+    "image": "/real/pu-60.webp",
+    "drawing": "/real/pu-60-c.webp"
+  },
+  {
+    "code": "PU-8107",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-8107",
+    "image": "/real/pu-8107.webp",
+    "drawing": "/real/pu-8107-c.webp"
+  },
+  {
+    "code": "PU-8108",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-8108",
+    "image": "/real/pu-8108.webp",
+    "drawing": "/real/pu-8108-c.webp"
+  },
+  {
+    "code": "PU-T152",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-T152",
+    "image": "/real/pu-t152.webp",
+    "drawing": "/real/pu-t152-c.webp"
+  },
+  {
+    "code": "PU-B001",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-B001",
+    "image": "/real/pu-b001.webp",
+    "drawing": "/real/pu-b001-c.webp"
+  },
+  {
+    "code": "PU-B002",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-B002",
+    "image": "/real/pu-b002.webp",
+    "drawing": "/real/pu-b002-c.webp"
+  },
+  {
+    "code": "PU-B004",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-B004",
+    "image": "/real/pu-b004.webp",
+    "drawing": "/real/pu-b004-c.webp"
+  },
+  {
+    "code": "PU-B005",
+    "category": "panel-kaplama",
+    "name": "Poliüretan Panel Kaplama PU-B005",
+    "image": "/real/pu-b005.webp",
+    "drawing": "/real/pu-b005-c.webp"
+  },
+  {
+    "code": "PU-1516",
+    "category": "kiris",
+    "name": "Poliüretan Kiriş PU-1516",
+    "image": "/real/pu-1516.webp",
+    "drawing": "/real/pu-1516-c.webp"
+  },
+  {
+    "code": "PU-1520",
+    "category": "kiris",
+    "name": "Poliüretan Kiriş PU-1520",
+    "image": "/real/pu-1520.webp",
+    "drawing": "/real/pu-1520-c.webp"
+  },
+  {
+    "code": "PU-1525",
+    "category": "kiris",
+    "name": "Poliüretan Kiriş PU-1525",
+    "image": "/real/pu-1525.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-1527",
+    "category": "kiris",
+    "name": "Poliüretan Kiriş PU-1527",
+    "image": "/real/pu-1527.webp",
+    "drawing": "/real/pu-1527-c.webp"
+  },
+  {
+    "code": "PU-1516A",
+    "category": "kiris",
+    "name": "Poliüretan Kiriş PU-1516A",
+    "image": "/real/pu-1516a.webp",
+    "drawing": "/real/pu-1516a-c.webp"
+  },
+  {
+    "code": "PU-1520A",
+    "category": "kiris",
+    "name": "Poliüretan Kiriş PU-1520A",
+    "image": "/real/pu-1520a.webp",
+    "drawing": "/real/pu-1520a-c.webp"
+  },
+  {
+    "code": "PU-1512A",
+    "category": "kiris",
+    "name": "Poliüretan Kiriş PU-1512A",
+    "image": "/real/pu-1512a.webp",
+    "drawing": "/real/pu-1512a-c.webp"
+  },
+  {
+    "code": "PU-GOBEK-G001",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G001",
+    "image": "/real/pu-gobek-g001.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G003",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G003",
+    "image": "/real/pu-gobek-g003.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G005",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G005",
+    "image": "/real/pu-gobek-g005.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G006",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G006",
+    "image": "/real/pu-gobek-g006.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G007",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G007",
+    "image": "/real/pu-gobek-g007.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G008",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G008",
+    "image": "/real/pu-gobek-g008.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G009",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G009",
+    "image": "/real/pu-gobek-g009.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G010",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G010",
+    "image": "/real/pu-gobek-g010.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G011",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G011",
+    "image": "/real/pu-gobek-g011.webp",
+    "drawing": null
+  },
+  {
+    "code": "PU-GOBEK-G012",
+    "category": "gobek",
+    "name": "Poliüretan Göbek PU-GOBEK-G012",
+    "image": "/real/pu-gobek-g012.webp",
+    "drawing": null
+  }
+]

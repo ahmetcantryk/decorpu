@@ -1,0 +1,79 @@
+{
+  "Nav": {
+    "catalog": "Katalog",
+    "categories": "Kategoriler",
+    "projects": "Projeler",
+    "about": "Atölye",
+    "contact": "İletişim",
+    "quote": "Teklif Al",
+    "menu": "Menü",
+    "seeAll": "Tüm Kataloğu Gör",
+    "seeProducts": "Ürünleri gör"
+  },
+  "Search": {
+    "placeholder": "Ürün kodu ile ara — ör. PU-1024",
+    "label": "Kod ile ara",
+    "submit": "Ara"
+  },
+  "Cookie": {
+    "title": "Çerez kullanıyoruz",
+    "body": "Deneyimini iyileştirmek ve site trafiğini anlamak için çerezler kullanıyoruz. Tercihini aşağıdan yönetebilirsin.",
+    "learnMore": "Detaylı bilgi",
+    "accept": "Kabul Et",
+    "reject": "Reddet",
+    "customize": "Çerez Ayarları",
+    "settingsTitle": "Çerez Tercihleri",
+    "settingsIntro": "Hangi çerezlere izin verdiğini buradan seçebilirsin. Tercihini dilediğin zaman güncelleyebilirsin.",
+    "necessary": "Gerekli Çerezler",
+    "necessaryDesc": "Sitenin temel işlevleri (tema, oturum, güvenlik) için zorunludur. Kapatılamaz.",
+    "analytics": "Analitik Çerezler",
+    "analyticsDesc": "Ziyaret istatistiklerini anlamamıza yardımcı olur (Google Analytics). Açık onayınla çalışır.",
+    "alwaysOn": "Her zaman açık",
+    "save": "Seçimi Kaydet",
+    "acceptAll": "Tümünü Kabul Et",
+    "back": "Geri",
+    "close": "Kapat"
+  },
+  "Hero": {
+    "eyebrow": "Poliüretan mimari dekorasyon · Proje bazlı imalat",
+    "title": "Mimarın çizgisini imalata dönüştürüyoruz.",
+    "subtitle": "Söveden kartonpiyere, sütundan kubbeye — tasarımındaki parçayı koduyla bul, teklif sepetine ekle, projene özel üretim al.",
+    "ctaPrimary": "Kod ile ara",
+    "ctaSecondary": "Kategorileri keşfet"
+  },
+  "Home": {
+    "categoriesTitle": "Kategoriler",
+    "categoriesSubtitle": "İç ve dış cephe mimari profiller.",
+    "categoriesCta": "Galeriye git",
+    "galleryTitle": "Galeri",
+    "gallerySubtitle": "Üretimden ve uygulamalardan kareler.",
+    "addToQuote": "Teklife ekle",
+    "projectsTitle": "Projeler",
+    "projectsSubtitle": "Mimari projelerde DecorPU.",
+    "projectsNote": "Vaka çalışmaları ve bu projelerde kullanılan ürünler yakında.",
+    "projectLabel": "Uygulama",
+    "refsTitle": "Güvenilen referanslar",
+    "refsSubtitle": "Mimari projelerde tercih edilen atölye.",
+    "searchTitle": "Tasarımındaki parçayı koduyla bul",
+    "searchBody": "Elindeki proje görselindeki kodu yaz; eşleşen parçayı teklif sepetine ekle.",
+    "storyEyebrow": "Atölye",
+    "storyTitle": "Katalog değil, proje ortağı.",
+    "storyBody": "decorpu, mimarla birlikte çalışan bir poliüretan mimari dekorasyon atölyesidir. Hafif, dayanıklı, montajı kolay profiller; prekast betona göre daha pratik bir alternatif.",
+    "storyCta": "Atölyeyi tanı",
+    "quoteTitle": "Projeniz için teklif alın",
+    "quoteBody": "Kodları teklif sepetinde toplayın, tek formla gönderin. Satış ekibimiz projeye özel fiyatla döner.",
+    "quoteCta": "Teklif sepetine başla"
+  },
+  "Footer": {
+    "tagline": "Mimarın çizgisini imalata dönüştüren poliüretan mimari dekorasyon atölyesi.",
+    "exploreTitle": "Keşfet",
+    "companyTitle": "Kurumsal",
+    "contactTitle": "İletişim",
+    "rights": "Tüm hakları saklıdır.",
+    "madeIn": "Türkiye'de tasarlandı ve üretildi."
+  },
+  "Common": {
+    "skipToContent": "İçeriğe geç",
+    "languageLabel": "Dil"
+  }
+}

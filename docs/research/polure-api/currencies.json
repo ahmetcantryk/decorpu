@@ -1,0 +1,37 @@
+{
+  "currencies": [
+    {
+      "code": "TRY",
+      "symbol": "₺",
+      "name": "Turk Lirasi"
+    },
+    {
+      "code": "USD",
+      "symbol": "$",
+      "name": "US Dollar"
+    },
+    {
+      "code": "EUR",
+      "symbol": "€",
+      "name": "Euro"
+    },
+    {
+      "code": "GBP",
+      "symbol": "£",
+      "name": "British Pound"
+    },
+    {
+      "code": "RON",
+      "symbol": "lei",
+      "name": "Romanian Leu"
+    }
+  ],
+  "default": "TRY",
+  "rates": {
+    "TRY": 1,
+    "USD": 0.028,
+    "EUR": 0.026,
+    "GBP": 0.022,
+    "RON": 0.13
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "polure-api-harvest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Isolated harvest of polure.com public catalog API -> JSON + Excel (competitive research; internal use only).",
+  "scripts": {
+    "harvest": "node harvest.mjs",
+    "excel": "node export-excel.mjs"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

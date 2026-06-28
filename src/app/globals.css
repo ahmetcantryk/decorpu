@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  DECORPU tasarım sistemi — "Beyaz & Marka Turuncusu"
+  Modern, kurumsal, canlı; beyaz zemin + crisp siyah + marka turuncusu (#f77300).
+  Logo: serif "Decor" (siyah) + "PU" (turuncu). Line-art sahne = soğuk açık gri.
+*/
+@theme {
+  --color-bg: #ffffff; /* beyaz zemin */
+  --color-bg-subtle: #f5f6f8; /* alternatif bölüm zemini */
+  --color-surface: #ffffff; /* kart */
+  --color-ink: #16171b; /* crisp neredeyse siyah — metin/başlık */
+  --color-ink-soft: #3b3e45; /* yumuşak mürekkep */
+  --color-muted: #6b7178; /* soğuk gri — ikincil metin */
+  --color-line: #e7e9ec; /* ince kenarlık */
+  --color-line-strong: #d2d6db; /* belirgin kenarlık */
+  --color-sketch: #aab1ba; /* line-art sahne grisi (Lemonade) — biraz daha belirgin */
+
+  --color-accent: #f77300; /* MARKA TURUNCUSU — CTA, vurgu */
+  --color-accent-strong: #d96400; /* hover — daha koyu turuncu */
+  --color-accent-fg: #ffffff; /* turuncu üstü metin */
+  --color-accent-soft: #fff2e6; /* turuncu tinti — hover zemini */
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  --shadow-soft: 0 1px 2px rgba(22, 23, 27, 0.05), 0 12px 32px rgba(22, 23, 27, 0.07);
+  --shadow-pop: 0 8px 40px rgba(22, 23, 27, 0.12);
+}
+
+/* ===== Dark theme — token overrides (semantic tokens flip the whole site) ===== */
+.dark {
+  --color-bg: #0e0f12;
+  --color-bg-subtle: #17191f;
+  --color-surface: #15171c;
+  --color-ink: #f2f3f5;
+  --color-ink-soft: #c9cdd4;
+  --color-muted: #969ba3;
+  --color-line: #282b32;
+  --color-line-strong: #3a3e47;
+  --color-sketch: #454a53;
+  --color-accent: #ff8a1f;
+  --color-accent-strong: #f77300;
+  --color-accent-fg: #ffffff;
+  --color-accent-soft: #2a1a0d;
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-pop: 0 8px 40px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-ink);
+  }
+
+  code, kbd, samp, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+@layer components {
+  /* Line-art: varsayılan mürekkep; sahne grisi; aksan kırmızı */
+  .line-art {
+    fill: none;
+    color: var(--color-ink);
+    stroke: currentColor;
+    stroke-width: 1.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .line-art-sketch {
+    color: var(--color-sketch);
+    stroke-width: 1.5;
+  }
+  .line-art-accent {
+    stroke: var(--color-accent);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.marquee-pause:hover .animate-marquee {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

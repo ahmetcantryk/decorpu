@@ -1,0 +1,79 @@
+{
+  "Nav": {
+    "catalog": "Catalog",
+    "categories": "Categories",
+    "projects": "Projects",
+    "about": "Workshop",
+    "contact": "Contact",
+    "quote": "Get a Quote",
+    "menu": "Menu",
+    "seeAll": "Browse All Catalog",
+    "seeProducts": "See products"
+  },
+  "Search": {
+    "placeholder": "Search by product code — e.g. PU-1024",
+    "label": "Search by code",
+    "submit": "Search"
+  },
+  "Cookie": {
+    "title": "We use cookies",
+    "body": "We use cookies to improve your experience and understand site traffic. Manage your preference below.",
+    "learnMore": "Learn more",
+    "accept": "Accept",
+    "reject": "Reject",
+    "customize": "Cookie Settings",
+    "settingsTitle": "Cookie Preferences",
+    "settingsIntro": "Choose which cookies you allow. You can update your preference anytime.",
+    "necessary": "Necessary Cookies",
+    "necessaryDesc": "Required for core functions (theme, session, security). Cannot be turned off.",
+    "analytics": "Analytics Cookies",
+    "analyticsDesc": "Help us understand visit statistics (Google Analytics). Run only with your consent.",
+    "alwaysOn": "Always on",
+    "save": "Save choices",
+    "acceptAll": "Accept all",
+    "back": "Back",
+    "close": "Close"
+  },
+  "Hero": {
+    "eyebrow": "Polyurethane architectural decoration · Project-based manufacturing",
+    "title": "We turn the architect's line into manufacture.",
+    "subtitle": "From jambs to cornices, columns to domes — find the piece by its code, add it to your quote, get production made for your project.",
+    "ctaPrimary": "Search by code",
+    "ctaSecondary": "Explore categories"
+  },
+  "Home": {
+    "categoriesTitle": "Categories",
+    "categoriesSubtitle": "Interior & exterior architectural profiles.",
+    "categoriesCta": "Go to gallery",
+    "galleryTitle": "Gallery",
+    "gallerySubtitle": "Frames from production and installations.",
+    "addToQuote": "Add to quote",
+    "projectsTitle": "Projects",
+    "projectsSubtitle": "DecorPU in architectural projects.",
+    "projectsNote": "Case studies and the products used in these projects are coming soon.",
+    "projectLabel": "Application",
+    "refsTitle": "Trusted by",
+    "refsSubtitle": "The workshop chosen for architectural projects.",
+    "searchTitle": "Find your piece by its code",
+    "searchBody": "Type the code from your project drawing; add the matching piece to your quote.",
+    "storyEyebrow": "Workshop",
+    "storyTitle": "Not a catalog — a project partner.",
+    "storyBody": "decorpu is a polyurethane architectural decoration workshop that works alongside architects. Lightweight, durable, easy-to-install profiles; a more practical alternative to precast concrete.",
+    "storyCta": "Meet the workshop",
+    "quoteTitle": "Get a quote for your project",
+    "quoteBody": "Collect codes in your quote cart and send them in one form. Our sales team responds with project-based pricing.",
+    "quoteCta": "Start a quote cart"
+  },
+  "Footer": {
+    "tagline": "A polyurethane architectural decoration workshop turning the architect's line into manufacture.",
+    "exploreTitle": "Explore",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved.",
+    "madeIn": "Designed and manufactured in Türkiye."
+  },
+  "Common": {
+    "skipToContent": "Skip to content",
+    "languageLabel": "Language"
+  }
+}
