@@ -8,8 +8,6 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instantiate createClient with right options
-  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "14.5"
   }
@@ -168,6 +166,7 @@ export type Database = {
           is_featured: boolean
           length_mm: number | null
           material: string | null
+          min_level: number
           name_en: string | null
           name_tr: string
           outdoor: boolean | null
@@ -177,6 +176,9 @@ export type Database = {
           seo_title: string | null
           slug: string | null
           sort_order: number
+          stock_qty: number
+          track_stock: boolean
+          unit: string
           updated_at: string
           water_resistant: boolean | null
           weight_g: number | null
@@ -198,6 +200,7 @@ export type Database = {
           is_featured?: boolean
           length_mm?: number | null
           material?: string | null
+          min_level?: number
           name_en?: string | null
           name_tr: string
           outdoor?: boolean | null
@@ -207,6 +210,9 @@ export type Database = {
           seo_title?: string | null
           slug?: string | null
           sort_order?: number
+          stock_qty?: number
+          track_stock?: boolean
+          unit?: string
           updated_at?: string
           water_resistant?: boolean | null
           weight_g?: number | null
@@ -228,6 +234,7 @@ export type Database = {
           is_featured?: boolean
           length_mm?: number | null
           material?: string | null
+          min_level?: number
           name_en?: string | null
           name_tr?: string
           outdoor?: boolean | null
@@ -237,6 +244,9 @@ export type Database = {
           seo_title?: string | null
           slug?: string | null
           sort_order?: number
+          stock_qty?: number
+          track_stock?: boolean
+          unit?: string
           updated_at?: string
           water_resistant?: boolean | null
           weight_g?: number | null
@@ -449,12 +459,66 @@ export type Database = {
         }
         Relationships: []
       }
+      stock_movements: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          note: string | null
+          product_id: string
+          quantity: number
+          reason: string | null
+          ref: string | null
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          note?: string | null
+          product_id: string
+          quantity: number
+          reason?: string | null
+          ref?: string | null
+          type: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          note?: string | null
+          product_id?: string
+          quantity?: number
+          reason?: string | null
+          ref?: string | null
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stock_movements_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      apply_stock_movement: {
+        Args: {
+          p_note?: string
+          p_product: string
+          p_qty: number
+          p_reason?: string
+          p_ref?: string
+          p_type: string
+        }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never
@@ -472,3 +536,4 @@ export type ProductImage = PublicTables["product_images"]["Row"]
 export type Lead = PublicTables["leads"]["Row"]
 export type ProductInsert = PublicTables["products"]["Insert"]
 export type CategoryInsert = PublicTables["categories"]["Insert"]
+export type StockMovement = PublicTables["stock_movements"]["Row"]

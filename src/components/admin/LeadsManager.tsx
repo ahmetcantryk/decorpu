@@ -68,21 +68,23 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
     <div className="space-y-5">
       <h1 className="text-2xl font-semibold tracking-tight">Talepler</h1>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="flex h-10 min-w-56 flex-1 items-center gap-2 rounded-md border border-line bg-surface px-3">
-          <Search className="size-4 text-muted" />
+      <div className="space-y-2 sm:flex sm:flex-wrap sm:items-center sm:gap-2 sm:space-y-0">
+        <div className="flex h-11 items-center gap-2 rounded-md border border-line bg-surface px-3 sm:h-10 sm:min-w-56 sm:flex-1">
+          <Search className="size-4 shrink-0 text-muted" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="İsim, firma, e-posta, mesaj, kod ara…"
-            className="w-full bg-transparent text-sm outline-none placeholder:text-muted/70"
+            placeholder="İsim, firma, e-posta, kod ara…"
+            className="w-full bg-transparent text-base outline-none placeholder:text-muted/70 sm:text-sm"
           />
         </div>
-        <div className="w-44">
-          <Select options={kindOptions} value={kind} onValueChange={setKind} />
-        </div>
-        <div className="w-44">
-          <Select options={statusOptions} value={status} onValueChange={setStatus} />
+        <div className="grid grid-cols-2 gap-2 sm:flex">
+          <div className="sm:w-44">
+            <Select options={kindOptions} value={kind} onValueChange={setKind} />
+          </div>
+          <div className="sm:w-44">
+            <Select options={statusOptions} value={status} onValueChange={setStatus} />
+          </div>
         </div>
       </div>
 
@@ -100,7 +102,7 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
                   </div>
                   <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
                     {l.company ? (<span className="inline-flex items-center gap-1"><Building2 className="size-3.5" />{l.company}</span>) : null}
-                    {l.email ? (<span className="inline-flex items-center gap-1"><Mail className="size-3.5" />{l.email}</span>) : null}
+                    {l.email ? (<span className="inline-flex max-w-full items-center gap-1"><Mail className="size-3.5 shrink-0" /><span className="break-all">{l.email}</span></span>) : null}
                     {l.phone ? (<span className="inline-flex items-center gap-1"><Phone className="size-3.5" />{l.phone}</span>) : null}
                   </div>
                 </div>

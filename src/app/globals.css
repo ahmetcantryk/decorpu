@@ -71,6 +71,8 @@
     color: var(--color-ink);
     font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
+    /* Yatay taşmayı keser (sticky/scroll'u bozmaz) — mobilde sağa-sola kaymayı önler. */
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4 {

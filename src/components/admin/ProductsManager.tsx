@@ -88,25 +88,70 @@ export function ProductsManager({ products, categories }: ProductsManagerProps):
         </button>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="flex h-10 min-w-56 flex-1 items-center gap-2 rounded-md border border-line bg-surface px-3">
-          <Search className="size-4 text-muted" />
+      <div className="space-y-2 sm:flex sm:flex-wrap sm:items-center sm:gap-2 sm:space-y-0">
+        <div className="flex h-11 items-center gap-2 rounded-md border border-line bg-surface px-3 sm:h-10 sm:min-w-56 sm:flex-1">
+          <Search className="size-4 shrink-0 text-muted" />
           <input
             value={query}
             onChange={(e) => reset(setQuery)(e.target.value)}
             placeholder="Kod veya ad ile canlı ara…"
-            className="w-full bg-transparent text-sm outline-none placeholder:text-muted/70"
+            className="w-full bg-transparent text-base outline-none placeholder:text-muted/70 sm:text-sm"
           />
         </div>
-        <div className="w-48">
-          <Select options={catOptions} value={cat} onValueChange={reset(setCat)} />
-        </div>
-        <div className="w-40">
-          <Select options={statusOptions} value={status} onValueChange={reset(setStatus)} />
+        <div className="grid grid-cols-2 gap-2 sm:flex">
+          <div className="sm:w-48">
+            <Select options={catOptions} value={cat} onValueChange={reset(setCat)} />
+          </div>
+          <div className="sm:w-40">
+            <Select options={statusOptions} value={status} onValueChange={reset(setStatus)} />
+          </div>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-line bg-surface">
+      {/* Mobil: kart listesi (tablo taşmasını önler) */}
+      <ul className="space-y-2 md:hidden">
+        {pageItems.map((p) => (
+          <li key={p.id} className="rounded-xl border border-line bg-surface p-3">
+            <div className="flex items-center gap-3">
+              <div className="relative size-12 shrink-0 overflow-hidden rounded-md border border-line bg-bg-subtle">
+                {p.image ? <Image src={p.image} alt="" fill sizes="48px" className="object-cover" /> : null}
+              </div>
+              <div className="min-w-0 flex-1">
+                <span className="font-mono text-xs text-muted">{p.code}</span>
+                <span className="flex items-center gap-1.5 font-medium text-ink">
+                  <span className="truncate">{p.name_tr}</span>
+                  {p.is_featured ? <Star className="size-3.5 shrink-0 fill-accent text-accent" /> : null}
+                </span>
+                {p.categoryName ? <span className="block truncate text-xs text-muted">{p.categoryName}</span> : null}
+              </div>
+              <div className="shrink-0 text-right">
+                <div className="text-sm tabular-nums">{p.price != null ? `${p.price.toLocaleString("tr-TR")} ₺` : "—"}</div>
+                <span className={cn("mt-1 inline-block rounded-full px-2 py-0.5 text-xs", p.is_active ? "bg-green-100 text-green-700" : "bg-bg-subtle text-muted")}>
+                  {p.is_active ? "Aktif" : "Pasif"}
+                </span>
+              </div>
+            </div>
+            <div className="mt-2.5 flex items-center justify-end gap-1 border-t border-line pt-2.5">
+              <button onClick={() => openEdit(p)} className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm text-ink-soft transition-colors hover:bg-bg-subtle">
+                <Pencil className="size-4" /> Düzenle
+              </button>
+              <ConfirmDelete
+                onConfirm={() => deleteProduct(p.id)}
+                title="Ürün silinsin mi?"
+                description={`${p.code} — ${p.name_tr} kalıcı olarak silinecek.`}
+              />
+            </div>
+          </li>
+        ))}
+        {!pageItems.length ? (
+          <li className="rounded-xl border border-dashed border-line py-10 text-center text-sm text-muted">
+            {query || cat !== "all" || status !== "all" ? "Sonuç bulunamadı." : "Henüz ürün yok."}
+          </li>
+        ) : null}
+      </ul>
+
+      {/* Masaüstü: tablo */}
+      <div className="hidden overflow-hidden rounded-lg border border-line bg-surface md:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-line text-left text-xs uppercase tracking-wide text-muted">

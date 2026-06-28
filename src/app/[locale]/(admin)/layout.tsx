@@ -2,6 +2,7 @@ import type { ReactNode, ReactElement } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
+import { AdminMobileNav } from "@/components/admin/AdminMobileNav";
 
 /** Admin/CMS shell — protected; redirects to /giris when not signed in. */
 export default async function AdminLayout({ children }: { children: ReactNode }): Promise<ReactElement> {
@@ -15,7 +16,8 @@ export default async function AdminLayout({ children }: { children: ReactNode })
     <div className="flex min-h-screen w-full bg-bg-subtle font-sans text-ink">
       <AdminSidebar email={user.email ?? ""} />
       <div className="flex min-w-0 flex-1 flex-col">
-        <main className="mx-auto w-full max-w-6xl flex-1 px-5 py-8 sm:px-8">{children}</main>
+        <AdminMobileNav />
+        <main className="mx-auto w-full max-w-6xl flex-1 px-5 py-6 sm:px-8 sm:py-8">{children}</main>
       </div>
     </div>
   );
