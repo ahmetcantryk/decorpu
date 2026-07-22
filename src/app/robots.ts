@@ -12,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       // Arama, yönetim, kimlik ve test sayfaları taranmasın.
-      disallow: ["/admin", "/en/admin", "/giris", "/en/giris", "/ara", "/en/ara", "/test", "/test2", "/en/test", "/en/test2"],
+      disallow: ["/admin", "/en/admin", "/giris", "/en/giris", "/ara", "/en/ara"],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,
