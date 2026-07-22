@@ -106,8 +106,56 @@ kalsın; her küme yukarıdaki 7 güçlü sayfanın içine başlık (H2/H3) olar
 | `/iletisim/` | `/iletisim` |
 | kategori/etiket arşivleri | en yakın decorpu kategorisi (tam tablo geçiş günü çıkarılır) |
 
-## 8. Sonraki Adımlar
+## 8. GERÇEK TRAFİK VERİSİ (GSC, son 16 ay — 2026-07-22'de doğrulandı) ✅
 
-1. **GSC DNS doğrulaması** (kartonpiyerdeposu domain'i) → §4 tablosu gerçek tıklama verisiyle netleşir.
-2. §6-B sayfalarının üretimi (decorpu'da) → onaylayınca başlanır.
-3. Geçiş günü: sayfa-sayfa 301 haritası + GSC "Adres Değişikliği".
+Kaynak: `gsc/` klasörü (Sayfa/Sorgu/Cihaz/Ülke/Grafik CSV'leri). **Toplam: 33.079 tık / ~1,95M gösterim**,
+%73 mobil, %96 Türkiye. 399 sayfa ve 1000 sorgu satırı.
+
+### 8.1 Tema kümeleri — GERÇEK tıklama dağılımı (envanter hipotezini düzeltir!)
+
+| Küme | Tık | Not |
+|---|---|---|
+| **Kartonpiyer** | **6.847** | Gerçek kral tema (envanter çıtayı işaret ediyordu — içerik hacmi ≠ trafik) |
+| **Duvar panelleri** | **3.556** | Tek sayfa 4.855 tık, pozisyon 2,1 — sitenin en güçlü sayfası |
+| Çıta / bordür | 2.469 | Önemli ama 3. sıra |
+| Kiriş / kütük / mertek (rustik) | 2.061 | Rustik fikirler sayfası tek başına 2.137 tık |
+| Marka | ~1.150 | "kartonpiyer deposu" 762 + **"decorpu" 383** (!) |
+| Şömine 564 · Söve/süpürgelik 530 · Kubbe/göbek 456 | | |
+
+### 8.2 En çok tık alan sayfalar (ilk 10)
+
+| Tık | Poz | Sayfa |
+|---|---|---|
+| 4.855 | 2,1 | /poliuretan-duvar-panelleri/ |
+| 4.835 | 8,1 | /poliuretan-kartonpiyer-modelleri/ (334K gösterim — poz. iyileşirse patlar) |
+| 2.411 | 7,4 | / (anasayfa) |
+| 2.137 | 4,0 | /…rustik-dekorasyon-fikirleri…/ |
+| 1.853 | 3,5 | /poliuretan-ahsap-kiris/ |
+| 1.754 | 3,2 | /poliuretan-gizli-isik-led-isik-kartonpiyer/ |
+| 1.545 | 4,7 | /poliuretan-sutun-modelleri/ |
+| 1.400 | 5,6 | /poliuretan-gobek-modelleri/ |
+| 1.171 | 1,5 | /category/kartonpiyer/alci-kartonpiyer/ |
+| 1.094 | 7,5 | /poliuretan-duvar-citasi-ve-bordur-modelleri/ |
+
+### 8.3 Çarpıcı sorgu bulguları
+
+- "kartonpiyer modelleri" 886 tık (poz 1,6) · "kartonpiyer" 671 tık ama poz 5,8 / 113K gösterim → iyileşme alanı
+- Panel ailesi çok güçlü ve poz ~1: "duvar panel modelleri" 499, "duvar paneli modelleri" 463, "tv arkası panel" 227
+- **"decorpu" sorgusu 383 tık bu siteye gidiyor** → marka trafiği yanlış evde; taşıma aciliyeti kanıtı
+- **"kartonpiyer dwg" 116 tık, %25 CTR** → decorpu'nun DWG indirme özelliği bu talebi birebir karşılıyor
+- LED/gizli ışık ailesi: "ledli stropiyer" 105 + "led ışıklı kartonpiyer" 104 + sayfası 1.754 tık
+
+### 8.4 decorpu kurulum önceliği (GERÇEK veriye göre revize)
+
+1. **Kartonpiyer modelleri** mega sayfası (kategori + rehber; alçı-vs-poliüretan karşılaştırma dahil)
+2. **Duvar panelleri** (decorpu'daki panel-kaplama kategorisini rehber içerikle büyüt; "tv arkası panel" alt başlık)
+3. **Rustik ahşap kiriş / mertek / kütük** rehberi
+4. **Gizli ışık / LED kartonpiyer** sayfası
+5. **Sütun modelleri** · 6. **Tavan göbeği** · 7. **Duvar çıtası** rehberi (fiyat+uygulama dahil)
+8. Şömine · söve · süpürgelik kategori metinleri
+
+## 9. Sonraki Adımlar
+
+1. ✅ GSC doğrulandı, 16 aylık veri alındı ve analiz edildi.
+2. §8.4 sırasıyla decorpu sayfalarının üretimi → onayla başlanır.
+3. Geçiş günü: sayfa-sayfa 301 (etiketler dahil) + GSC "Adres Değişikliği".
