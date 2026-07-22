@@ -17,6 +17,11 @@ export async function CategoryShowcase(): Promise<ReactElement> {
   const tree = await getCategoryTree();
   const coverBySlug = new Map(tree.map((n) => [n.slug, n.cover]));
 
+  // Gerçek kapak görseli olan kategoriler başa — placeholder'lı olanlar sona (grup içi sıra korunur).
+  const withCover = CATEGORIES.filter((c) => coverBySlug.get(c.slug));
+  const withoutCover = CATEGORIES.filter((c) => !coverBySlug.get(c.slug));
+  const ordered = [...withCover, ...withoutCover];
+
   return (
     <section id="kategoriler" className="scroll-mt-20 py-20">
       <Container>
@@ -31,7 +36,7 @@ export async function CategoryShowcase(): Promise<ReactElement> {
         </div>
 
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {CATEGORIES.map((cat) => {
+          {ordered.map((cat) => {
             const img = coverBySlug.get(cat.slug) || PLACEHOLDER;
             return (
               <li key={cat.slug}>

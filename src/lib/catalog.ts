@@ -93,13 +93,16 @@ export async function getCategoryTree(): Promise<CategoryNode[]> {
     }
   }
 
-  return parents.map((parent) => {
+  const nodes = parents.map((parent) => {
     const kids = childrenOf(parent.id);
     const ids = [parent.id, ...kids.map((k) => k.id)];
     const productCount = ids.reduce((n, id) => n + (countByCat.get(id) ?? 0), 0);
     const cover = ids.map((id) => imagesByCat.get(id)?.[0]).find(Boolean) ?? null;
     return { ...parent, children: kids, productCount, cover };
   });
+
+  // Gerçek kapak görseli olanlar başa (boş görünüm engellenir); grup içi sort_order korunur.
+  return [...nodes.filter((n) => n.cover), ...nodes.filter((n) => !n.cover)];
 }
 
 /** A single category with its parent + sibling subcategories. */
