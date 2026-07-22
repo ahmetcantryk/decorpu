@@ -49,7 +49,7 @@ export default async function CategoriesPage({
                 </div>
               </div>
               <div className="flex items-center justify-between px-3.5 py-2.5 text-xs text-muted">
-                <span>{cat.productCount} ürün</span>
+                <span>{cat.productCount > 0 ? `${cat.productCount} ürün` : "Talep üzerine"}</span>
                 {cat.children.length ? <span>{cat.children.length} alt kategori</span> : null}
               </div>
             </Link>

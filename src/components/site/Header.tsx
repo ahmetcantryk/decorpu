@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, FileDown, PencilRuler } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
@@ -23,7 +23,17 @@ export function Header(): ReactElement {
       {/* top utility bar — masaüstü */}
       <div className="hidden border-b border-line/70 bg-bg-subtle/60 lg:block">
         <Container className="flex h-9 items-center justify-between text-xs text-muted">
-          <span>Mimarlara özel · Proje bazlı poliüretan dekorasyon imalatı</span>
+          <div className="flex items-center gap-4">
+            <span>Mimarlara özel · Proje bazlı poliüretan dekorasyon imalatı</span>
+            <a href={SITE.downloads.catalogPdf} download className="flex items-center gap-1 font-medium text-ink transition-colors hover:text-accent">
+              <FileDown className="size-3.5 text-accent" />
+              Katalog (PDF)
+            </a>
+            <a href={SITE.downloads.dwg} download className="flex items-center gap-1 font-medium text-ink transition-colors hover:text-accent">
+              <PencilRuler className="size-3.5 text-accent" />
+              Teknik Çizimler (DWG)
+            </a>
+          </div>
           <div className="flex items-center gap-4">
             <a href={SITE.emailHref} className="transition-colors hover:text-accent">{SITE.email}</a>
             <a href={SITE.phoneHref} className="flex items-center gap-1.5 font-medium text-ink transition-colors hover:text-accent">

@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactElement } from "react";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight, FileDown, PencilRuler } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CategoryGlyph } from "@/components/illustrations/CategoryGlyph";
 import { CATEGORIES, categoryName } from "@/lib/taxonomy";
+import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
@@ -109,12 +110,22 @@ export function MegaMenu(): ReactElement {
               </div>
             </div>
 
-            {/* Alt çubuk — tüm kataloğa git */}
-            <div className="border-t border-line bg-bg-subtle/50 px-6 py-3">
+            {/* Alt çubuk — indirilenler + tüm katalog */}
+            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line bg-bg-subtle/50 px-6 py-3">
+              <div className="flex items-center gap-5 text-sm">
+                <a href={SITE.downloads.catalogPdf} download className="flex items-center gap-1.5 font-medium text-ink transition-colors hover:text-accent">
+                  <FileDown className="size-4 text-accent" />
+                  Katalog PDF İndir
+                </a>
+                <a href={SITE.downloads.dwg} download className="flex items-center gap-1.5 font-medium text-ink transition-colors hover:text-accent">
+                  <PencilRuler className="size-4 text-accent" />
+                  DWG Çizimleri İndir
+                </a>
+              </div>
               <Link
                 href="/kategoriler"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-1.5 text-sm font-medium text-accent transition-opacity hover:opacity-80"
+                className="flex items-center gap-1.5 text-sm font-medium text-accent transition-opacity hover:opacity-80"
               >
                 {t("seeAll")}
                 <ArrowRight className="size-4" />

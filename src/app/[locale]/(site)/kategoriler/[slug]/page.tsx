@@ -3,10 +3,14 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
+import { Phone, ArrowRight, FileDown, PackageCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs, type Crumb } from "@/components/site/Breadcrumbs";
 import { ProductCard } from "@/components/site/ProductCard";
+import { buttonVariants } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
+import { SITE } from "@/lib/site";
+import { cn } from "@/lib/utils";
 import { getCategoryBySlug, getProductsInCategory, getCategoryTree } from "@/lib/catalog";
 import { localizedAlternates, clampDescription, clampTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
@@ -68,7 +72,7 @@ export default async function CategoryDetailPage({
           <h1 className="text-3xl font-semibold sm:text-4xl">{category.name_tr}</h1>
           {category.description ? <p className="mt-2 max-w-2xl text-muted">{category.description}</p> : null}
         </div>
-        <span className="font-mono text-sm text-muted">{products.length} ürün</span>
+        <span className="font-mono text-sm text-muted">{products.length > 0 ? `${products.length} ürün` : "Talep üzerine"}</span>
       </div>
 
       {/* Subcategories */}
@@ -104,9 +108,35 @@ export default async function CategoryDetailPage({
             ))}
           </ul>
         ) : (
-          <p className="rounded-lg border border-line bg-surface px-4 py-12 text-center text-muted">
-            Bu kategoride henüz ürün yok.
-          </p>
+          /* Ürünler üretimde mevcut — katalog sitesine henüz eklenmedi. "Yok" izlenimi verme, talebe yönlendir. */
+          <div className="rounded-xl border border-line bg-surface p-6 text-center sm:p-10">
+            <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+              <PackageCheck className="size-6" />
+            </span>
+            <h2 className="mt-4 text-xl font-semibold sm:text-2xl">Bu kategorideki ürünlerimiz üretimimizde mevcut</h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+              {category.name_tr} modellerimiz web kataloğuna henüz eklenmedi; imalatımızda üretiliyor ve stoklarımızda
+              bulunuyor. Projeniz için hemen teklif isteyin — ölçü ve modele göre size özel fiyat verelim.
+            </p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
+              <Link href="/teklif" className={cn(buttonVariants({ variant: "primary", size: "lg" }), "w-full sm:w-auto")}>
+                Teklif İste
+                <ArrowRight className="size-4" />
+              </Link>
+              <a href={SITE.phoneHref} className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto")}>
+                <Phone className="size-4" />
+                {SITE.phoneDisplay}
+              </a>
+            </div>
+            <a
+              href={SITE.downloads.catalogPdf}
+              download
+              className="mt-4 inline-flex items-center gap-1.5 text-sm text-ink-soft underline-offset-2 transition-colors hover:text-accent hover:underline"
+            >
+              <FileDown className="size-4 text-accent" />
+              Tüm modeller için Katalog PDF indirin
+            </a>
+          </div>
         )}
       </section>
     </Container>

@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, FileDown, PencilRuler } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
@@ -66,6 +66,18 @@ export function Footer(): ReactElement {
                 </Link>
               </li>
             ))}
+            <li>
+              <a href={SITE.downloads.catalogPdf} download className="inline-flex items-center gap-1.5 text-sm text-ink-soft transition-colors hover:text-accent">
+                <FileDown className="size-3.5 text-accent" />
+                Katalog PDF İndir
+              </a>
+            </li>
+            <li>
+              <a href={SITE.downloads.dwg} download className="inline-flex items-center gap-1.5 text-sm text-ink-soft transition-colors hover:text-accent">
+                <PencilRuler className="size-3.5 text-accent" />
+                Teknik Çizimler (DWG)
+              </a>
+            </li>
           </ul>
         </nav>
 

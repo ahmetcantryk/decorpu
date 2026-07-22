@@ -2,7 +2,7 @@
 
 import { useState, useEffect, type ReactElement } from "react";
 import { createPortal } from "react-dom";
-import { Menu, X, Phone, MessageCircle, MapPin, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, MapPin, ChevronDown, ArrowRight, FileDown, PencilRuler } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { CodeSearch } from "./CodeSearch";
 import { Wordmark } from "./Wordmark";
@@ -57,6 +57,26 @@ export function MobileMenu(): ReactElement {
           {/* kaydırılabilir gövde */}
           <div className="flex-1 overflow-y-auto px-5 py-5">
             <CodeSearch size="lg" />
+
+            {/* mimarlar için indirilenler */}
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <a
+                href={SITE.downloads.catalogPdf}
+                download
+                className="flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-3 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+              >
+                <FileDown className="size-4 text-accent" />
+                Katalog PDF
+              </a>
+              <a
+                href={SITE.downloads.dwg}
+                download
+                className="flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-3 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+              >
+                <PencilRuler className="size-4 text-accent" />
+                DWG Çizimler
+              </a>
+            </div>
 
             {/* sayfa linkleri */}
             <nav className="mt-5 flex flex-col">
