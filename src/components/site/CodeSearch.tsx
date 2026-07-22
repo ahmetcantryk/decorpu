@@ -134,7 +134,12 @@ export function CodeSearch({ className, size = "sm" }: CodeSearchProps): ReactEl
       {/* üst bar: büyük arama girişi */}
       <div className="shrink-0 border-b border-line bg-surface">
         <Container className="flex h-16 items-center gap-3 sm:h-20">
-          <form onSubmit={onSubmit} className="flex min-w-0 flex-1 items-center gap-3">
+          <form
+            onSubmit={onSubmit}
+            toolname="product_search"
+            tooldescription="DecorPU kataloğunda ürün kodu veya adıyla arama yapar"
+            className="flex min-w-0 flex-1 items-center gap-3"
+          >
             {loading ? (
               <Loader2 className="size-5 shrink-0 animate-spin text-accent" aria-hidden="true" />
             ) : (
@@ -152,6 +157,7 @@ export function CodeSearch({ className, size = "sm" }: CodeSearchProps): ReactEl
               aria-expanded={items.length > 0}
               aria-autocomplete="list"
               autoComplete="off"
+              toolparamdescription="Ürün kodu (ör. PU-1024) veya arama kelimesi"
               className="w-full bg-transparent font-mono text-lg uppercase tracking-wide text-ink outline-none placeholder:normal-case placeholder:tracking-normal placeholder:text-muted/70 sm:text-xl"
             />
           </form>

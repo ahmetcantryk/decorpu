@@ -7,6 +7,7 @@ import { CookieConsent } from "@/components/site/CookieConsent";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { Analytics } from "@/components/seo/Analytics";
 import { Clarity } from "@/components/seo/Clarity";
+import { WebMcpTools } from "@/components/seo/WebMcpTools";
 
 /** Public site chrome (header + footer). Admin lives in the (admin) group without this. */
 export default async function SiteLayout({
@@ -38,6 +39,7 @@ export default async function SiteLayout({
       <CookieConsent />
       {process.env.NEXT_PUBLIC_GA4_ID ? <Analytics gaId={process.env.NEXT_PUBLIC_GA4_ID} /> : null}
       {process.env.NEXT_PUBLIC_CLARITY_ID ? <Clarity id={process.env.NEXT_PUBLIC_CLARITY_ID} /> : null}
+      <WebMcpTools />
     </>
   );
 }

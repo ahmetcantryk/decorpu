@@ -52,14 +52,19 @@ export function ContactForm({ source = "iletisim", compact = false }: ContactFor
   }
 
   return (
-    <form onSubmit={onSubmit} className={cn("space-y-3 rounded-xl border border-line bg-surface", compact ? "p-5" : "p-6")}>
+    <form
+      onSubmit={onSubmit}
+      toolname="contact_quote_request"
+      tooldescription="DecorPU'ya ürün seçmeden hızlı teklif/iletişim talebi gönderir; ad soyad ve telefon ister"
+      className={cn("space-y-3 rounded-xl border border-line bg-surface", compact ? "p-5" : "p-6")}
+    >
       {!compact ? <h2 className="text-lg font-semibold">{t("formTitle")}</h2> : null}
       <p className="text-sm text-muted">{t("formNote")}</p>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <input name="full_name" required placeholder={tQuote("fullName")} className={field} />
-        <input name="phone" type="tel" required placeholder={tQuote("phone")} className={field} />
+        <input name="full_name" required placeholder={tQuote("fullName")} toolparamdescription="Talep sahibinin adı soyadı" className={field} />
+        <input name="phone" type="tel" required placeholder={tQuote("phone")} toolparamdescription="Telefon numarası" className={field} />
       </div>
-      <textarea name="message" placeholder={t("noteProject")} className={cn(field, "min-h-28 resize-y")} />
+      <textarea name="message" placeholder={t("noteProject")} toolparamdescription="Proje veya talep notu" className={cn(field, "min-h-28 resize-y")} />
       <HoneypotField />
       <input type="hidden" name="source" value={source} />
       {error ? <p className="text-sm text-accent">{error}</p> : null}

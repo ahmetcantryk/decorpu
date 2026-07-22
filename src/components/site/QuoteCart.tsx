@@ -159,12 +159,17 @@ export function QuoteCart(): ReactElement {
         </div>
 
         {/* Form */}
-        <form onSubmit={onSubmit} className="h-fit space-y-3 rounded-xl border border-line bg-surface p-6 lg:sticky lg:top-24">
+        <form
+          onSubmit={onSubmit}
+          toolname="quote_cart_submit"
+          tooldescription="Teklif sepetindeki ürün kodları için DecorPU'dan fiyat teklifi talebi gönderir; ad soyad ve telefon ister"
+          className="h-fit space-y-3 rounded-xl border border-line bg-surface p-6 lg:sticky lg:top-24"
+        >
           <h2 className="text-lg font-semibold">{t("contactInfo")}</h2>
           <p className="text-sm text-muted">{t("contactNote")}</p>
-          <input name="full_name" required placeholder={t("fullName")} className={field} />
-          <input name="phone" type="tel" required placeholder={t("phone")} className={field} />
-          <textarea name="message" placeholder={t("noteOptional")} className={cn(field, "min-h-24 resize-y")} />
+          <input name="full_name" required placeholder={t("fullName")} toolparamdescription="Talep sahibinin adı soyadı" className={field} />
+          <input name="phone" type="tel" required placeholder={t("phone")} toolparamdescription="Telefon numarası" className={field} />
+          <textarea name="message" placeholder={t("noteOptional")} toolparamdescription="Proje notu (opsiyonel)" className={cn(field, "min-h-24 resize-y")} />
           <HoneypotField />
           {error ? <p className="text-sm text-accent">{error}</p> : null}
           <Button type="submit" disabled={pending} className="w-full">
