@@ -125,7 +125,7 @@
     "emptyBody": "{name} modellerimiz web kataloğuna henüz eklenmedi; imalatımızda üretiliyor ve stoklarımızda bulunuyor. Projeniz için hemen teklif isteyin — ölçü ve modele göre size özel fiyat verelim.",
     "viewInCatalog": "Tüm modelleri Katalog PDF'te görüntüleyin",
     "metaDescription": "Poliüretan mimari dekorasyon ürün kategorileri — söve, sütun, kartonpiyer, kemer, kubbe, şömine ve daha fazlası.",
-    "modelsTitle": "{name} Modelleri",
+    "modelsTitle": "{name} Modelleri ve Fiyatları",
     "metaDescFallback": "Poliüretan {name} modelleri — ölçüler, iç/dış mekan seçenekleri ve projeye özel fiyat teklifi. DecorPU mimari dekorasyon.",
     "notFound": "Kategori bulunamadı"
   },

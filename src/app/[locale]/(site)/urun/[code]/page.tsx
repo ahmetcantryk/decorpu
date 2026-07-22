@@ -9,7 +9,8 @@ import { ProductGallery } from "@/components/site/ProductGallery";
 import { AddToQuoteButton } from "@/components/site/AddToQuoteButton";
 import { ProductCard } from "@/components/site/ProductCard";
 import { getProductByCode, getRelatedProducts } from "@/lib/catalog";
-import { localizedAlternates, clampDescription, clampTitle } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { localizedAlternates, clampDescription, clampTitle, breadcrumbSchema } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export const revalidate = 3600;
@@ -89,6 +90,7 @@ export default async function ProductDetailPage({
   return (
     <Container className="py-10 md:py-14">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })))} />
       <Breadcrumbs items={crumbs} />
 
       <div className="mt-6 grid gap-10 lg:grid-cols-2">

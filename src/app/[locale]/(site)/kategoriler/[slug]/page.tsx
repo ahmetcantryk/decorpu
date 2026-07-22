@@ -8,6 +8,8 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs, type Crumb } from "@/components/site/Breadcrumbs";
 import { ProductCard } from "@/components/site/ProductCard";
 import { CategoryGuide } from "@/components/site/CategoryGuide";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 import { buttonVariants } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
@@ -68,8 +70,27 @@ export default async function CategoryDetailPage({
   if (parent) crumbs.push({ label: catName(parent), href: `/kategoriler/${parent.slug}` });
   crumbs.push({ label: catName(category) });
 
+  // Zengin sonuçlar: BreadcrumbList + ürünlerin ItemList'i
+  const bcSchema = breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })));
+  const listSchema = products.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: `${catName(category)} Modelleri`,
+        numberOfItems: products.length,
+        itemListElement: products.slice(0, 30).map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: p.name_tr,
+          url: `${SITE_URL}/urun/${p.code.toLowerCase()}`,
+        })),
+      }
+    : null;
+
   return (
     <Container className="py-12 md:py-16">
+      <JsonLd data={bcSchema} />
+      {listSchema ? <JsonLd data={listSchema} /> : null}
       <Breadcrumbs items={crumbs} />
       <div className="mt-4 flex flex-wrap items-end justify-between gap-3">
         <div>
