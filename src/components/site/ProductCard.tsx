@@ -19,17 +19,13 @@ export function ProductCard({ product }: { product: CatalogProduct }): ReactElem
   return (
     <div className="group flex flex-col overflow-hidden rounded-lg border border-line bg-surface transition-shadow hover:shadow-soft">
       <Link href={`/urun/${product.code.toLowerCase()}`} className="relative block aspect-square overflow-hidden bg-bg-subtle">
-        {product.image ? (
-          <Image
-            src={product.image}
-            alt={product.name_tr}
-            fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover"
-          />
-        ) : (
-          <div className="flex h-full items-center justify-center text-line-strong">—</div>
-        )}
+        <Image
+          src={product.image ?? "/placeholder.svg"}
+          alt={product.name_tr}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          className="object-cover"
+        />
         {/* hover: teknik çizim (çizim hali) yumuşak geçişle belirir — zoom/scale yok */}
         {product.drawing ? (
           <Image

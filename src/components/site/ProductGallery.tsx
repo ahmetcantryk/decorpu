@@ -45,7 +45,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
             </span>
           </>
         ) : (
-          <div className="flex h-full items-center justify-center text-line-strong">Görsel yok</div>
+          <Image src="/placeholder.svg" alt={alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
         )}
       </button>
 

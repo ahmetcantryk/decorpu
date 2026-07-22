@@ -82,7 +82,7 @@ export function QuoteCart(): ReactElement {
               {items.map((it) => (
                 <li key={it.code} className="flex items-center gap-3 rounded-lg border border-line bg-surface p-3">
                   <span className="relative size-14 shrink-0 overflow-hidden rounded-md bg-bg-subtle">
-                    {it.image ? <Image src={it.image} alt="" fill sizes="56px" className="object-cover" /> : null}
+                    <Image src={it.image ?? "/placeholder.svg"} alt="" fill sizes="56px" className="object-cover" />
                   </span>
                   <div className="min-w-0 flex-1">
                     <Link href={`/urun/${it.code.toLowerCase()}`} className="font-mono text-xs text-accent">{it.code}</Link>

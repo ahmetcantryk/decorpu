@@ -40,9 +40,13 @@ export default async function CategoriesPage({
           <li key={cat.id}>
             <Link href={`/kategoriler/${cat.slug}`} className="group block overflow-hidden rounded-lg border border-line bg-surface transition-shadow hover:shadow-soft">
               <div className="relative aspect-[4/3] overflow-hidden bg-bg-subtle">
-                {cat.cover ? (
-                  <Image src={cat.cover} alt={cat.name_tr} fill sizes="(max-width:640px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
-                ) : null}
+                <Image
+                  src={cat.cover ?? "/placeholder.svg"}
+                  alt={cat.name_tr}
+                  fill
+                  sizes="(max-width:640px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-3.5">
                   <h2 className="font-display text-lg font-medium text-bg drop-shadow">{cat.name_tr}</h2>
