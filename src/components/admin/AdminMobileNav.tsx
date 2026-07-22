@@ -17,11 +17,11 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
+  { href: "/admin/talepler", label: "Talepler", icon: Inbox, leadsBadge: true },
   { href: "/admin", label: "Panel", icon: LayoutDashboard, exact: true },
   { href: "/admin/urunler", label: "Ürünler", icon: Package },
   { href: "/admin/kategoriler", label: "Kategoriler", icon: FolderTree },
   { href: "/admin/stok", label: "Stok", icon: Boxes, soon: true },
-  { href: "/admin/talepler", label: "Talepler", icon: Inbox, leadsBadge: true },
 ];
 
 /** Mobil admin üst barı + kaydırılabilir bölüm sekmeleri (sidebar mobilde gizli). */

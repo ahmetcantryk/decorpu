@@ -19,11 +19,11 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
+  { href: "/admin/talepler", label: "Talepler", icon: Inbox, leadsBadge: true },
   { href: "/admin", label: "Panel", icon: LayoutDashboard, exact: true },
   { href: "/admin/urunler", label: "Ürünler", icon: Package },
   { href: "/admin/kategoriler", label: "Kategoriler", icon: FolderTree },
   { href: "/admin/stok", label: "Stok Takip", icon: Boxes, soon: true },
-  { href: "/admin/talepler", label: "Talepler", icon: Inbox, leadsBadge: true },
 ];
 
 export function AdminSidebar({ email, newLeads = 0 }: { email: string; newLeads?: number }): ReactElement {

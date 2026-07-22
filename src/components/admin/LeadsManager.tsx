@@ -159,7 +159,7 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
               <th className="px-4 py-3 font-medium">Ad Soyad</th>
               <th className="px-4 py-3 font-medium">Telefon</th>
               <th className="px-4 py-3 font-medium">Tür</th>
-              <th className="px-4 py-3 font-medium">Ürün</th>
+              <th className="px-4 py-3 font-medium">Ürün / Mesaj</th>
               <th className="px-4 py-3 font-medium">Durum</th>
               <th className="px-4 py-3" />
             </tr>
@@ -184,15 +184,24 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
                 <td className="px-4 py-2.5">
                   <span className="rounded-sm bg-bg-subtle px-1.5 py-0.5 text-[11px] text-muted">{KIND_TR[l.kind] ?? l.kind}</span>
                 </td>
-                <td className="whitespace-nowrap px-4 py-2.5 text-xs">
+                <td className="px-4 py-2.5 text-xs">
                   {l.product_codes?.length ? (
                     <button
                       type="button"
                       onClick={() => setDetailId(l.id)}
-                      className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2.5 py-1 font-medium text-accent transition-colors hover:bg-accent/20"
+                      className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-accent/10 px-2.5 py-1 font-medium text-accent transition-colors hover:bg-accent/20"
                     >
                       <Package className="size-3.5" />
                       {l.product_codes.length} ürün
+                    </button>
+                  ) : l.message ? (
+                    <button
+                      type="button"
+                      onClick={() => setDetailId(l.id)}
+                      title={l.message}
+                      className="block max-w-64 truncate text-left text-muted transition-colors hover:text-ink"
+                    >
+                      {l.message}
                     </button>
                   ) : (
                     <span className="text-muted">—</span>
@@ -252,6 +261,9 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
                   <span className="inline-flex items-center gap-1"><Package className="size-3.5" />{l.product_codes.length} ürün</span>
                 ) : null}
               </div>
+              {!l.product_codes?.length && l.message ? (
+                <p className="mt-1.5 line-clamp-1 text-xs text-muted">{l.message}</p>
+              ) : null}
             </button>
           </li>
         ))}

@@ -3,10 +3,12 @@
 import { useState, useTransition, type FormEvent, type ReactElement } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { sanitizeNextPath } from "@/lib/admin/next-url";
 import { Button } from "@/components/ui/Button";
 import { fieldCls } from "./form";
 
-export function LoginForm(): ReactElement {
+/** `next`: giriş sonrası dönülecek yol (return URL, sunucuda doğrulanmış). */
+export function LoginForm({ next }: { next?: string }): ReactElement {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +24,7 @@ export function LoginForm(): ReactElement {
       if (err) {
         setError("E-posta veya şifre hatalı.");
       } else {
-        router.push("/admin");
+        router.push(sanitizeNextPath(next));
         router.refresh();
       }
     });
