@@ -1,6 +1,6 @@
 # kartonpiyerdeposu.com — SEO Envanter ve Taşıma Analizi
 
-> Tarih: 2026-07-22 · Yöntem: sitenin public taraması (88 sayfa, %100 erişildi) + Yoast sitemap + 114 etiket.
+> Tarih: 2026-07-22 · Yöntem: sitenin public taraması — 88 çekirdek sayfa + 114 etiket arşivi, %100 erişildi (202 URL).
 > **Sınır:** Gerçek ziyaret SAYILARI ancak Search Console (DNS doğrulaması) ile görülebilir; bu rapor
 > sayfa yapısı, anahtar kelime hedefleri ve içerik sinyallerinden çıkarılan **on-page güç analizidir**.
 > Ham veri: `pages.json` (başlık/meta/H1/H2/kelime sayısı/iç link) ve `tags.json` (114 anahtar kelime).
@@ -10,6 +10,16 @@
 - WordPress + **Yoast SEO** + Avada tema; robots tamamen açık, temiz sitemap hiyerarşisi.
 - 19 statik sayfa + 41 yazı + 28 kategori arşivi; 114 etiket arşivi (uzun kuyruk kelime ağı).
 - İpucu: `/4cm-duvar-citasi` sayfa başlığı "…- Decorpu" ile bitiyor — iki site zaten ilişkilendirilmiş.
+
+**Tam kapsam doğrulaması (Google `site:` ~230 sonuç ile mutabakat):**
+88 çekirdek + 116 etiket arşiv sayfası (114 etiket, 2'si çok sayfalı) + 2 yazar ≈ **206 URL**;
+kalan fark kategori sayfalamaları (`/page/2/`) ve WP görsel eki sayfalarıdır. `site:` sayısı Google'ın
+tahminidir; kesin liste GSC ile görülür. Etiket verisi: `tag-pages.json`.
+
+**Kritik bulgu — etiketler noindex DEĞİL:** 114 etiketin tamamı `index, follow`. Yani bu ince arşivler
+sitenin gerçek sıralama yüzeyinin parçası; her biri tam-eşleşme kelimeyi 500-1000 kelimelik özet
+içerikle hedefliyor (en dolular: "duvar çıta modelleri" 10 yazı/1079w, "duvar çıtası" 10/931w,
+"poliuretan çıta" 10/995w). Geçişte `/tag/*` URL'leri de 301 haritasına girmek ZORUNDA.
 
 ## 2. Anahtar Kelime Evreni (etiketlerden kümeleme)
 
