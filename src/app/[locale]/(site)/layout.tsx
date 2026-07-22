@@ -1,5 +1,4 @@
 import type { ReactNode, ReactElement } from "react";
-import Script from "next/script";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -39,12 +38,6 @@ export default async function SiteLayout({
       <CookieConsent />
       {process.env.NEXT_PUBLIC_GA4_ID ? <Analytics gaId={process.env.NEXT_PUBLIC_GA4_ID} /> : null}
       {process.env.NEXT_PUBLIC_CLARITY_ID ? <Clarity id={process.env.NEXT_PUBLIC_CLARITY_ID} /> : null}
-      {/* Ahrefs Web Analytics — çerezsiz (cookieless), kişisel veri toplamaz; onay gerektirmez. */}
-      <Script
-        src="https://analytics.ahrefs.com/analytics.js"
-        data-key="J0R49qfpRoqZl3jbSO5+0w"
-        strategy="afterInteractive"
-      />
     </>
   );
 }
