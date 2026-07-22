@@ -154,8 +154,20 @@ Kaynak: `gsc/` klasörü (Sayfa/Sorgu/Cihaz/Ülke/Grafik CSV'leri). **Toplam: 33
 5. **Sütun modelleri** · 6. **Tavan göbeği** · 7. **Duvar çıtası** rehberi (fiyat+uygulama dahil)
 8. Şömine · söve · süpürgelik kategori metinleri
 
-## 9. Sonraki Adımlar
+## 9. Durum ve Geçiş Günü Runbook'u
 
-1. ✅ GSC doğrulandı, 16 aylık veri alındı ve analiz edildi.
-2. §8.4 sırasıyla decorpu sayfalarının üretimi → onayla başlanır.
-3. Geçiş günü: sayfa-sayfa 301 (etiketler dahil) + GSC "Adres Değişikliği".
+**Tamamlananlar (2026-07-22):**
+1. ✅ GSC doğrulandı; 16 aylık gerçek veri `gsc/` klasöründe, analiz §8'de.
+2. ✅ §8.4 içerik üretimi: **11 kategori rehberi** canlıda (kartonpiyer, panel-kaplama, gizli-isik,
+   kiris, sutun-baslik, gobek, cita-lambri, somine, sove, supurgelik, kubbe) — SSS + FAQPage schema ile.
+3. ✅ CTR paketi: BreadcrumbList (kategori+ürün), ItemList (kategori), TR başlıklara "ve Fiyatları" eki.
+4. ✅ **301 haritası KODA GÖMÜLÜ**: `redirects-kartonpiyerdeposu.ts` (~70 kural, host-koşullu) —
+   kartonpiyerdeposu.com Vercel'e bağlanana kadar pasif; bağlandığı an otomatik aktif.
+
+**Geçiş günü runbook'u (kullanıcı aksiyonu — 15 dk):**
+1. Vercel → decorpu projesi → Settings → **Domains** → `kartonpiyerdeposu.com` ve `www.kartonpiyerdeposu.com` ekle.
+2. kartonpiyerdeposu DNS panelinde: A kaydını Vercel'in verdiği IP'ye, www CNAME'ini `cname.vercel-dns.com`'a çevir.
+3. Yayılım sonrası test: `kartonpiyerdeposu.com/poliuretan-kartonpiyer-modelleri/` → decorpu kartonpiyer sayfasına 301 atmalı.
+4. GSC'de kartonpiyerdeposu mülkü → Ayarlar → **Adres Değişikliği** → decorpu.com seç.
+5. WP hosting'i İPTAL ETME (mail vb. yoksa bile) — domain kaydı ve redirect'ler **en az 1 yıl** yaşamalı.
+6. Takip: ilk 8 hafta GSC'de her iki mülkün Performans grafiği haftalık karşılaştırılır.
