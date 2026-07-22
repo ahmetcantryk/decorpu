@@ -7,6 +7,7 @@ import { Phone, ArrowRight, FileDown, PackageCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs, type Crumb } from "@/components/site/Breadcrumbs";
 import { ProductCard } from "@/components/site/ProductCard";
+import { CategoryGuide } from "@/components/site/CategoryGuide";
 import { buttonVariants } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
@@ -142,6 +143,9 @@ export default async function CategoryDetailPage({
           </div>
         )}
       </section>
+
+      {/* SEO rehberi + SSS (yalnız TR; FAQPage schema dahil) */}
+      <CategoryGuide slug={slug} locale={locale} />
     </Container>
   );
 }
