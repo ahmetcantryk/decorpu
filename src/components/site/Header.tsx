@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { Phone, MessageCircle, FileDown, PencilRuler } from "lucide-react";
+import { Phone, MessageCircle, FileText, PencilRuler, Download } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
@@ -17,6 +17,8 @@ import { cn } from "@/lib/utils";
 /** Sticky site header — mega menu, code search, phone, theme toggle, prominent CTA. */
 export function Header(): ReactElement {
   const t = useTranslations("Nav");
+  const tHeader = useTranslations("Header");
+  const tDl = useTranslations("Downloads");
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-bg/90 backdrop-blur-sm">
@@ -24,14 +26,18 @@ export function Header(): ReactElement {
       <div className="hidden border-b border-line/70 bg-bg-subtle/60 lg:block">
         <Container className="flex h-9 items-center justify-between text-xs text-muted">
           <div className="flex items-center gap-4">
-            <span>Mimarlara özel · Proje bazlı poliüretan dekorasyon imalatı</span>
-            <a href={SITE.downloads.catalogPdf} download className="flex items-center gap-1 font-medium text-ink transition-colors hover:text-accent">
-              <FileDown className="size-3.5 text-accent" />
-              Katalog (PDF)
+            <span>{tHeader("tagline")}</span>
+            <a href={SITE.downloads.catalogPdf} target="_blank" rel="noopener" className="flex items-center gap-1 font-medium text-ink transition-colors hover:text-accent">
+              <FileText className="size-3.5 text-accent" />
+              {tDl("catalogPdf")}
             </a>
             <a href={SITE.downloads.dwg} download className="flex items-center gap-1 font-medium text-ink transition-colors hover:text-accent">
               <PencilRuler className="size-3.5 text-accent" />
-              Teknik Çizimler (DWG)
+              {tDl("dwg")}
+              <span className="ml-0.5 flex items-center gap-0.5 text-accent">
+                <Download className="size-3.5" />
+                {tDl("download")}
+              </span>
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -72,10 +78,10 @@ export function Header(): ReactElement {
             {t("catalog")}
           </Link>
           <Link href="/calismalarimiz" className="text-sm text-ink-soft transition-colors hover:text-accent">
-            Çalışmalar
+            {t("works")}
           </Link>
           <Link href="/hizmetler" className="text-sm text-ink-soft transition-colors hover:text-accent">
-            Hizmetler
+            {t("services")}
           </Link>
         </nav>
 
@@ -85,7 +91,7 @@ export function Header(): ReactElement {
           <QuoteCartButton />
           <LocaleSwitcher />
           <Link href="/iletisim" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
-            İletişim
+            {t("contact")}
           </Link>
           <Link href="/teklif" className={cn(buttonVariants({ variant: "primary", size: "sm" }))}>
             {t("quote")}

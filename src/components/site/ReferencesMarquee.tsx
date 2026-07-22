@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
@@ -22,12 +23,13 @@ const BRANDS: { name: string; cls?: string }[] = [
 ];
 
 export function ReferencesMarquee(): ReactElement {
+  const t = useTranslations("Home");
   const row = [...BRANDS, ...BRANDS];
 
   return (
-    <section aria-label="Güvenilen referanslar" className="border-y border-line bg-surface py-10">
+    <section aria-label={t("refsTitle")} className="border-y border-line bg-surface py-10">
       <Container>
-        <p className="mb-6 text-center font-mono text-xs uppercase tracking-wide text-muted">Güvenilen referanslar</p>
+        <p className="mb-6 text-center font-mono text-xs uppercase tracking-wide text-muted">{t("refsTitle")}</p>
       </Container>
       <div className="marquee-pause relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
         <div className="animate-marquee flex w-max items-center gap-12 sm:gap-16">

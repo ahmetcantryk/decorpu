@@ -2,8 +2,9 @@
 
 import { useState, useTransition, type ReactElement } from "react";
 import { useRouter } from "next/navigation";
-import { Search, Mail, Phone, Building2 } from "lucide-react";
+import { Search, Mail, Phone, Building2, Eye, Package } from "lucide-react";
 import { Select } from "./ui/Select";
+import { Dialog } from "./ui/Dialog";
 import { ConfirmDelete } from "./ui/ConfirmDelete";
 import { updateLeadStatus, deleteLead } from "@/lib/admin/actions";
 import type { Lead } from "@/lib/supabase/types";
@@ -16,17 +17,22 @@ const STATUS: { value: string; label: string; cls: string }[] = [
   { value: "won", label: "Kazanıldı", cls: "bg-green-100 text-green-700" },
   { value: "lost", label: "Kaybedildi", cls: "bg-bg-subtle text-muted" },
 ];
-const KIND_TR: Record<string, string> = { rfq: "Teklif Talebi", contact: "İletişim" };
+const KIND_TR: Record<string, string> = { rfq: "Teklif", contact: "İletişim" };
 
 function fmt(iso: string): string {
-  return new Date(iso).toLocaleString("tr-TR", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+  return new Date(iso).toLocaleString("tr-TR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
 }
 
-function StatusSelect({ lead }: { lead: Lead }): ReactElement {
+function StatusBadge({ status }: { status: string }): ReactElement {
+  const st = STATUS.find((s) => s.value === status);
+  return <span className={cn("whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-medium", st?.cls ?? "bg-bg-subtle text-muted")}>{st?.label ?? status}</span>;
+}
+
+function StatusSelect({ lead, className }: { lead: Lead; className?: string }): ReactElement {
   const router = useRouter();
   const [pending, start] = useTransition();
   return (
-    <div className={cn("w-44", pending && "opacity-60")}>
+    <div className={cn("w-40", pending && "opacity-60", className)}>
       <Select
         value={lead.status}
         options={STATUS.map((s) => ({ value: s.value, label: s.label }))}
@@ -45,6 +51,7 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
   const [query, setQuery] = useState("");
   const [kind, setKind] = useState("all");
   const [status, setStatus] = useState("all");
+  const [detailId, setDetailId] = useState<string | null>(null);
 
   const q = query.trim().toLowerCase();
   const filtered = leads.filter((l) => {
@@ -57,6 +64,9 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
     return true;
   });
 
+  // Dialog verisini leads prop'undan türet — durum güncellenince (router.refresh) taze kalır.
+  const detail = detailId ? leads.find((l) => l.id === detailId) ?? null : null;
+
   const kindOptions = [
     { value: "all", label: "Tüm türler" },
     { value: "contact", label: "İletişim" },
@@ -68,6 +78,7 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
     <div className="space-y-5">
       <h1 className="text-2xl font-semibold tracking-tight">Talepler</h1>
 
+      {/* filtreler */}
       <div className="space-y-2 sm:flex sm:flex-wrap sm:items-center sm:gap-2 sm:space-y-0">
         <div className="flex h-11 items-center gap-2 rounded-md border border-line bg-surface px-3 sm:h-10 sm:min-w-56 sm:flex-1">
           <Search className="size-4 shrink-0 text-muted" />
@@ -88,57 +99,172 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
         </div>
       </div>
 
-      <div className="space-y-3">
-        {filtered.map((l) => {
-          const st = STATUS.find((s) => s.value === l.status);
-          return (
-            <article key={l.id} className="rounded-lg border border-line bg-surface p-5">
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h2 className="font-medium">{l.full_name ?? "—"}</h2>
-                    <span className={cn("rounded-full px-2 py-0.5 text-xs", st?.cls ?? "bg-bg-subtle text-muted")}>{st?.label ?? l.status}</span>
-                    <span className="rounded-sm bg-bg-subtle px-1.5 py-0.5 text-[11px] text-muted">{KIND_TR[l.kind] ?? l.kind}</span>
+      {/* Masaüstü: tablo */}
+      <div className="hidden overflow-hidden rounded-lg border border-line bg-surface md:block">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-line text-left text-xs uppercase tracking-wide text-muted">
+              <th className="px-4 py-3 font-medium">Tarih</th>
+              <th className="px-4 py-3 font-medium">Ad Soyad</th>
+              <th className="px-4 py-3 font-medium">Telefon</th>
+              <th className="px-4 py-3 font-medium">Tür</th>
+              <th className="px-4 py-3 font-medium">Ürün</th>
+              <th className="px-4 py-3 font-medium">Durum</th>
+              <th className="px-4 py-3" />
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-line">
+            {filtered.map((l) => (
+              <tr key={l.id} className="hover:bg-bg-subtle/50">
+                <td className="whitespace-nowrap px-4 py-2.5 text-xs text-muted">{fmt(l.created_at)}</td>
+                <td className="px-4 py-2.5">
+                  <button type="button" onClick={() => setDetailId(l.id)} className="font-medium text-ink transition-colors hover:text-accent">
+                    {l.full_name ?? "—"}
+                  </button>
+                  {l.company ? <span className="block text-xs text-muted">{l.company}</span> : null}
+                </td>
+                <td className="whitespace-nowrap px-4 py-2.5">
+                  {l.phone ? (
+                    <a href={`tel:${l.phone}`} className="tabular-nums text-ink-soft transition-colors hover:text-accent">{l.phone}</a>
+                  ) : (
+                    <span className="text-muted">—</span>
+                  )}
+                </td>
+                <td className="px-4 py-2.5">
+                  <span className="rounded-sm bg-bg-subtle px-1.5 py-0.5 text-[11px] text-muted">{KIND_TR[l.kind] ?? l.kind}</span>
+                </td>
+                <td className="whitespace-nowrap px-4 py-2.5 text-xs text-muted">
+                  {l.product_codes?.length ? `${l.product_codes.length} ürün` : "—"}
+                </td>
+                <td className="px-4 py-2.5">
+                  <StatusSelect lead={l} className="w-36" />
+                </td>
+                <td className="px-4 py-2.5">
+                  <div className="flex items-center justify-end gap-1">
+                    <button
+                      type="button"
+                      onClick={() => setDetailId(l.id)}
+                      aria-label="Detay"
+                      className="flex size-8 items-center justify-center rounded-md text-muted hover:bg-bg hover:text-ink"
+                    >
+                      <Eye className="size-4" />
+                    </button>
+                    <ConfirmDelete
+                      onConfirm={() => deleteLead(l.id)}
+                      title="Talep silinsin mi?"
+                      description={`${l.full_name ?? "Bu talep"} kalıcı olarak silinecek.`}
+                    />
                   </div>
-                  <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
-                    {l.company ? (<span className="inline-flex items-center gap-1"><Building2 className="size-3.5" />{l.company}</span>) : null}
-                    {l.email ? (<span className="inline-flex max-w-full items-center gap-1"><Mail className="size-3.5 shrink-0" /><span className="break-all">{l.email}</span></span>) : null}
-                    {l.phone ? (<span className="inline-flex items-center gap-1"><Phone className="size-3.5" />{l.phone}</span>) : null}
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 text-xs text-muted">
-                  {fmt(l.created_at)}
-                  <ConfirmDelete
-                    onConfirm={() => deleteLead(l.id)}
-                    title="Talep silinsin mi?"
-                    description={`${l.full_name ?? "Bu talep"} kalıcı olarak silinecek.`}
-                  />
-                </div>
-              </div>
+                </td>
+              </tr>
+            ))}
+            {!filtered.length ? (
+              <tr>
+                <td colSpan={7} className="px-4 py-10 text-center text-muted">
+                  {query || kind !== "all" || status !== "all" ? "Sonuç bulunamadı." : "Henüz talep yok."}
+                </td>
+              </tr>
+            ) : null}
+          </tbody>
+        </table>
+      </div>
 
-              {l.product_codes?.length ? (
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {l.product_codes.map((c) => (
+      {/* Mobil: kompakt satır kartları */}
+      <ul className="space-y-2 md:hidden">
+        {filtered.map((l) => (
+          <li key={l.id}>
+            <button
+              type="button"
+              onClick={() => setDetailId(l.id)}
+              className="w-full rounded-xl border border-line bg-surface p-3 text-left"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="min-w-0 truncate font-medium text-ink">{l.full_name ?? "—"}</span>
+                <StatusBadge status={l.status} />
+              </div>
+              <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-muted">
+                <span>{fmt(l.created_at)}</span>
+                <span>{KIND_TR[l.kind] ?? l.kind}</span>
+                {l.phone ? <span className="tabular-nums">{l.phone}</span> : null}
+                {l.product_codes?.length ? (
+                  <span className="inline-flex items-center gap-1"><Package className="size-3.5" />{l.product_codes.length} ürün</span>
+                ) : null}
+              </div>
+            </button>
+          </li>
+        ))}
+        {!filtered.length ? (
+          <li className="rounded-xl border border-dashed border-line py-10 text-center text-sm text-muted">
+            {query || kind !== "all" || status !== "all" ? "Sonuç bulunamadı." : "Henüz talep yok."}
+          </li>
+        ) : null}
+      </ul>
+
+      {/* Detay dialog */}
+      <Dialog
+        open={detail !== null}
+        onOpenChange={(o) => !o && setDetailId(null)}
+        title={detail?.full_name ?? "Talep"}
+        description={detail ? `${KIND_TR[detail.kind] ?? detail.kind} · ${fmt(detail.created_at)}` : undefined}
+      >
+        {detail ? (
+          <div className="space-y-4">
+            <div className="grid gap-2 text-sm">
+              {detail.phone ? (
+                <a href={`tel:${detail.phone}`} className="inline-flex items-center gap-2 font-medium text-ink hover:text-accent">
+                  <Phone className="size-4 text-accent" />
+                  {detail.phone}
+                </a>
+              ) : null}
+              {detail.email ? (
+                <a href={`mailto:${detail.email}`} className="inline-flex items-center gap-2 text-ink-soft hover:text-accent">
+                  <Mail className="size-4 shrink-0 text-accent" />
+                  <span className="break-all">{detail.email}</span>
+                </a>
+              ) : null}
+              {detail.company ? (
+                <span className="inline-flex items-center gap-2 text-ink-soft">
+                  <Building2 className="size-4 text-accent" />
+                  {detail.company}
+                </span>
+              ) : null}
+            </div>
+
+            {detail.message ? (
+              <div className="rounded-lg border border-line bg-bg-subtle/50 p-3 text-sm leading-relaxed text-ink-soft">{detail.message}</div>
+            ) : null}
+
+            {detail.product_codes?.length ? (
+              <div>
+                <p className="mb-1.5 text-xs font-medium uppercase tracking-wide text-muted">
+                  İstenen ürünler ({detail.product_codes.length})
+                </p>
+                <div className="flex max-h-44 flex-wrap gap-1.5 overflow-y-auto">
+                  {detail.product_codes.map((c) => (
                     <span key={c} className="rounded-sm border border-line bg-bg-subtle px-2 py-0.5 font-mono text-xs">{c}</span>
                   ))}
                 </div>
-              ) : null}
-
-              {l.message ? <p className="mt-3 text-sm text-ink-soft">{l.message}</p> : null}
-
-              <div className="mt-4 flex items-center gap-2">
-                <span className="text-xs text-muted">Durum:</span>
-                <StatusSelect lead={l} />
               </div>
-            </article>
-          );
-        })}
-        {!filtered.length ? (
-          <p className="rounded-lg border border-line bg-surface px-4 py-10 text-center text-muted">
-            {query || kind !== "all" || status !== "all" ? "Sonuç bulunamadı." : "Henüz talep yok."}
-          </p>
+            ) : null}
+
+            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-muted">Durum:</span>
+                <StatusSelect lead={detail} />
+              </div>
+              <ConfirmDelete
+                onConfirm={async () => {
+                  const r = await deleteLead(detail.id);
+                  if (r.ok) setDetailId(null);
+                  return r;
+                }}
+                title="Talep silinsin mi?"
+                description={`${detail.full_name ?? "Bu talep"} kalıcı olarak silinecek.`}
+              />
+            </div>
+          </div>
         ) : null}
-      </div>
+      </Dialog>
     </div>
   );
 }

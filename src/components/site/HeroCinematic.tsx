@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, type ReactElement } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChevronLeft, ChevronRight, ArrowDown, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/Button";
@@ -15,6 +16,8 @@ import { cn } from "@/lib/utils";
  * (alttaki kategoriler ilk ekranda yarı görünsün). Soldan koyu gradient + metin.
  */
 export function HeroCinematic(): ReactElement {
+  const t = useTranslations("Hero");
+  const tGallery = useTranslations("Gallery");
   const [index, setIndex] = useState(0);
   const reduce = useReducedMotion();
   const n = HERO_SLIDES.length;
@@ -54,31 +57,31 @@ export function HeroCinematic(): ReactElement {
 
       <Container className="relative flex h-full flex-col justify-center">
         <p className="font-mono text-xs uppercase tracking-wide text-white/75">
-          Poliüretan mimari dekorasyon · Proje bazlı imalat
+          {t("eyebrow")}
         </p>
         <h1 className="mt-3 max-w-2xl text-balance text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">
-          Mimarın çizgisini imalata dönüştürüyoruz.
+          {t("title")}
         </h1>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <Link href="/kategoriler" className={cn(buttonVariants({ variant: "primary", size: "lg" }))}>
-            Kataloğu keşfet
+            {t("ctaCatalog")}
             <ArrowRight className="size-4" />
           </Link>
           <a
             href="#kategoriler"
             className="inline-flex h-12 items-center gap-2 rounded-sm border border-white/40 px-6 text-sm font-medium text-white transition-colors hover:bg-white/10"
           >
-            Kategoriler
+            {t("ctaCategories")}
             <ArrowDown className="size-4" />
           </a>
         </div>
       </Container>
 
       {/* arrows */}
-      <button type="button" onClick={() => go(-1)} aria-label="Önceki" className="absolute left-3 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/15 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 sm:flex">
+      <button type="button" onClick={() => go(-1)} aria-label={tGallery("prev")} className="absolute left-3 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/15 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 sm:flex">
         <ChevronLeft className="size-5" />
       </button>
-      <button type="button" onClick={() => go(1)} aria-label="Sonraki" className="absolute right-3 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/15 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 sm:flex">
+      <button type="button" onClick={() => go(1)} aria-label={tGallery("next")} className="absolute right-3 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/15 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 sm:flex">
         <ChevronRight className="size-5" />
       </button>
 
@@ -88,7 +91,7 @@ export function HeroCinematic(): ReactElement {
           <button
             key={s.src}
             type="button"
-            aria-label={`Görsel ${i + 1}`}
+            aria-label={tGallery("imageN", { n: i + 1 })}
             onClick={() => setIndex(i)}
             className={cn("h-1.5 rounded-full bg-white/50 transition-all hover:bg-white", i === index ? "w-6 bg-white" : "w-1.5")}
           />

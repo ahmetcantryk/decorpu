@@ -2,12 +2,15 @@
 
 import { useState, type ReactElement } from "react";
 import { MessageCircle, Phone, FileText, X, Plus } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 /** Sağda sabit (fixed) iletişim butonları — WhatsApp, telefon, teklif. Mobilde toplanır. */
 export function FloatingContact(): ReactElement {
+  const tNav = useTranslations("Nav");
+  const tCommon = useTranslations("Common");
   const [open, setOpen] = useState(false);
 
   const items = (
@@ -17,21 +20,21 @@ export function FloatingContact(): ReactElement {
         target="_blank"
         rel="noopener"
         aria-label="WhatsApp"
-        className="flex size-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-pop transition-transform hover:scale-105"
+        className="flex size-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-pop transition-transform"
       >
         <MessageCircle className="size-6" />
       </a>
       <a
         href={SITE.phoneHref}
-        aria-label="Telefon"
-        className="flex size-12 items-center justify-center rounded-full bg-ink text-bg shadow-pop transition-transform hover:scale-105"
+        aria-label={tCommon("phone")}
+        className="flex size-12 items-center justify-center rounded-full bg-ink text-bg shadow-pop transition-transform"
       >
         <Phone className="size-5" />
       </a>
       <Link
         href="/teklif"
-        aria-label="Teklif Al"
-        className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-fg shadow-pop transition-transform hover:scale-105"
+        aria-label={tNav("quote")}
+        className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-fg shadow-pop transition-transform"
       >
         <FileText className="size-5" />
       </Link>
@@ -51,7 +54,7 @@ export function FloatingContact(): ReactElement {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Kapat" : "İletişim"}
+          aria-label={open ? tCommon("close") : tNav("contact")}
           className="flex size-13 items-center justify-center rounded-full bg-accent text-accent-fg shadow-pop"
         >
           {open ? <X className="size-6" /> : <Plus className="size-6" />}

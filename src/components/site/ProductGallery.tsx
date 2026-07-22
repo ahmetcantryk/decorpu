@@ -3,13 +3,23 @@
 import { useState, useEffect, useCallback, type ReactElement } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
-export function ProductGallery({ images, alt }: { images: string[]; alt: string }): ReactElement {
+interface ProductGalleryProps {
+  images: string[];
+  alt: string;
+  /** Teknik çizim görseli — beyaz zeminde, kırpılmadan (contain) gösterilir. */
+  drawing?: string | null;
+}
+
+export function ProductGallery({ images, alt, drawing }: ProductGalleryProps): ReactElement {
+  const t = useTranslations("Gallery");
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState(false);
-  const list = images.length ? images : [];
+  const list = drawing ? [...images, drawing] : images;
   const n = list.length;
+  const isDrawing = (src: string): boolean => src === drawing;
 
   const go = useCallback((dir: number) => setActive((i) => (i + dir + n) % n), [n]);
 
@@ -34,12 +44,19 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
       <button
         type="button"
         onClick={() => list[active] && setLightbox(true)}
-        aria-label="Görseli büyüt"
+        aria-label={t("zoom")}
         className="group relative block aspect-square w-full overflow-hidden rounded-xl border border-line bg-bg-subtle"
       >
         {list[active] ? (
           <>
-            <Image src={list[active]} alt={alt} fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            <Image
+              src={list[active]}
+              alt={alt}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className={isDrawing(list[active]) ? "bg-white object-contain p-4" : "object-cover"}
+            />
             <span className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
               <Expand className="size-4" />
             </span>
@@ -61,7 +78,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
                 i === active ? "border-accent" : "border-line hover:border-ink",
               )}
             >
-              <Image src={src} alt="" fill sizes="64px" className="object-cover" />
+              <Image src={src} alt="" fill sizes="64px" className={isDrawing(src) ? "bg-white object-contain p-1" : "object-cover"} />
             </button>
           ))}
         </div>
@@ -79,14 +96,14 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
           <button
             type="button"
             onClick={() => setLightbox(false)}
-            aria-label="Kapat"
+            aria-label={t("close")}
             className="absolute right-4 top-4 flex size-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25"
           >
             <X className="size-5" />
           </button>
 
           <div onClick={(e) => e.stopPropagation()} className="relative flex h-full w-full max-w-5xl items-center justify-center">
-            <div className="relative h-full max-h-[80vh] w-full">
+            <div className={cn("relative h-full max-h-[80vh] w-full", isDrawing(list[active]) && "rounded-xl bg-white p-4")}>
               <Image src={list[active]} alt={alt} fill sizes="100vw" className="object-contain" />
             </div>
 
@@ -95,7 +112,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
                 <button
                   type="button"
                   onClick={() => go(-1)}
-                  aria-label="Önceki"
+                  aria-label={t("prev")}
                   className="absolute left-0 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25 sm:-left-4"
                 >
                   <ChevronLeft className="size-6" />
@@ -103,7 +120,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
                 <button
                   type="button"
                   onClick={() => go(1)}
-                  aria-label="Sonraki"
+                  aria-label={t("next")}
                   className="absolute right-0 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25 sm:-right-4"
                 >
                   <ChevronRight className="size-6" />
@@ -128,7 +145,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
                     i === active ? "border-white opacity-100" : "border-white/30 opacity-60 hover:opacity-100",
                   )}
                 >
-                  <Image src={src} alt="" fill sizes="56px" className="object-cover" />
+                  <Image src={src} alt="" fill sizes="56px" className={isDrawing(src) ? "bg-white object-contain p-1" : "object-cover"} />
                 </button>
               ))}
             </div>

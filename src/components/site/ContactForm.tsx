@@ -2,6 +2,7 @@
 
 import { useState, useTransition, type FormEvent, type ReactElement } from "react";
 import { CheckCircle2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { submitRfq } from "@/lib/rfq/actions";
 import { Button } from "@/components/ui/Button";
 import { HoneypotField } from "@/components/site/HoneypotField";
@@ -16,6 +17,8 @@ interface ContactFormProps {
 
 /** Ürün seçmeden basit teklif/iletişim formu. */
 export function ContactForm({ source = "iletisim", compact = false }: ContactFormProps): ReactElement {
+  const t = useTranslations("Contact");
+  const tQuote = useTranslations("Quote");
   const [pending, start] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
@@ -42,26 +45,26 @@ export function ContactForm({ source = "iletisim", compact = false }: ContactFor
     return (
       <div className="rounded-xl border border-line bg-surface p-8 text-center">
         <CheckCircle2 className="mx-auto size-10 text-accent" />
-        <h3 className="mt-3 text-xl font-semibold">Mesajınız alındı</h3>
-        <p className="mt-2 text-sm text-muted">En kısa sürede sizinle iletişime geçeceğiz.</p>
+        <h3 className="mt-3 text-xl font-semibold">{t("successTitle")}</h3>
+        <p className="mt-2 text-sm text-muted">{t("successBody")}</p>
       </div>
     );
   }
 
   return (
     <form onSubmit={onSubmit} className={cn("space-y-3 rounded-xl border border-line bg-surface", compact ? "p-5" : "p-6")}>
-      {!compact ? <h2 className="text-lg font-semibold">Hızlı Teklif / İletişim</h2> : null}
-      <p className="text-sm text-muted">Ürün seçmeden de formu doldurarak teklif alabilirsiniz.</p>
+      {!compact ? <h2 className="text-lg font-semibold">{t("formTitle")}</h2> : null}
+      <p className="text-sm text-muted">{t("formNote")}</p>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <input name="full_name" required placeholder="Ad Soyad *" className={field} />
-        <input name="phone" type="tel" required placeholder="Telefon *" className={field} />
+        <input name="full_name" required placeholder={tQuote("fullName")} className={field} />
+        <input name="phone" type="tel" required placeholder={tQuote("phone")} className={field} />
       </div>
-      <textarea name="message" placeholder="Notunuz / projeniz" className={cn(field, "min-h-28 resize-y")} />
+      <textarea name="message" placeholder={t("noteProject")} className={cn(field, "min-h-28 resize-y")} />
       <HoneypotField />
       <input type="hidden" name="source" value={source} />
       {error ? <p className="text-sm text-accent">{error}</p> : null}
       <Button type="submit" disabled={pending} className="w-full">
-        {pending ? "Gönderiliyor…" : "Gönder"}
+        {pending ? tQuote("sending") : t("send")}
       </Button>
     </form>
   );

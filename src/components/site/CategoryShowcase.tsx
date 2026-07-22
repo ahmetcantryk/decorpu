@@ -40,24 +40,23 @@ export async function CategoryShowcase(): Promise<ReactElement> {
             const img = coverBySlug.get(cat.slug) || PLACEHOLDER;
             return (
               <li key={cat.slug}>
-                <Link href={`/kategoriler/${cat.slug}`} className="group block overflow-hidden rounded-md border border-line bg-surface">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                <Link href={`/kategoriler/${cat.slug}`} className="group block overflow-hidden rounded-md border border-line bg-surface transition-colors hover:border-accent/60">
+                  {/* görsel tam ve temiz — overlay/gradient yok */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-bg-subtle">
                     <Image
                       src={img}
                       alt={categoryName(cat, locale)}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3.5">
-                      <span className="font-display text-lg font-medium text-white drop-shadow">
-                        {categoryName(cat, locale)}
-                      </span>
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-bg/90 text-ink opacity-0 transition-opacity group-hover:opacity-100">
-                        <ArrowUpRight className="size-4" />
-                      </span>
-                    </div>
+                  </div>
+                  {/* isim görselin ALTINDA — turuncu ayraç + turuncu ok */}
+                  <div className="flex items-center justify-between gap-2 border-t-2 border-accent px-3.5 py-3">
+                    <span className="min-w-0 truncate font-display text-base font-medium text-ink transition-colors group-hover:text-accent sm:text-lg">
+                      {categoryName(cat, locale)}
+                    </span>
+                    <ArrowUpRight className="size-4 shrink-0 text-accent" />
                   </div>
                 </Link>
               </li>

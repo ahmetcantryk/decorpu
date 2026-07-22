@@ -2,7 +2,7 @@
 
 import { useState, useTransition, type ReactElement, type FormEvent } from "react";
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Trash2, Minus, Plus, CheckCircle2, PackageSearch, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useRfq } from "@/lib/rfq/store";
@@ -16,16 +16,16 @@ import { CATEGORIES, categoryName } from "@/lib/taxonomy";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-const STEPS: { title: string; body: string }[] = [
-  { title: "Ürünleri ekleyin", body: "Katalogdan veya kod aramasından ürünleri sepete ekleyin." },
-  { title: "Bilgilerinizi bırakın", body: "Ad soyad ve telefon yeterli; e-posta istemiyoruz." },
-  { title: "Teklifinizi alın", body: "Satış ekibimiz projeye özel fiyatla hızlıca döner." },
-];
-
 const field = "w-full rounded-md border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-accent";
 
 export function QuoteCart(): ReactElement {
+  const t = useTranslations("Quote");
   const locale = useLocale() as Locale;
+  const steps: { title: string; body: string }[] = [
+    { title: t("step1Title"), body: t("step1Body") },
+    { title: t("step2Title"), body: t("step2Body") },
+    { title: t("step3Title"), body: t("step3Body") },
+  ];
   const items = useRfq((s) => s.items);
   const remove = useRfq((s) => s.remove);
   const setQty = useRfq((s) => s.setQty);
@@ -60,10 +60,10 @@ export function QuoteCart(): ReactElement {
     return (
       <Container className="py-20 text-center">
         <CheckCircle2 className="mx-auto size-12 text-accent" />
-        <h1 className="mt-4 text-3xl font-semibold">Talebiniz alındı</h1>
-        <p className="mx-auto mt-3 max-w-md text-muted">Teklifiniz satış ekibimize iletildi. En kısa sürede projeye özel fiyatla size döneceğiz.</p>
+        <h1 className="mt-4 text-3xl font-semibold">{t("successTitle")}</h1>
+        <p className="mx-auto mt-3 max-w-md text-muted">{t("successBody")}</p>
         <Link href="/kategoriler" className="mt-8 inline-block">
-          <Button>Kataloğa dön</Button>
+          <Button>{t("backToCatalog")}</Button>
         </Link>
       </Container>
     );
@@ -71,8 +71,8 @@ export function QuoteCart(): ReactElement {
 
   return (
     <Container className="py-12 md:py-16">
-      <h1 className="text-3xl font-semibold sm:text-4xl">Teklif Sepeti</h1>
-      <p className="mt-2 text-muted">Seçtiğiniz ürün kodlarını tek formla gönderin; projeye özel teklif hazırlayalım.</p>
+      <h1 className="text-3xl font-semibold sm:text-4xl">{t("title")}</h1>
+      <p className="mt-2 text-muted">{t("subtitle")}</p>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
         {/* Items */}
@@ -93,7 +93,7 @@ export function QuoteCart(): ReactElement {
                     <span className="w-7 text-center text-sm tabular-nums">{it.qty}</span>
                     <button type="button" onClick={() => setQty(it.code, it.qty + 1)} className="flex size-8 items-center justify-center text-muted hover:text-ink"><Plus className="size-3.5" /></button>
                   </div>
-                  <button type="button" onClick={() => remove(it.code)} aria-label="Kaldır" className="flex size-8 items-center justify-center rounded-md text-muted hover:bg-accent/10 hover:text-accent">
+                  <button type="button" onClick={() => remove(it.code)} aria-label={t("remove")} className="flex size-8 items-center justify-center rounded-md text-muted hover:bg-accent/10 hover:text-accent">
                     <Trash2 className="size-4" />
                   </button>
                 </li>
@@ -106,26 +106,25 @@ export function QuoteCart(): ReactElement {
                 <span className="flex size-12 items-center justify-center rounded-full bg-accent/10 text-accent">
                   <PackageSearch className="size-6" />
                 </span>
-                <h2 className="mt-4 text-xl font-semibold">Sepetiniz henüz boş</h2>
+                <h2 className="mt-4 text-xl font-semibold">{t("emptyTitle")}</h2>
                 <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
-                  Beğendiğiniz ürünlerin kodlarını ekleyerek tek formla toplu teklif alın. Acelesi olanlar yandaki formu
-                  doldurup <span className="font-medium text-ink">ürün seçmeden</span> de teklif isteyebilir.
+                  {t.rich("emptyBody", { b: (chunks) => <span className="font-medium text-ink">{chunks}</span> })}
                 </p>
 
                 <div className="mt-5">
-                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">Ürün kodunu biliyor musunuz?</p>
+                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">{t("knowCode")}</p>
                   <CodeSearch size="lg" />
                 </div>
 
                 <Link href="/kategoriler" className={cn(buttonVariants({ variant: "outline", size: "md" }), "mt-5")}>
-                  Kataloğa göz at
+                  {t("browseCatalog")}
                   <ArrowRight className="size-4" />
                 </Link>
               </div>
 
               {/* popüler kategoriler */}
               <div className="rounded-xl border border-line bg-surface p-6">
-                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Popüler kategoriler</p>
+                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">{t("popularCategories")}</p>
                 <div className="flex flex-wrap gap-2">
                   {CATEGORIES.slice(0, 8).map((cat) => (
                     <Link
@@ -142,10 +141,10 @@ export function QuoteCart(): ReactElement {
 
               {/* nasıl çalışır */}
               <div className="rounded-xl border border-line bg-surface p-6">
-                <p className="mb-4 text-xs font-medium uppercase tracking-wide text-muted">Nasıl çalışır?</p>
+                <p className="mb-4 text-xs font-medium uppercase tracking-wide text-muted">{t("howItWorks")}</p>
                 <ol className="space-y-4">
-                  {STEPS.map((s, i) => (
-                    <li key={s.title} className="flex gap-3">
+                  {steps.map((s, i) => (
+                    <li key={i} className="flex gap-3">
                       <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-ink text-xs font-semibold text-bg">{i + 1}</span>
                       <div>
                         <p className="text-sm font-medium text-ink">{s.title}</p>
@@ -161,17 +160,17 @@ export function QuoteCart(): ReactElement {
 
         {/* Form */}
         <form onSubmit={onSubmit} className="h-fit space-y-3 rounded-xl border border-line bg-surface p-6 lg:sticky lg:top-24">
-          <h2 className="text-lg font-semibold">İletişim Bilgileri</h2>
-          <p className="text-sm text-muted">Size dönebilmemiz için ad soyad ve telefon yeterli.</p>
-          <input name="full_name" required placeholder="Ad Soyad *" className={field} />
-          <input name="phone" type="tel" required placeholder="Telefon *" className={field} />
-          <textarea name="message" placeholder="Notunuz (opsiyonel)" className={cn(field, "min-h-24 resize-y")} />
+          <h2 className="text-lg font-semibold">{t("contactInfo")}</h2>
+          <p className="text-sm text-muted">{t("contactNote")}</p>
+          <input name="full_name" required placeholder={t("fullName")} className={field} />
+          <input name="phone" type="tel" required placeholder={t("phone")} className={field} />
+          <textarea name="message" placeholder={t("noteOptional")} className={cn(field, "min-h-24 resize-y")} />
           <HoneypotField />
           {error ? <p className="text-sm text-accent">{error}</p> : null}
           <Button type="submit" disabled={pending} className="w-full">
-            {pending ? "Gönderiliyor…" : items.length ? `Teklif iste (${items.length} ürün)` : "Teklif iste"}
+            {pending ? t("sending") : items.length ? t("submitCount", { count: items.length }) : t("submit")}
           </Button>
-          <p className="text-center text-xs text-muted">Göndererek iletişim kurulmasına izin vermiş olursunuz.</p>
+          <p className="text-center text-xs text-muted">{t("consent")}</p>
         </form>
       </div>
     </Container>

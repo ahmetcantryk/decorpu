@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Calendar } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -16,7 +16,10 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
   const w = await getProjectBySlug(slug);
-  if (!w) return { title: "Çalışma bulunamadı" };
+  if (!w) {
+    const t = await getTranslations({ locale });
+    return { title: t("Works.notFound") };
+  }
 
   const where = w.location ? `, ${w.location}` : "";
   const description = clampDescription(
@@ -36,12 +39,13 @@ export default async function WorkDetailPage({
 }): Promise<ReactElement> {
   const { locale, slug } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations();
   const w = await getProjectBySlug(slug);
   if (!w) notFound();
 
   return (
     <Container className="py-10 md:py-14">
-      <Breadcrumbs items={[{ label: "Ana Sayfa", href: "/" }, { label: "Çalışmalarımız", href: "/calismalarimiz" }, { label: w.title }]} />
+      <Breadcrumbs items={[{ label: t("Common.home"), href: "/" }, { label: t("Works.title"), href: "/calismalarimiz" }, { label: w.title }]} />
 
       <div className="mt-6 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
         <ProductGallery images={w.images} alt={w.title} />
@@ -60,8 +64,8 @@ export default async function WorkDetailPage({
       {/* Bu projede kullanılan ürünler */}
       {w.products.length ? (
         <section className="mt-16">
-          <h2 className="mb-1 text-xl font-semibold">Bu projede kullanılan ürünler</h2>
-          <p className="mb-6 text-sm text-muted">Aynı ürünleri teklif sepetinize ekleyebilirsiniz.</p>
+          <h2 className="mb-1 text-xl font-semibold">{t("Works.usedProducts")}</h2>
+          <p className="mb-6 text-sm text-muted">{t("Works.usedProductsNote")}</p>
           <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {w.products.map((p) => (
               <li key={p.id}>

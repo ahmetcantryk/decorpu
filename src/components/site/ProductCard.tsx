@@ -1,5 +1,6 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AddToQuoteButton } from "./AddToQuoteButton";
 import type { CatalogProduct } from "@/lib/catalog";
@@ -15,6 +16,7 @@ function dims(p: Pick<CatalogProduct, "width_mm" | "length_mm" | "height_mm" | "
 }
 
 export function ProductCard({ product }: { product: CatalogProduct }): ReactElement {
+  const t = useTranslations("Product");
   const d = dims(product);
   return (
     <div className="group flex flex-col overflow-hidden rounded-lg border border-line bg-surface transition-shadow hover:shadow-soft">
@@ -30,10 +32,10 @@ export function ProductCard({ product }: { product: CatalogProduct }): ReactElem
         {product.drawing ? (
           <Image
             src={product.drawing}
-            alt={`${product.name_tr} teknik çizim`}
+            alt={t("drawingAlt", { name: product.name_tr })}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="pointer-events-none absolute inset-0 object-contain bg-[#1f1a16] p-3 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+            className="pointer-events-none absolute inset-0 bg-white object-contain p-2 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
           />
         ) : null}
         <span className="absolute left-2.5 top-2.5 z-10 rounded-sm bg-bg/90 px-2 py-0.5 font-mono text-[11px] text-ink shadow-soft">
@@ -41,7 +43,7 @@ export function ProductCard({ product }: { product: CatalogProduct }): ReactElem
         </span>
         {product.drawing ? (
           <span className="absolute bottom-2.5 right-2.5 z-10 rounded-sm bg-white/90 px-1.5 py-0.5 font-mono text-[10px] text-ink opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            çizim
+            {t("drawingBadge")}
           </span>
         ) : null}
       </Link>
@@ -54,7 +56,7 @@ export function ProductCard({ product }: { product: CatalogProduct }): ReactElem
         <div className="mt-3 flex items-center justify-between gap-2 pt-1">
           <AddToQuoteButton code={product.code} name={product.name_tr} image={product.image} />
           <Link href={`/urun/${product.code.toLowerCase()}`} className="text-xs text-muted transition-colors hover:text-accent">
-            İncele →
+            {t("inspect")} →
           </Link>
         </div>
       </div>

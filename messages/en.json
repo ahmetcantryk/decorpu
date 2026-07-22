@@ -8,12 +8,27 @@
     "quote": "Get a Quote",
     "menu": "Menu",
     "seeAll": "Browse All Catalog",
-    "seeProducts": "See products"
+    "seeProducts": "See products",
+    "works": "Work",
+    "services": "Services"
+  },
+  "Header": {
+    "tagline": "For architects · Project-based polyurethane decoration manufacturing"
+  },
+  "Downloads": {
+    "catalogPdf": "Catalog (PDF)",
+    "dwg": "Technical Drawings (DWG)",
+    "dwgShort": "DWG",
+    "download": "Download"
   },
   "Search": {
     "placeholder": "Search by product code — e.g. PU-1024",
     "label": "Search by code",
-    "submit": "Search"
+    "submit": "Search",
+    "results": "{count, plural, one {# result} other {# results}} for <q>{query}</q>",
+    "noResults": "No results found. Try a different code or keyword.",
+    "prompt": "Type a product code (e.g. PU-1024) or keyword above.",
+    "viewAllResults": "View all results"
   },
   "Cookie": {
     "title": "We use cookies",
@@ -39,7 +54,9 @@
     "title": "We turn the architect's line into manufacture.",
     "subtitle": "From jambs to cornices, columns to domes — find the piece by its code, add it to your quote, get production made for your project.",
     "ctaPrimary": "Search by code",
-    "ctaSecondary": "Explore categories"
+    "ctaSecondary": "Explore categories",
+    "ctaCatalog": "Explore the catalog",
+    "ctaCategories": "Categories"
   },
   "Home": {
     "categoriesTitle": "Categories",
@@ -64,16 +81,150 @@
     "quoteBody": "Collect codes in your quote cart and send them in one form. Our sales team responds with project-based pricing.",
     "quoteCta": "Start a quote cart"
   },
+  "Gallery": {
+    "zoom": "Enlarge image",
+    "prev": "Previous",
+    "next": "Next",
+    "close": "Close",
+    "imageN": "Image {n}"
+  },
+  "Works": {
+    "eyebrow": "References",
+    "title": "Our Work",
+    "homeSubtitle": "The DecorPU touch in architectural projects. Discover the products used in each one.",
+    "pageSubtitle": "The DecorPU touch in architectural projects. Open a project to see the gallery and the products used.",
+    "usedProducts": "Products used in this project",
+    "usedProductsNote": "You can add the same products to your quote cart.",
+    "metaTitle": "Our Work",
+    "metaDescription": "DecorPU polyurethane decoration in architectural projects — reference works and the products used.",
+    "notFound": "Project not found"
+  },
+  "Services": {
+    "eyebrow": "What we do",
+    "title": "Our Services",
+    "homeSubtitle": "From survey to manufacture, installation to custom design — end-to-end project support.",
+    "pageSubtitle": "From survey to manufacture, installation to custom design — we're with you at every stage of your project.",
+    "details": "Details",
+    "relatedProducts": "Related products",
+    "relatedProductsNote": "Polyurethane products frequently used with this service.",
+    "ctaNote": "Get a project-specific quote for this service, or get in touch with us.",
+    "contactCta": "Get in Touch",
+    "others": "Other services",
+    "metaTitle": "Our Services",
+    "metaDescription": "Architectural survey, 3D modeling, 3D scanning, professional installation, custom design and manufacturing — DecorPU end-to-end project services.",
+    "notFound": "Service not found"
+  },
+  "Category": {
+    "pageSubtitle": "Interior and exterior architectural profiles. Open a category to explore subcategories and products.",
+    "productCount": "{count, plural, one {# product} other {# products}}",
+    "onRequest": "Available on request",
+    "subCount": "{count, plural, one {# subcategory} other {# subcategories}}",
+    "subcategories": "Subcategories",
+    "subcategoriesAria": "{name} subcategories",
+    "emptyTitle": "Products in this category are available in our production",
+    "emptyBody": "Our {name} models haven't been added to the web catalog yet; they're produced in our workshop and kept in stock. Request a quote for your project right away — we'll give you a price tailored to size and model.",
+    "viewInCatalog": "View all models in the Catalog PDF",
+    "metaDescription": "Polyurethane architectural decoration product categories — jambs, columns, cornices, arches, domes, fireplaces and more.",
+    "modelsTitle": "{name} Models",
+    "metaDescFallback": "Polyurethane {name} models — dimensions, indoor/outdoor options and a project-specific quote. DecorPU architectural decoration.",
+    "notFound": "Category not found"
+  },
+  "Product": {
+    "drawingBadge": "drawing",
+    "drawingAlt": "{name} technical drawing",
+    "inspect": "View",
+    "viewCart": "View quote cart",
+    "noPrice": "No prices — we work on a project-specific quote basis. Add codes to your cart and send them in one form.",
+    "specs": "Technical Specifications",
+    "description": "Description",
+    "related": "Similar Products",
+    "specMaterial": "Material",
+    "specPaintable": "Paintable",
+    "specIndoor": "Indoor Use",
+    "specOutdoor": "Outdoor Use",
+    "specWaterResistant": "Water Resistant",
+    "specWeight": "Weight",
+    "specWidth": "Width",
+    "specLength": "Length",
+    "specHeight": "Height",
+    "specDiameter": "Diameter",
+    "materialDefault": "Polyurethane",
+    "yes": "Yes",
+    "no": "No",
+    "notFound": "Product not found"
+  },
+  "Quote": {
+    "add": "Add to quote",
+    "added": "Added to quote",
+    "cartLabel": "Quote cart",
+    "request": "Request a Quote",
+    "successTitle": "Your request has been received",
+    "successBody": "Your quote has been sent to our sales team. We'll get back to you shortly with project-specific pricing.",
+    "backToCatalog": "Back to catalog",
+    "title": "Quote Cart",
+    "subtitle": "Send the product codes you've selected in one form; we'll prepare a project-specific quote.",
+    "remove": "Remove",
+    "emptyTitle": "Your cart is empty",
+    "emptyBody": "Add the codes of the products you like to get a bulk quote in one form. In a hurry? Fill in the form on the side and request a quote <b>without selecting products</b>.",
+    "knowCode": "Know the product code?",
+    "browseCatalog": "Browse the catalog",
+    "popularCategories": "Popular categories",
+    "howItWorks": "How it works?",
+    "step1Title": "Add products",
+    "step1Body": "Add products to your cart from the catalog or the code search.",
+    "step2Title": "Leave your details",
+    "step2Body": "Your name and phone are enough; we don't ask for email.",
+    "step3Title": "Get your quote",
+    "step3Body": "Our sales team responds quickly with project-specific pricing.",
+    "contactInfo": "Contact Details",
+    "contactNote": "Your name and phone are all we need to get back to you.",
+    "fullName": "Full Name *",
+    "phone": "Phone *",
+    "noteOptional": "Your note (optional)",
+    "sending": "Sending…",
+    "submit": "Request a quote",
+    "submitCount": "Request a quote ({count, plural, one {# product} other {# products}})",
+    "consent": "By submitting, you agree to be contacted.",
+    "metaTitle": "Quote Cart",
+    "metaDescription": "Request a project-specific quote for the polyurethane decoration products you've selected."
+  },
+  "Contact": {
+    "successTitle": "Your message has been received",
+    "successBody": "We'll get in touch with you as soon as possible.",
+    "formTitle": "Quick Quote / Contact",
+    "formNote": "You can get a quote by filling in the form without selecting products.",
+    "noteProject": "Your note / project",
+    "send": "Send",
+    "whatsappWrite": "Message on WhatsApp",
+    "title": "Contact",
+    "subtitle": "Get in touch for your project; you can also get a quick quote without selecting products.",
+    "whatsappValue": "Send a message",
+    "labelEmail": "Email",
+    "labelAddress": "Address",
+    "metaDescription": "Get in touch with DecorPU — phone, email, address and a quick quote form."
+  },
   "Footer": {
     "tagline": "A polyurethane architectural decoration workshop turning the architect's line into manufacture.",
     "exploreTitle": "Explore",
     "companyTitle": "Company",
     "contactTitle": "Contact",
     "rights": "All rights reserved.",
-    "madeIn": "Designed and manufactured in Türkiye."
+    "madeIn": "Designed and manufactured in Türkiye.",
+    "location": "Location",
+    "legalNav": "Legal",
+    "kvkk": "Data Protection Notice",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy"
   },
   "Common": {
     "skipToContent": "Skip to content",
-    "languageLabel": "Language"
+    "languageLabel": "Language",
+    "home": "Home",
+    "viewAll": "View all",
+    "close": "Close",
+    "phone": "Phone",
+    "call": "Call",
+    "pageNotFound": "Page not found",
+    "mapTitle": "DecorPU location"
   }
 }

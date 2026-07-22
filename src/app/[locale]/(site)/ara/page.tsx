@@ -30,7 +30,11 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
       {q ? (
         <>
           <p className="mt-6 text-sm text-muted">
-            <span className="font-mono uppercase text-ink">{q}</span> için {results.length} sonuç
+            {t.rich("results", {
+              query: q,
+              count: results.length,
+              q: (chunks) => <span className="font-mono uppercase text-ink">{chunks}</span>,
+            })}
           </p>
           {results.length ? (
             <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -42,12 +46,12 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
             </ul>
           ) : (
             <p className="mt-10 rounded-lg border border-line bg-surface px-4 py-12 text-center text-muted">
-              Sonuç bulunamadı. Farklı bir kod ya da kelime deneyin.
+              {t("noResults")}
             </p>
           )}
         </>
       ) : (
-        <p className="mt-8 text-muted">Yukarıya bir ürün kodu (ör. PU-1024) ya da kelime yazın.</p>
+        <p className="mt-8 text-muted">{t("prompt")}</p>
       )}
     </Container>
   );

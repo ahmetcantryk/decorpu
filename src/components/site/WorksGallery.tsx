@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import { getProjects } from "@/lib/projects";
@@ -13,17 +14,20 @@ export async function WorksGallery(): Promise<ReactElement> {
   const works = await getProjects();
   if (!works.length) return <></>;
 
+  const t = await getTranslations("Works");
+  const tCommon = await getTranslations("Common");
+
   return (
     <section id="calismalar" className="scroll-mt-20 py-20">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-wide text-accent">Referanslar</p>
-            <h2 className="mt-2 text-3xl sm:text-4xl">Çalışmalarımız</h2>
-            <p className="mt-2 max-w-xl text-muted">Mimari projelerde DecorPU dokunuşu. Her çalışmada kullanılan ürünleri keşfedin.</p>
+            <p className="font-mono text-xs uppercase tracking-wide text-accent">{t("eyebrow")}</p>
+            <h2 className="mt-2 text-3xl sm:text-4xl">{t("title")}</h2>
+            <p className="mt-2 max-w-xl text-muted">{t("homeSubtitle")}</p>
           </div>
           <Link href="/calismalarimiz" className="text-sm text-ink-soft transition-colors hover:text-accent">
-            Tümünü gör →
+            {tCommon("viewAll")} →
           </Link>
         </div>
 
@@ -39,7 +43,7 @@ export async function WorksGallery(): Promise<ReactElement> {
                       alt={w.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                      className="object-cover"
                     />
                   ) : null}
                 </div>

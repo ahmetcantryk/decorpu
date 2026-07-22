@@ -2,7 +2,7 @@
 
 import { useState, useEffect, type ReactElement } from "react";
 import { createPortal } from "react-dom";
-import { Menu, X, Phone, MessageCircle, MapPin, ChevronDown, ArrowRight, FileDown, PencilRuler } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, MapPin, ChevronDown, ArrowRight, FileText, PencilRuler, Download } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { CodeSearch } from "./CodeSearch";
 import { Wordmark } from "./Wordmark";
@@ -14,16 +14,21 @@ import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-const PAGE_LINKS: { href: string; label: string }[] = [
-  { href: "/calismalarimiz", label: "Çalışmalarımız" },
-  { href: "/hizmetler", label: "Hizmetler" },
-  { href: "/iletisim", label: "İletişim" },
-];
-
 /** Mobil navigasyon — tam ekran drawer: arama, sayfa linkleri, akordeon kategoriler, iletişim, CTA. */
 export function MobileMenu(): ReactElement {
   const t = useTranslations("Nav");
+  const tDl = useTranslations("Downloads");
+  const tWorks = useTranslations("Works");
+  const tCommon = useTranslations("Common");
+  const tContact = useTranslations("Contact");
+  const tCategory = useTranslations("Category");
   const locale = useLocale() as Locale;
+
+  const pageLinks: { href: string; label: string }[] = [
+    { href: "/calismalarimiz", label: tWorks("title") },
+    { href: "/hizmetler", label: t("services") },
+    { href: "/iletisim", label: t("contact") },
+  ];
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -47,7 +52,7 @@ export function MobileMenu(): ReactElement {
             <button
               type="button"
               onClick={close}
-              aria-label="Kapat"
+              aria-label={tCommon("close")}
               className="flex size-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-bg-subtle"
             >
               <X className="size-5" />
@@ -62,11 +67,12 @@ export function MobileMenu(): ReactElement {
             <div className="mt-4 grid grid-cols-2 gap-2">
               <a
                 href={SITE.downloads.catalogPdf}
-                download
+                target="_blank"
+                rel="noopener"
                 className="flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-3 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
               >
-                <FileDown className="size-4 text-accent" />
-                Katalog PDF
+                <FileText className="size-4 text-accent" />
+                {tDl("catalogPdf")}
               </a>
               <a
                 href={SITE.downloads.dwg}
@@ -74,7 +80,11 @@ export function MobileMenu(): ReactElement {
                 className="flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-3 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
               >
                 <PencilRuler className="size-4 text-accent" />
-                DWG Çizimler
+                {tDl("dwgShort")}
+                <span className="flex items-center gap-1 text-accent">
+                  <Download className="size-4" />
+                  {tDl("download")}
+                </span>
               </a>
             </div>
 
@@ -83,7 +93,7 @@ export function MobileMenu(): ReactElement {
               <Link href="/kategoriler" onClick={close} className="border-b border-line py-3.5 text-base font-medium text-ink transition-colors hover:text-accent">
                 {t("catalog")}
               </Link>
-              {PAGE_LINKS.map((l) => (
+              {pageLinks.map((l) => (
                 <Link key={l.href} href={l.href} onClick={close} className="border-b border-line py-3.5 text-base font-medium text-ink transition-colors hover:text-accent">
                   {l.label}
                 </Link>
@@ -110,7 +120,7 @@ export function MobileMenu(): ReactElement {
                           type="button"
                           onClick={() => setExpanded(isOpen ? null : cat.slug)}
                           aria-expanded={isOpen}
-                          aria-label={`${categoryName(cat, locale)} alt kategoriler`}
+                          aria-label={tCategory("subcategoriesAria", { name: categoryName(cat, locale) })}
                           className="flex size-10 shrink-0 items-center justify-center text-muted"
                         >
                           <ChevronDown className={cn("size-4 transition-transform duration-200", isOpen && "rotate-180")} />
@@ -135,14 +145,14 @@ export function MobileMenu(): ReactElement {
 
             {/* iletişim bloğu */}
             <div className="mt-6 rounded-xl border border-line bg-surface p-4">
-              <p className="font-mono text-xs uppercase tracking-wide text-muted">İletişim</p>
+              <p className="font-mono text-xs uppercase tracking-wide text-muted">{t("contact")}</p>
               <a href={SITE.phoneHref} className="mt-2.5 flex items-center gap-2.5 text-lg font-semibold text-ink transition-colors hover:text-accent">
                 <Phone className="size-5 text-accent" />
                 {SITE.phoneDisplay}
               </a>
               <a href={SITE.whatsapp} target="_blank" rel="noopener" className="mt-2.5 flex items-center gap-2.5 text-sm text-ink-soft transition-colors hover:text-[#25D366]">
                 <MessageCircle className="size-4 text-[#25D366]" />
-                WhatsApp ile yazın
+                {tContact("whatsappWrite")}
               </a>
               <a href={SITE.emailHref} className="mt-2.5 block text-sm text-ink-soft transition-colors hover:text-accent">
                 {SITE.email}
@@ -157,7 +167,7 @@ export function MobileMenu(): ReactElement {
           {/* sabit alt CTA */}
           <div className="flex shrink-0 items-center gap-2 border-t border-line bg-bg px-5 py-3">
             <a href={SITE.phoneHref} onClick={close} className={cn(buttonVariants({ variant: "outline", size: "md" }), "flex-1")}>
-              <Phone className="size-4" /> Ara
+              <Phone className="size-4" /> {tCommon("call")}
             </a>
             <Link href="/teklif" onClick={close} className={cn(buttonVariants({ variant: "primary", size: "md" }), "flex-1")}>
               {t("quote")}

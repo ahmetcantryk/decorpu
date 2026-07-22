@@ -30,7 +30,7 @@ export function ProjectsSection(): ReactElement {
                     alt="DecorPU uygulama"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
                 </div>

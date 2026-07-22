@@ -44,7 +44,7 @@ export function Gallery(): ReactElement {
                   alt=""
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
                 <div className="pointer-events-none absolute inset-0 flex items-end justify-between gap-2 bg-gradient-to-t from-ink/55 to-transparent p-3 opacity-0 transition-opacity group-hover:opacity-100">
                   <button

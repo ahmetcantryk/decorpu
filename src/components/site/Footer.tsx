@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { Phone, Mail, MapPin, FileDown, PencilRuler } from "lucide-react";
+import { Phone, Mail, MapPin, FileText, PencilRuler, Download } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
@@ -9,26 +9,26 @@ import { CATEGORIES, categoryName } from "@/lib/taxonomy";
 import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 
-const COMPANY_LINKS: { label: string; href: string }[] = [
-  { label: "Kategoriler", href: "/kategoriler" },
-  { label: "Çalışmalarımız", href: "/calismalarimiz" },
-  { label: "Hizmetler", href: "/hizmetler" },
-  { label: "Teklif Al", href: "/teklif" },
-  { label: "İletişim", href: "/iletisim" },
-];
-
-const LEGAL_LINKS: { label: string; href: string }[] = [
-  { label: "KVKK Aydınlatma Metni", href: "/kvkk" },
-  { label: "Gizlilik Politikası", href: "/gizlilik" },
-  { label: "Çerez Politikası", href: "/cerez-politikasi" },
-];
-
 /** Site footer with contact + map. */
 export function Footer(): ReactElement {
   const t = useTranslations();
   const locale = useLocale() as Locale;
   const year = new Date().getFullYear();
   const topCategories = CATEGORIES.slice(0, 6);
+
+  const companyLinks: { label: string; href: string }[] = [
+    { label: t("Nav.categories"), href: "/kategoriler" },
+    { label: t("Works.title"), href: "/calismalarimiz" },
+    { label: t("Nav.services"), href: "/hizmetler" },
+    { label: t("Nav.quote"), href: "/teklif" },
+    { label: t("Nav.contact"), href: "/iletisim" },
+  ];
+
+  const legalLinks: { label: string; href: string }[] = [
+    { label: t("Footer.kvkk"), href: "/kvkk" },
+    { label: t("Footer.privacy"), href: "/gizlilik" },
+    { label: t("Footer.cookies"), href: "/cerez-politikasi" },
+  ];
 
   return (
     <footer className="mt-24 border-t border-line bg-surface">
@@ -59,7 +59,7 @@ export function Footer(): ReactElement {
         <nav aria-label={t("Footer.companyTitle")}>
           <h2 className="font-mono text-xs uppercase tracking-wide text-muted">{t("Footer.companyTitle")}</h2>
           <ul className="mt-4 space-y-2.5">
-            {COMPANY_LINKS.map((item) => (
+            {companyLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-sm text-ink-soft transition-colors hover:text-accent">
                   {item.label}
@@ -67,15 +67,19 @@ export function Footer(): ReactElement {
               </li>
             ))}
             <li>
-              <a href={SITE.downloads.catalogPdf} download className="inline-flex items-center gap-1.5 text-sm text-ink-soft transition-colors hover:text-accent">
-                <FileDown className="size-3.5 text-accent" />
-                Katalog PDF İndir
+              <a href={SITE.downloads.catalogPdf} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 text-sm text-ink-soft transition-colors hover:text-accent">
+                <FileText className="size-3.5 text-accent" />
+                {t("Downloads.catalogPdf")}
               </a>
             </li>
             <li>
               <a href={SITE.downloads.dwg} download className="inline-flex items-center gap-1.5 text-sm text-ink-soft transition-colors hover:text-accent">
                 <PencilRuler className="size-3.5 text-accent" />
-                Teknik Çizimler (DWG)
+                {t("Downloads.dwg")}
+                <span className="inline-flex items-center gap-0.5 text-accent">
+                  <Download className="size-3.5" />
+                  {t("Downloads.download")}
+                </span>
               </a>
             </li>
           </ul>
@@ -83,10 +87,10 @@ export function Footer(): ReactElement {
 
         {/* map */}
         <div>
-          <h2 className="mb-4 font-mono text-xs uppercase tracking-wide text-muted">Konum</h2>
+          <h2 className="mb-4 font-mono text-xs uppercase tracking-wide text-muted">{t("Footer.location")}</h2>
           <div className="overflow-hidden rounded-lg border border-line">
             <iframe
-              title="DecorPU konum"
+              title={t("Common.mapTitle")}
               src={SITE.mapEmbed}
               className="h-44 w-full"
               loading="lazy"
@@ -98,8 +102,8 @@ export function Footer(): ReactElement {
 
       <div className="border-t border-line">
         <Container className="flex flex-col gap-4 py-6 text-xs text-muted">
-          <nav aria-label="Yasal" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-start">
-            {LEGAL_LINKS.map((item) => (
+          <nav aria-label={t("Footer.legalNav")} className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-start">
+            {legalLinks.map((item) => (
               <Link key={item.href} href={item.href} className="transition-colors hover:text-accent">
                 {item.label}
               </Link>

@@ -8,12 +8,27 @@
     "quote": "Teklif Al",
     "menu": "Menü",
     "seeAll": "Tüm Kataloğu Gör",
-    "seeProducts": "Ürünleri gör"
+    "seeProducts": "Ürünleri gör",
+    "works": "Çalışmalar",
+    "services": "Hizmetler"
+  },
+  "Header": {
+    "tagline": "Mimarlara özel · Proje bazlı poliüretan dekorasyon imalatı"
+  },
+  "Downloads": {
+    "catalogPdf": "Katalog (PDF)",
+    "dwg": "Teknik Çizimler (DWG)",
+    "dwgShort": "DWG",
+    "download": "İndir"
   },
   "Search": {
     "placeholder": "Ürün kodu ile ara — ör. PU-1024",
     "label": "Kod ile ara",
-    "submit": "Ara"
+    "submit": "Ara",
+    "results": "<q>{query}</q> için {count, plural, other {# sonuç}}",
+    "noResults": "Sonuç bulunamadı. Farklı bir kod ya da kelime deneyin.",
+    "prompt": "Yukarıya bir ürün kodu (ör. PU-1024) ya da kelime yazın.",
+    "viewAllResults": "Tüm sonuçları gör"
   },
   "Cookie": {
     "title": "Çerez kullanıyoruz",
@@ -39,7 +54,9 @@
     "title": "Mimarın çizgisini imalata dönüştürüyoruz.",
     "subtitle": "Söveden kartonpiyere, sütundan kubbeye — tasarımındaki parçayı koduyla bul, teklif sepetine ekle, projene özel üretim al.",
     "ctaPrimary": "Kod ile ara",
-    "ctaSecondary": "Kategorileri keşfet"
+    "ctaSecondary": "Kategorileri keşfet",
+    "ctaCatalog": "Kataloğu keşfet",
+    "ctaCategories": "Kategoriler"
   },
   "Home": {
     "categoriesTitle": "Kategoriler",
@@ -64,16 +81,150 @@
     "quoteBody": "Kodları teklif sepetinde toplayın, tek formla gönderin. Satış ekibimiz projeye özel fiyatla döner.",
     "quoteCta": "Teklif sepetine başla"
   },
+  "Gallery": {
+    "zoom": "Görseli büyüt",
+    "prev": "Önceki",
+    "next": "Sonraki",
+    "close": "Kapat",
+    "imageN": "Görsel {n}"
+  },
+  "Works": {
+    "eyebrow": "Referanslar",
+    "title": "Çalışmalarımız",
+    "homeSubtitle": "Mimari projelerde DecorPU dokunuşu. Her çalışmada kullanılan ürünleri keşfedin.",
+    "pageSubtitle": "Mimari projelerde DecorPU dokunuşu. Bir çalışmaya girip galeriyi ve kullanılan ürünleri görün.",
+    "usedProducts": "Bu projede kullanılan ürünler",
+    "usedProductsNote": "Aynı ürünleri teklif sepetinize ekleyebilirsiniz.",
+    "metaTitle": "Çalışmalarımız",
+    "metaDescription": "Mimari projelerde DecorPU poliüretan dekorasyon uygulamaları — referans çalışmalar ve kullanılan ürünler.",
+    "notFound": "Çalışma bulunamadı"
+  },
+  "Services": {
+    "eyebrow": "Ne yapıyoruz",
+    "title": "Hizmetlerimiz",
+    "homeSubtitle": "Keşiften imalata, montajdan özel tasarıma — uçtan uca proje desteği.",
+    "pageSubtitle": "Keşiften imalata, montajdan özel tasarıma — projenizin her aşamasında yanınızdayız.",
+    "details": "Detaylar",
+    "relatedProducts": "İlgili ürünler",
+    "relatedProductsNote": "Bu hizmetle sıkça kullanılan poliüretan ürünler.",
+    "ctaNote": "Bu hizmet için projenize özel teklif alın ya da bizimle iletişime geçin.",
+    "contactCta": "İletişime Geç",
+    "others": "Diğer hizmetler",
+    "metaTitle": "Hizmetlerimiz",
+    "metaDescription": "Mimari keşif, 3D modelleme, 3D tarama, profesyonel montaj, özel tasarım ve üretim — DecorPU uçtan uca proje hizmetleri.",
+    "notFound": "Hizmet bulunamadı"
+  },
+  "Category": {
+    "pageSubtitle": "İç ve dış cephe mimari profiller. Bir kategoriye girip alt kategorileri ve ürünleri keşfedin.",
+    "productCount": "{count, plural, other {# ürün}}",
+    "onRequest": "Talep üzerine",
+    "subCount": "{count, plural, other {# alt kategori}}",
+    "subcategories": "Alt Kategoriler",
+    "subcategoriesAria": "{name} alt kategoriler",
+    "emptyTitle": "Bu kategorideki ürünlerimiz üretimimizde mevcut",
+    "emptyBody": "{name} modellerimiz web kataloğuna henüz eklenmedi; imalatımızda üretiliyor ve stoklarımızda bulunuyor. Projeniz için hemen teklif isteyin — ölçü ve modele göre size özel fiyat verelim.",
+    "viewInCatalog": "Tüm modelleri Katalog PDF'te görüntüleyin",
+    "metaDescription": "Poliüretan mimari dekorasyon ürün kategorileri — söve, sütun, kartonpiyer, kemer, kubbe, şömine ve daha fazlası.",
+    "modelsTitle": "{name} Modelleri",
+    "metaDescFallback": "Poliüretan {name} modelleri — ölçüler, iç/dış mekan seçenekleri ve projeye özel fiyat teklifi. DecorPU mimari dekorasyon.",
+    "notFound": "Kategori bulunamadı"
+  },
+  "Product": {
+    "drawingBadge": "çizim",
+    "drawingAlt": "{name} teknik çizim",
+    "inspect": "İncele",
+    "viewCart": "Teklif sepetini görüntüle",
+    "noPrice": "Fiyat yok — projeye özel teklif modeli. Kodları sepete ekleyip tek formla gönderin.",
+    "specs": "Teknik Özellikler",
+    "description": "Açıklama",
+    "related": "Benzer Ürünler",
+    "specMaterial": "Malzeme",
+    "specPaintable": "Boyanabilir",
+    "specIndoor": "İç Mekan",
+    "specOutdoor": "Dış Mekan",
+    "specWaterResistant": "Su Geçirmez",
+    "specWeight": "Ağırlık",
+    "specWidth": "Genişlik (En)",
+    "specLength": "Uzunluk (Boy)",
+    "specHeight": "Yükseklik",
+    "specDiameter": "Çap",
+    "materialDefault": "Poliüretan",
+    "yes": "Evet",
+    "no": "Hayır",
+    "notFound": "Ürün bulunamadı"
+  },
+  "Quote": {
+    "add": "Teklife ekle",
+    "added": "Sepete eklendi",
+    "cartLabel": "Teklif sepeti",
+    "request": "Teklif İste",
+    "successTitle": "Talebiniz alındı",
+    "successBody": "Teklifiniz satış ekibimize iletildi. En kısa sürede projeye özel fiyatla size döneceğiz.",
+    "backToCatalog": "Kataloğa dön",
+    "title": "Teklif Sepeti",
+    "subtitle": "Seçtiğiniz ürün kodlarını tek formla gönderin; projeye özel teklif hazırlayalım.",
+    "remove": "Kaldır",
+    "emptyTitle": "Sepetiniz henüz boş",
+    "emptyBody": "Beğendiğiniz ürünlerin kodlarını ekleyerek tek formla toplu teklif alın. Acelesi olanlar yandaki formu doldurup <b>ürün seçmeden</b> de teklif isteyebilir.",
+    "knowCode": "Ürün kodunu biliyor musunuz?",
+    "browseCatalog": "Kataloğa göz at",
+    "popularCategories": "Popüler kategoriler",
+    "howItWorks": "Nasıl çalışır?",
+    "step1Title": "Ürünleri ekleyin",
+    "step1Body": "Katalogdan veya kod aramasından ürünleri sepete ekleyin.",
+    "step2Title": "Bilgilerinizi bırakın",
+    "step2Body": "Ad soyad ve telefon yeterli; e-posta istemiyoruz.",
+    "step3Title": "Teklifinizi alın",
+    "step3Body": "Satış ekibimiz projeye özel fiyatla hızlıca döner.",
+    "contactInfo": "İletişim Bilgileri",
+    "contactNote": "Size dönebilmemiz için ad soyad ve telefon yeterli.",
+    "fullName": "Ad Soyad *",
+    "phone": "Telefon *",
+    "noteOptional": "Notunuz (opsiyonel)",
+    "sending": "Gönderiliyor…",
+    "submit": "Teklif iste",
+    "submitCount": "Teklif iste ({count, plural, other {# ürün}})",
+    "consent": "Göndererek iletişim kurulmasına izin vermiş olursunuz.",
+    "metaTitle": "Teklif Sepeti",
+    "metaDescription": "Seçtiğiniz poliüretan dekorasyon ürünleri için projeye özel teklif isteyin."
+  },
+  "Contact": {
+    "successTitle": "Mesajınız alındı",
+    "successBody": "En kısa sürede sizinle iletişime geçeceğiz.",
+    "formTitle": "Hızlı Teklif / İletişim",
+    "formNote": "Ürün seçmeden de formu doldurarak teklif alabilirsiniz.",
+    "noteProject": "Notunuz / projeniz",
+    "send": "Gönder",
+    "whatsappWrite": "WhatsApp ile yazın",
+    "title": "İletişim",
+    "subtitle": "Projeniz için bize ulaşın; ürün seçmeden de hızlı teklif alabilirsiniz.",
+    "whatsappValue": "Mesaj gönder",
+    "labelEmail": "E-posta",
+    "labelAddress": "Adres",
+    "metaDescription": "DecorPU ile iletişime geçin — telefon, e-posta, adres ve hızlı teklif formu."
+  },
   "Footer": {
     "tagline": "Mimarın çizgisini imalata dönüştüren poliüretan mimari dekorasyon atölyesi.",
     "exploreTitle": "Keşfet",
     "companyTitle": "Kurumsal",
     "contactTitle": "İletişim",
     "rights": "Tüm hakları saklıdır.",
-    "madeIn": "Türkiye'de tasarlandı ve üretildi."
+    "madeIn": "Türkiye'de tasarlandı ve üretildi.",
+    "location": "Konum",
+    "legalNav": "Yasal",
+    "kvkk": "KVKK Aydınlatma Metni",
+    "privacy": "Gizlilik Politikası",
+    "cookies": "Çerez Politikası"
   },
   "Common": {
     "skipToContent": "İçeriğe geç",
-    "languageLabel": "Dil"
+    "languageLabel": "Dil",
+    "home": "Ana Sayfa",
+    "viewAll": "Tümünü gör",
+    "close": "Kapat",
+    "phone": "Telefon",
+    "call": "Ara",
+    "pageNotFound": "Sayfa bulunamadı",
+    "mapTitle": "DecorPU konum"
   }
 }
