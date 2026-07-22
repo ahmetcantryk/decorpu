@@ -7,16 +7,25 @@ import type { ReactElement } from "react";
 import { signOut } from "@/lib/admin/auth";
 import { cn } from "@/lib/utils";
 
-const NAV: { href: string; label: string; icon: LucideIcon; exact?: boolean }[] = [
+interface NavItem {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+  exact?: boolean;
+  soon?: boolean;
+  leadsBadge?: boolean;
+}
+
+const NAV: NavItem[] = [
   { href: "/admin", label: "Panel", icon: LayoutDashboard, exact: true },
   { href: "/admin/urunler", label: "Ürünler", icon: Package },
   { href: "/admin/kategoriler", label: "Kategoriler", icon: FolderTree },
-  { href: "/admin/stok", label: "Stok", icon: Boxes },
-  { href: "/admin/talepler", label: "Talepler", icon: Inbox },
+  { href: "/admin/stok", label: "Stok", icon: Boxes, soon: true },
+  { href: "/admin/talepler", label: "Talepler", icon: Inbox, leadsBadge: true },
 ];
 
 /** Mobil admin üst barı + kaydırılabilir bölüm sekmeleri (sidebar mobilde gizli). */
-export function AdminMobileNav(): ReactElement {
+export function AdminMobileNav({ newLeads = 0 }: { newLeads?: number }): ReactElement {
   const raw = usePathname();
   const path = raw.replace(/^\/(tr|en)(?=\/|$)/, "") || "/";
 
@@ -36,6 +45,21 @@ export function AdminMobileNav(): ReactElement {
       </div>
       <nav className="flex gap-1.5 overflow-x-auto px-3 pb-2 [scrollbar-width:none]">
         {NAV.map((it) => {
+          if (it.soon) {
+            return (
+              <span
+                key={it.href}
+                aria-disabled="true"
+                className="flex shrink-0 cursor-not-allowed items-center gap-1.5 rounded-full bg-bg-subtle px-3 py-1.5 text-sm text-muted/70"
+              >
+                <it.icon className="size-3.5" />
+                {it.label}
+                <span className="rounded-full bg-accent/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-accent">
+                  Yakında
+                </span>
+              </span>
+            );
+          }
           const active = it.exact ? path === it.href : path.startsWith(it.href);
           return (
             <Link
@@ -48,6 +72,11 @@ export function AdminMobileNav(): ReactElement {
             >
               <it.icon className="size-3.5" />
               {it.label}
+              {it.leadsBadge && newLeads > 0 ? (
+                <span className="flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-accent px-1 text-[10px] font-semibold tabular-nums text-accent-fg">
+                  {newLeads}
+                </span>
+              ) : null}
             </Link>
           );
         })}

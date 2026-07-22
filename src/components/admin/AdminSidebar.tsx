@@ -12,17 +12,21 @@ interface NavItem {
   label: string;
   icon: LucideIcon;
   exact?: boolean;
+  /** Tıklanamaz — "Yakında" etiketiyle gösterilir. */
+  soon?: boolean;
+  /** Okunmamış talep rozetini bu öğede göster. */
+  leadsBadge?: boolean;
 }
 
 const NAV: NavItem[] = [
   { href: "/admin", label: "Panel", icon: LayoutDashboard, exact: true },
   { href: "/admin/urunler", label: "Ürünler", icon: Package },
   { href: "/admin/kategoriler", label: "Kategoriler", icon: FolderTree },
-  { href: "/admin/stok", label: "Stok Takip", icon: Boxes },
-  { href: "/admin/talepler", label: "Talepler", icon: Inbox },
+  { href: "/admin/stok", label: "Stok Takip", icon: Boxes, soon: true },
+  { href: "/admin/talepler", label: "Talepler", icon: Inbox, leadsBadge: true },
 ];
 
-export function AdminSidebar({ email }: { email: string }): ReactElement {
+export function AdminSidebar({ email, newLeads = 0 }: { email: string; newLeads?: number }): ReactElement {
   const raw = usePathname();
   const path = raw.replace(/^\/(tr|en)(?=\/|$)/, "") || "/";
 
@@ -40,6 +44,21 @@ export function AdminSidebar({ email }: { email: string }): ReactElement {
 
       <nav className="flex-1 space-y-1 p-3">
         {NAV.map((item) => {
+          if (item.soon) {
+            return (
+              <span
+                key={item.href}
+                aria-disabled="true"
+                className="flex cursor-not-allowed items-center gap-3 rounded-md px-3 py-2 text-sm text-muted/70"
+              >
+                <item.icon className="size-4" />
+                {item.label}
+                <span className="ml-auto rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent">
+                  Yakında
+                </span>
+              </span>
+            );
+          }
           const active = item.exact ? path === item.href : path.startsWith(item.href);
           return (
             <Link
@@ -52,6 +71,11 @@ export function AdminSidebar({ email }: { email: string }): ReactElement {
             >
               <item.icon className="size-4" />
               {item.label}
+              {item.leadsBadge && newLeads > 0 ? (
+                <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-[11px] font-semibold tabular-nums text-accent-fg">
+                  {newLeads}
+                </span>
+              ) : null}
             </Link>
           );
         })}

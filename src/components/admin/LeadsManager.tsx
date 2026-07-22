@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useTransition, type ReactElement } from "react";
+import { useState, useEffect, useTransition, type ReactElement } from "react";
 import { useRouter } from "next/navigation";
-import { Search, Mail, Phone, Building2, Eye, Package } from "lucide-react";
+import Image from "next/image";
+import { Search, Mail, Phone, Building2, Eye, Package, Loader2 } from "lucide-react";
 import { Select } from "./ui/Select";
 import { Dialog } from "./ui/Dialog";
 import { ConfirmDelete } from "./ui/ConfirmDelete";
 import { updateLeadStatus, deleteLead } from "@/lib/admin/actions";
+import { fetchLeadProducts, type LeadProduct } from "@/lib/admin/lead-products";
 import type { Lead } from "@/lib/supabase/types";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +28,55 @@ function fmt(iso: string): string {
 function StatusBadge({ status }: { status: string }): ReactElement {
   const st = STATUS.find((s) => s.value === status);
   return <span className={cn("whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-medium", st?.cls ?? "bg-bg-subtle text-muted")}>{st?.label ?? status}</span>;
+}
+
+/** Talepteki ürünleri görsel + ad + adet ile listeler (dialog içinde). */
+function LeadProducts({ codes }: { codes: string[] }): ReactElement {
+  const [rows, setRows] = useState<LeadProduct[] | null>(null);
+
+  useEffect(() => {
+    let alive = true;
+    fetchLeadProducts(codes).then((r) => {
+      if (alive) setRows(r);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [codes]);
+
+  if (!rows) {
+    return (
+      <div className="flex items-center justify-center gap-2 py-6 text-sm text-muted">
+        <Loader2 className="size-4 animate-spin text-accent" /> Yükleniyor…
+      </div>
+    );
+  }
+
+  const totalQty = rows.reduce((n, r) => n + r.qty, 0);
+
+  return (
+    <div>
+      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">
+        İstenen ürünler — {rows.length} model · toplam {totalQty} adet
+      </p>
+      <ul className="max-h-72 divide-y divide-line overflow-y-auto rounded-lg border border-line">
+        {rows.map((p) => (
+          <li key={p.code} className="flex items-center gap-3 p-2.5">
+            <span className="relative size-11 shrink-0 overflow-hidden rounded-md border border-line bg-bg-subtle">
+              <Image src={p.image ?? "/placeholder.svg"} alt="" fill sizes="44px" className="object-cover" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-mono text-xs text-accent">{p.code}</span>
+              <span className="block truncate text-sm text-ink">{p.name ?? "—"}</span>
+            </span>
+            <span className="shrink-0 rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold tabular-nums text-accent">
+              {p.qty} adet
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 function StatusSelect({ lead, className }: { lead: Lead; className?: string }): ReactElement {
@@ -133,8 +184,19 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
                 <td className="px-4 py-2.5">
                   <span className="rounded-sm bg-bg-subtle px-1.5 py-0.5 text-[11px] text-muted">{KIND_TR[l.kind] ?? l.kind}</span>
                 </td>
-                <td className="whitespace-nowrap px-4 py-2.5 text-xs text-muted">
-                  {l.product_codes?.length ? `${l.product_codes.length} ürün` : "—"}
+                <td className="whitespace-nowrap px-4 py-2.5 text-xs">
+                  {l.product_codes?.length ? (
+                    <button
+                      type="button"
+                      onClick={() => setDetailId(l.id)}
+                      className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2.5 py-1 font-medium text-accent transition-colors hover:bg-accent/20"
+                    >
+                      <Package className="size-3.5" />
+                      {l.product_codes.length} ürün
+                    </button>
+                  ) : (
+                    <span className="text-muted">—</span>
+                  )}
                 </td>
                 <td className="px-4 py-2.5">
                   <StatusSelect lead={l} className="w-36" />
@@ -234,18 +296,7 @@ export function LeadsManager({ leads }: { leads: Lead[] }): ReactElement {
               <div className="rounded-lg border border-line bg-bg-subtle/50 p-3 text-sm leading-relaxed text-ink-soft">{detail.message}</div>
             ) : null}
 
-            {detail.product_codes?.length ? (
-              <div>
-                <p className="mb-1.5 text-xs font-medium uppercase tracking-wide text-muted">
-                  İstenen ürünler ({detail.product_codes.length})
-                </p>
-                <div className="flex max-h-44 flex-wrap gap-1.5 overflow-y-auto">
-                  {detail.product_codes.map((c) => (
-                    <span key={c} className="rounded-sm border border-line bg-bg-subtle px-2 py-0.5 font-mono text-xs">{c}</span>
-                  ))}
-                </div>
-              </div>
-            ) : null}
+            {detail.product_codes?.length ? <LeadProducts codes={detail.product_codes} /> : null}
 
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
               <div className="flex items-center gap-2">

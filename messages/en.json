@@ -156,6 +156,8 @@
   "Quote": {
     "add": "Add to quote",
     "added": "Added to quote",
+    "qtyIncrease": "Increase quantity",
+    "qtyDecrease": "Decrease quantity",
     "cartLabel": "Quote cart",
     "request": "Request a Quote",
     "successTitle": "Your request has been received",

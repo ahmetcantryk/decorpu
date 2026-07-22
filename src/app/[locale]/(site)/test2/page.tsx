@@ -1,6 +1,10 @@
 import type { ReactElement } from "react";
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { HeroLookbook } from "@/components/site/HeroLookbook";
+
+/** Dev karşılaştırma sayfası — indexlenmez. */
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 import { HomeBody } from "@/components/site/HomeBody";
 import type { Locale } from "@/i18n/routing";
 

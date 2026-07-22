@@ -156,6 +156,8 @@
   "Quote": {
     "add": "Teklife ekle",
     "added": "Sepete eklendi",
+    "qtyIncrease": "Adedi artır",
+    "qtyDecrease": "Adedi azalt",
     "cartLabel": "Teklif sepeti",
     "request": "Teklif İste",
     "successTitle": "Talebiniz alındı",
