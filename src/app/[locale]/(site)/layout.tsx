@@ -7,6 +7,7 @@ import { FloatingContact } from "@/components/site/FloatingContact";
 import { CookieConsent } from "@/components/site/CookieConsent";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { Analytics } from "@/components/seo/Analytics";
+import { Clarity } from "@/components/seo/Clarity";
 
 /** Public site chrome (header + footer). Admin lives in the (admin) group without this. */
 export default async function SiteLayout({
@@ -37,6 +38,7 @@ export default async function SiteLayout({
       <FloatingContact />
       <CookieConsent />
       {process.env.NEXT_PUBLIC_GA4_ID ? <Analytics gaId={process.env.NEXT_PUBLIC_GA4_ID} /> : null}
+      {process.env.NEXT_PUBLIC_CLARITY_ID ? <Clarity id={process.env.NEXT_PUBLIC_CLARITY_ID} /> : null}
       {/* Ahrefs Web Analytics — çerezsiz (cookieless), kişisel veri toplamaz; onay gerektirmez. */}
       <Script
         src="https://analytics.ahrefs.com/analytics.js"
