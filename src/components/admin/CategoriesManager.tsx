@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useMemo, type ReactElement } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Plus, Pencil, Search, FolderTree, CornerDownRight } from "lucide-react";
+import { Plus, Pencil, Search, FolderTree, CornerDownRight, ImageOff } from "lucide-react";
 import { Dialog } from "./ui/Dialog";
 import { ConfirmDelete } from "./ui/ConfirmDelete";
 import { CategoryForm } from "./CategoryForm";
@@ -12,6 +13,26 @@ import type { Category } from "@/lib/supabase/types";
 import { cn } from "@/lib/utils";
 
 const iconBtn = "flex size-8 items-center justify-center rounded-md text-muted transition-colors hover:bg-bg hover:text-ink";
+
+/** Kapak görseli önizlemesi — boşsa "kapak yok" rozeti. */
+function CoverThumb({ src, size }: { src: string | null; size: "sm" | "md" }): ReactElement {
+  const box = size === "md" ? "size-9" : "size-7";
+  if (!src) {
+    return (
+      <span
+        className={cn(box, "flex shrink-0 items-center justify-center rounded border border-dashed border-line text-muted")}
+        title="Kapak görseli yok — kategorideki ilk ürünün görseli kullanılır"
+      >
+        <ImageOff className="size-3.5" />
+      </span>
+    );
+  }
+  return (
+    <span className={cn(box, "relative shrink-0 overflow-hidden rounded border border-line bg-bg")} title="Kapak görseli">
+      <Image src={src} alt="" fill sizes="36px" className="object-cover" unoptimized />
+    </span>
+  );
+}
 
 export function CategoriesManager({ categories }: { categories: Category[] }): ReactElement {
   const router = useRouter();
@@ -70,6 +91,7 @@ export function CategoriesManager({ categories }: { categories: Category[] }): R
             <div key={p.id} className="overflow-hidden rounded-lg border border-line bg-surface">
               <div className="flex items-center justify-between gap-3 border-b border-line bg-bg-subtle/60 px-4 py-3">
                 <div className="flex min-w-0 flex-wrap items-center gap-2.5">
+                  <CoverThumb src={p.image_path} size="md" />
                   <FolderTree className="size-4 shrink-0 text-accent" />
                   <span className="font-medium">{p.name_tr}</span>
                   <span className="font-mono text-xs text-muted">{p.slug}</span>
@@ -99,6 +121,7 @@ export function CategoriesManager({ categories }: { categories: Category[] }): R
                     <li key={s.id} className="flex items-center justify-between gap-3 py-2.5 pl-10 pr-4 hover:bg-bg-subtle">
                       <div className="flex min-w-0 items-center gap-2">
                         <CornerDownRight className="size-3.5 shrink-0 text-muted" />
+                        <CoverThumb src={s.image_path} size="sm" />
                         <span className="text-sm text-ink-soft">{s.name_tr}</span>
                         <span className="font-mono text-xs text-muted">{s.slug}</span>
                       </div>

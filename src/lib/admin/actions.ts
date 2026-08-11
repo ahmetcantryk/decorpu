@@ -2,10 +2,34 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import { isAllowedImageUrl } from "@/lib/admin/image-url";
 
 export type ActionResult = { ok: true } | { ok: false; error: string };
 
 const NONE = "none";
+
+/** Ürün adresi koddan üretilir (`/urun/<kod>`) — URL'i kıracak karakterler kabul edilmez. */
+const CODE_PATTERN = /^[A-Za-z0-9][A-Za-z0-9._-]*$/;
+/** Kategori adresi slug'dan üretilir (`/kategoriler/<slug>`). */
+const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+/**
+ * Herkese açık sayfaların ISR önbelleğini tazeler.
+ * Anasayfa ve /kategoriler `revalidate = 3600` ile önbelleklendiği için,
+ * bu çağrı olmadan panelden yapılan değişiklik canlıda 1 saate kadar gecikir.
+ *
+ * DİKKAT: Desenler route group'u (`(site)`) İÇERMEK ZORUNDA — Next etiketleri
+ * app dizin yoluna göre üretiyor. `/[locale]/kategoriler` yazılırsa sessizce
+ * hiçbir şeyi tazelemez (yerelde ölçüldü).
+ */
+function revalidatePublic(): void {
+  revalidatePath("/[locale]/(site)", "page");
+  revalidatePath("/[locale]/(site)/kategoriler", "page");
+  revalidatePath("/[locale]/(site)/kategoriler/[slug]", "page");
+  revalidatePath("/[locale]/(site)/urun/[code]", "page");
+  revalidatePath("/[locale]/(site)/ara", "page");
+  revalidatePath("/sitemap.xml");
+}
 
 function num(v: FormDataEntryValue | null): number | null {
   if (v === null || v === "") return null;
@@ -28,6 +52,17 @@ export async function saveProduct(id: string | null, formData: FormData): Promis
     const code = str(formData.get("code"));
     const name_tr = str(formData.get("name_tr"));
     if (!code || !name_tr) return { ok: false, error: "Kod ve TR ad zorunlu." };
+    if (!CODE_PATTERN.test(code)) {
+      return {
+        ok: false,
+        error: "Ürün kodu ürün adresinde kullanılıyor: boşluk ve Türkçe karakter içeremez (ör. DP-1001).",
+      };
+    }
+
+    const imageUrl = str(formData.get("image_url"));
+    if (imageUrl && !isAllowedImageUrl(imageUrl)) {
+      return { ok: false, error: "Görsel adresi geçersiz. Dosya yükleyin ya da site içi bir yol girin (/catalog/…)." };
+    }
 
     const values = {
       code,
@@ -62,7 +97,6 @@ export async function saveProduct(id: string | null, formData: FormData): Promis
       productId = data.id;
     }
 
-    const imageUrl = str(formData.get("image_url"));
     if (imageUrl && productId) {
       await supabase.from("product_images").delete().eq("product_id", productId).eq("is_primary", true);
       await supabase.from("product_images").insert({ product_id: productId, url: imageUrl, is_primary: true });
@@ -70,6 +104,7 @@ export async function saveProduct(id: string | null, formData: FormData): Promis
 
     revalidatePath("/admin/urunler");
     revalidatePath("/admin");
+    revalidatePublic();
     return { ok: true };
   } catch (e) {
     return fail(e);
@@ -83,6 +118,7 @@ export async function deleteProduct(id: string): Promise<ActionResult> {
     if (error) return { ok: false, error: error.message };
     revalidatePath("/admin/urunler");
     revalidatePath("/admin");
+    revalidatePublic();
     return { ok: true };
   } catch (e) {
     return fail(e);
@@ -94,6 +130,17 @@ export async function saveCategory(id: string | null, formData: FormData): Promi
     const slug = str(formData.get("slug"));
     const name_tr = str(formData.get("name_tr"));
     if (!slug || !name_tr) return { ok: false, error: "Slug ve ad zorunlu." };
+    if (!SLUG_PATTERN.test(slug)) {
+      return {
+        ok: false,
+        error: "Slug kategori adresinde kullanılıyor: sadece küçük harf, rakam ve tire (ör. sutun-baslik).",
+      };
+    }
+
+    const image_path = str(formData.get("image_path"));
+    if (image_path && !isAllowedImageUrl(image_path)) {
+      return { ok: false, error: "Kapak görseli adresi geçersiz. Dosya yükleyin ya da site içi bir yol girin (/catalog/…)." };
+    }
 
     const values = {
       slug,
@@ -101,6 +148,7 @@ export async function saveCategory(id: string | null, formData: FormData): Promi
       name_en: str(formData.get("name_en")),
       parent_id: str(formData.get("parent_id")),
       sort_order: num(formData.get("sort_order")) ?? 0,
+      image_path,
     };
 
     const supabase = await createClient();
@@ -113,6 +161,7 @@ export async function saveCategory(id: string | null, formData: FormData): Promi
     }
     revalidatePath("/admin/kategoriler");
     revalidatePath("/admin");
+    revalidatePublic();
     return { ok: true };
   } catch (e) {
     return fail(e);
@@ -126,6 +175,7 @@ export async function deleteCategory(id: string): Promise<ActionResult> {
     if (error) return { ok: false, error: error.message };
     revalidatePath("/admin/kategoriler");
     revalidatePath("/admin");
+    revalidatePublic();
     return { ok: true };
   } catch (e) {
     return fail(e);

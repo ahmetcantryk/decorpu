@@ -58,7 +58,7 @@ export default async function CategoryDetailPage({
     for (const node of tree) {
       if (node.id === catId) return node.cover;
       const kid = node.children.find((c) => c.id === catId);
-      if (kid) return node.cover;
+      if (kid) return kid.image_path ?? node.cover;
     }
     return null;
   };

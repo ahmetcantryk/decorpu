@@ -1,5 +1,4 @@
 import { createPublicClient } from "@/lib/supabase/public";
-import { categoryCover } from "@/lib/category-covers";
 
 export interface CatalogCategory {
   id: string;
@@ -9,6 +8,8 @@ export interface CatalogCategory {
   description: string | null;
   parent_id: string | null;
   sort_order: number;
+  /** Panelden yönetilen kapak görseli; boşsa kategorideki ilk ürünün görseli kullanılır. */
+  image_path: string | null;
 }
 
 export interface CatalogProduct {
@@ -43,7 +44,7 @@ export async function getAllCategories(): Promise<CatalogCategory[]> {
   const supabase = createPublicClient();
   const { data } = await supabase
     .from("categories")
-    .select("id,slug,name_tr,name_en,description,parent_id,sort_order")
+    .select("id,slug,name_tr,name_en,description,parent_id,sort_order,image_path")
     .eq("is_active", true)
     .order("sort_order");
   return data ?? [];
@@ -66,7 +67,7 @@ export async function getCategoryTree(): Promise<CategoryNode[]> {
   const [{ data: cats }, { data: prods }] = await Promise.all([
     supabase
       .from("categories")
-      .select("id,slug,name_tr,name_en,description,parent_id,sort_order")
+      .select("id,slug,name_tr,name_en,description,parent_id,sort_order,image_path")
       .eq("is_active", true)
       .order("sort_order"),
     supabase
@@ -98,8 +99,9 @@ export async function getCategoryTree(): Promise<CategoryNode[]> {
     const kids = childrenOf(parent.id);
     const ids = [parent.id, ...kids.map((k) => k.id)];
     const productCount = ids.reduce((n, id) => n + (countByCat.get(id) ?? 0), 0);
-    const dbCover = ids.map((id) => imagesByCat.get(id)?.[0]).find(Boolean) ?? null;
-    const cover = categoryCover(parent.slug, dbCover);
+    // Öncelik: panelden seçilen kapak > kategorideki ilk ürünün görseli.
+    const productCover = ids.map((id) => imagesByCat.get(id)?.[0]).find(Boolean) ?? null;
+    const cover = parent.image_path ?? productCover;
     return { ...parent, children: kids, productCount, cover };
   });
 

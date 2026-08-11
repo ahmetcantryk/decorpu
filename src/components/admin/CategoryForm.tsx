@@ -3,6 +3,7 @@
 import { useState, useTransition, type ReactElement, type FormEvent } from "react";
 import { saveCategory } from "@/lib/admin/actions";
 import { Field, Input } from "./form";
+import { ImageField } from "./ImageField";
 import { Select } from "./ui/Select";
 import { Button } from "@/components/ui/Button";
 import type { Category } from "@/lib/supabase/types";
@@ -23,6 +24,7 @@ export function CategoryForm({ category, parents, defaultParentId, onDone }: Cat
   const c = category ?? null;
   const [pending, start] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const [imagePath, setImagePath] = useState(c?.image_path ?? "");
 
   const parentOptions = [
     { value: "none", label: "— Ana kategori —" },
@@ -47,8 +49,15 @@ export function CategoryForm({ category, parents, defaultParentId, onDone }: Cat
         <Input name="name_tr" defaultValue={c?.name_tr ?? ""} required placeholder="Kartonpiyer" />
       </Field>
       <div className="grid grid-cols-2 gap-4">
-        <Field label="Slug *" hint="URL'de görünür">
-          <Input name="slug" defaultValue={c?.slug ?? ""} required placeholder="kartonpiyer" />
+        <Field label="Slug *" hint="URL'de görünür: küçük harf, rakam ve tire">
+          <Input
+            name="slug"
+            defaultValue={c?.slug ?? ""}
+            required
+            placeholder="kartonpiyer"
+            pattern="[a-z0-9]+(-[a-z0-9]+)*"
+            title="Sadece küçük harf, rakam ve tire kullanın (ör. kartonpiyer, sutun-baslik)"
+          />
         </Field>
         <Field label="Ad (EN)">
           <Input name="name_en" defaultValue={c?.name_en ?? ""} placeholder="Cornice" />
@@ -62,6 +71,15 @@ export function CategoryForm({ category, parents, defaultParentId, onDone }: Cat
           <Input name="sort_order" type="number" defaultValue={c?.sort_order ?? 0} />
         </Field>
       </div>
+      <ImageField
+        name="image_path"
+        label="Kapak görseli"
+        hint="Anasayfa ve kategori listesindeki kart görseli. Boş bırakılırsa kategorideki ilk ürünün görseli kullanılır."
+        value={imagePath}
+        onChange={setImagePath}
+        kind="cover"
+      />
+
       {error ? <p className="text-sm text-accent">{error}</p> : null}
       <div className="flex items-center gap-3">
         <Button type="submit" disabled={pending}>
