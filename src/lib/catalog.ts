@@ -1,4 +1,5 @@
 import { createPublicClient } from "@/lib/supabase/public";
+import { categoryCover } from "@/lib/category-covers";
 
 export interface CatalogCategory {
   id: string;
@@ -97,7 +98,8 @@ export async function getCategoryTree(): Promise<CategoryNode[]> {
     const kids = childrenOf(parent.id);
     const ids = [parent.id, ...kids.map((k) => k.id)];
     const productCount = ids.reduce((n, id) => n + (countByCat.get(id) ?? 0), 0);
-    const cover = ids.map((id) => imagesByCat.get(id)?.[0]).find(Boolean) ?? null;
+    const dbCover = ids.map((id) => imagesByCat.get(id)?.[0]).find(Boolean) ?? null;
+    const cover = categoryCover(parent.slug, dbCover);
     return { ...parent, children: kids, productCount, cover };
   });
 
