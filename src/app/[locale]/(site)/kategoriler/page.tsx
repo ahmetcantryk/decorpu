@@ -43,14 +43,14 @@ export default async function CategoriesPage({
         {tree.map((cat) => (
           <li key={cat.id}>
             <Link href={`/kategoriler/${cat.slug}`} className="group block overflow-hidden rounded-lg border border-line bg-surface transition-colors hover:border-accent/60">
-              {/* görsel tam ve temiz — overlay/gradient yok */}
+              {/* görsel tam ve temiz — overlay/gradient yok, kırpma yok (object-contain) */}
               <div className="relative aspect-[4/3] overflow-hidden bg-bg-subtle">
                 <Image
                   src={cat.cover ?? "/placeholder.svg"}
                   alt={catName(cat)}
                   fill
                   sizes="(max-width:640px) 50vw, 25vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               {/* isim + sayılar görselin ALTINDA — turuncu ayraç */}

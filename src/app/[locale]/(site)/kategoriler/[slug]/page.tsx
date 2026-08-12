@@ -111,7 +111,7 @@ export default async function CategoryDetailPage({
                 <li key={sub.id}>
                   <Link href={`/kategoriler/${sub.slug}`} className="group flex items-center gap-3 overflow-hidden rounded-lg border border-line bg-surface p-2.5 transition-colors hover:border-accent/50">
                     <span className="relative size-12 shrink-0 overflow-hidden rounded-md bg-bg-subtle">
-                      <Image src={cover ?? "/placeholder.svg"} alt="" fill sizes="48px" className="object-cover" />
+                      <Image src={cover ?? "/placeholder.svg"} alt="" fill sizes="48px" className="object-contain" />
                     </span>
                     <span className="text-sm font-medium text-ink transition-colors group-hover:text-accent">{catName(sub)}</span>
                   </Link>
