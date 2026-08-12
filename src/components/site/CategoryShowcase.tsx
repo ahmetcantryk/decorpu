@@ -41,14 +41,14 @@ export async function CategoryShowcase(): Promise<ReactElement> {
             return (
               <li key={cat.slug}>
                 <Link href={`/kategoriler/${cat.slug}`} className="group block overflow-hidden rounded-md border border-line bg-surface transition-colors hover:border-accent/60">
-                  {/* görsel tam ve temiz — overlay/gradient yok, kırpma yok (object-contain) */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-bg-subtle">
+                  {/* görsel kutuyu tam doldurur: kaynaklar kare, kutu da kare — ne boşluk ne kırpma */}
+                  <div className="relative aspect-square overflow-hidden bg-bg-subtle">
                     <Image
                       src={img}
                       alt={categoryName(cat, locale)}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      className="object-contain"
+                      className="object-cover"
                     />
                   </div>
                   {/* isim görselin ALTINDA — turuncu ayraç + turuncu ok */}
