@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { Analytics } from "@/components/seo/Analytics";
 import { Clarity } from "@/components/seo/Clarity";
 import { WebMcpTools } from "@/components/seo/WebMcpTools";
+import { getNavCategories } from "@/lib/nav-categories";
 
 /** Public site chrome (header + footer). Admin lives in the (admin) group without this. */
 export default async function SiteLayout({
@@ -20,6 +21,7 @@ export default async function SiteLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const tCommon = await getTranslations("Common");
+  const navCategories = await getNavCategories();
 
   return (
     <>
@@ -30,11 +32,11 @@ export default async function SiteLayout({
       >
         {tCommon("skipToContent")}
       </a>
-      <Header />
+      <Header categories={navCategories} />
       <main id="main" className="flex-1">
         {children}
       </main>
-      <Footer />
+      <Footer categories={navCategories} />
       <FloatingContact />
       <CookieConsent />
       {process.env.NEXT_PUBLIC_GA4_ID ? <Analytics gaId={process.env.NEXT_PUBLIC_GA4_ID} /> : null}

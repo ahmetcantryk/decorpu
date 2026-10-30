@@ -5,7 +5,7 @@ import { ChevronDown, ArrowRight, FileText, PencilRuler, Download } from "lucide
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CategoryGlyph } from "@/components/illustrations/CategoryGlyph";
-import { CATEGORIES, categoryName } from "@/lib/taxonomy";
+import { categoryName, type Category } from "@/lib/taxonomy";
 import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
  * gizlenmez, her şey tek tık uzakta. Panel `absolute top-full` ile header'ın
  * TAM altına oturur (utility bar yüksekliğinden bağımsız → header'a binmez).
  */
-export function MegaMenu(): ReactElement {
+export function MegaMenu({ categories }: { categories: readonly Category[] }): ReactElement {
   const t = useTranslations("Nav");
   const tDl = useTranslations("Downloads");
   const locale = useLocale() as Locale;
@@ -79,7 +79,7 @@ export function MegaMenu(): ReactElement {
             {/* Tüm kategoriler — sütun akışı (hepsi görünür) */}
             <div className="max-h-[72vh] overflow-y-auto px-6 py-6">
               <div className="gap-x-8 [column-fill:balance] sm:columns-2 lg:columns-3 xl:columns-4">
-                {CATEGORIES.map((cat) => (
+                {categories.map((cat) => (
                   <div key={cat.slug} className="mb-5 break-inside-avoid">
                     <Link
                       href={`/kategoriler/${cat.slug}`}

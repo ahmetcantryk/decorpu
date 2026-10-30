@@ -5,16 +5,16 @@ import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import { Wordmark } from "./Wordmark";
 import { CookieSettingsButton } from "./CookieSettingsButton";
-import { CATEGORIES, categoryName } from "@/lib/taxonomy";
+import { categoryName, type Category } from "@/lib/taxonomy";
 import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 
 /** Site footer with contact + map. */
-export function Footer(): ReactElement {
+export function Footer({ categories }: { categories: readonly Category[] }): ReactElement {
   const t = useTranslations();
   const locale = useLocale() as Locale;
   const year = new Date().getFullYear();
-  const topCategories = CATEGORIES.slice(0, 6);
+  const topCategories = categories.slice(0, 6);
 
   const companyLinks: { label: string; href: string }[] = [
     { label: t("Nav.categories"), href: "/kategoriler" },

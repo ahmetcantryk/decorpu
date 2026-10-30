@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Phone, ArrowRight, FileDown, PackageCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -14,7 +14,7 @@ import { buttonVariants } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { getCategoryBySlug, getProductsInCategory, getCategoryTree } from "@/lib/catalog";
+import { getCategoryBySlug, getProductsInCategory, getCategoryTree, resolveRenamedCategorySlug } from "@/lib/catalog";
 import { localizedAlternates, clampDescription, clampTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
@@ -49,7 +49,12 @@ export default async function CategoryDetailPage({
     locale === "en" ? c.name_en ?? c.name_tr : c.name_tr;
 
   const found = await getCategoryBySlug(slug);
-  if (!found) notFound();
+  if (!found) {
+    // panelde slug değiştiyse eski adres yenisine kalıcı yönlenir
+    const renamed = await resolveRenamedCategorySlug(slug);
+    if (renamed) permanentRedirect(`${locale === "en" ? "/en" : ""}/kategoriler/${renamed}`);
+    notFound();
+  }
   const { category, parent, children } = found;
 
   // subcategory covers (from tree) for image cards

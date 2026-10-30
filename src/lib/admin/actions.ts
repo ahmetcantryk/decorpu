@@ -23,6 +23,8 @@ const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
  * hiçbir şeyi tazelemez (yerelde ölçüldü).
  */
 function revalidatePublic(): void {
+  // layout: menü/footer kategorileri tüm public sayfalarda tazelenir
+  revalidatePath("/[locale]/(site)", "layout");
   revalidatePath("/[locale]/(site)", "page");
   revalidatePath("/[locale]/(site)/kategoriler", "page");
   revalidatePath("/[locale]/(site)/kategoriler/[slug]", "page");

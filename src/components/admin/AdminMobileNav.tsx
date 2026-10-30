@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Package, FolderTree, Boxes, Inbox, LogOut, type LucideIcon } from "lucide-react";
+import { LayoutDashboard, Package, FolderTree, Wrench, Images, Boxes, Inbox, LogOut, type LucideIcon } from "lucide-react";
 import type { ReactElement } from "react";
 import { signOut } from "@/lib/admin/auth";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,8 @@ const NAV: NavItem[] = [
   { href: "/admin", label: "Panel", icon: LayoutDashboard, exact: true },
   { href: "/admin/urunler", label: "Ürünler", icon: Package },
   { href: "/admin/kategoriler", label: "Kategoriler", icon: FolderTree },
+  { href: "/admin/hizmetler", label: "Hizmetler", icon: Wrench },
+  { href: "/admin/calismalar", label: "Çalışmalar", icon: Images },
   { href: "/admin/stok", label: "Stok", icon: Boxes, soon: true },
 ];
 

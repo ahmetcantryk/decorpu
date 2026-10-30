@@ -13,6 +13,20 @@ export type Database = {
   }
   public: {
     Tables: {
+      category_slug_history: {
+        Row: { old_slug: string; category_id: string; created_at: string }
+        Insert: { old_slug: string; category_id: string; created_at?: string }
+        Update: { old_slug?: string; category_id?: string; created_at?: string }
+        Relationships: [
+          {
+            foreignKeyName: "category_slug_history_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       categories: {
         Row: {
           created_at: string

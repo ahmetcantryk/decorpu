@@ -39,6 +39,18 @@ function primaryImage(imgs?: { url: string; is_primary: boolean }[] | null): str
   return imgs.find((i) => i.is_primary)?.url ?? imgs[0].url;
 }
 
+/** Panelde slug'ı değişmiş bir kategorinin güncel slug'ı (eski adres → yeni adres). */
+export async function resolveRenamedCategorySlug(oldSlug: string): Promise<string | null> {
+  const supabase = createPublicClient();
+  const { data } = await supabase
+    .from("category_slug_history")
+    .select("categories(slug)")
+    .eq("old_slug", oldSlug)
+    .maybeSingle();
+  const cat = data?.categories as { slug: string } | { slug: string }[] | null | undefined;
+  return (Array.isArray(cat) ? cat[0]?.slug : cat?.slug) ?? null;
+}
+
 /** All categories (flat). */
 export async function getAllCategories(): Promise<CatalogCategory[]> {
   const supabase = createPublicClient();

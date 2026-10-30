@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 interface ProductGalleryProps {
   images: string[];
   alt: string;
-  /** Teknik çizim görseli — beyaz zeminde, kırpılmadan (contain) gösterilir. */
+  /** Teknik çizim görseli — galerinin sonuna eklenir, ürün görseli gibi kutuyu doldurur. */
   drawing?: string | null;
 }
 
@@ -19,7 +19,6 @@ export function ProductGallery({ images, alt, drawing }: ProductGalleryProps): R
   const [lightbox, setLightbox] = useState(false);
   const list = drawing ? [...images, drawing] : images;
   const n = list.length;
-  const isDrawing = (src: string): boolean => src === drawing;
 
   const go = useCallback((dir: number) => setActive((i) => (i + dir + n) % n), [n]);
 
@@ -55,7 +54,7 @@ export function ProductGallery({ images, alt, drawing }: ProductGalleryProps): R
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className={isDrawing(list[active]) ? "bg-white object-contain p-4" : "object-cover"}
+              className="object-cover"
             />
             <span className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
               <Expand className="size-4" />
@@ -78,7 +77,7 @@ export function ProductGallery({ images, alt, drawing }: ProductGalleryProps): R
                 i === active ? "border-accent" : "border-line hover:border-ink",
               )}
             >
-              <Image src={src} alt="" fill sizes="64px" className={isDrawing(src) ? "bg-white object-contain p-1" : "object-cover"} />
+              <Image src={src} alt="" fill sizes="64px" className="object-cover" />
             </button>
           ))}
         </div>
@@ -103,7 +102,7 @@ export function ProductGallery({ images, alt, drawing }: ProductGalleryProps): R
           </button>
 
           <div onClick={(e) => e.stopPropagation()} className="relative flex h-full w-full max-w-5xl items-center justify-center">
-            <div className={cn("relative h-full max-h-[80vh] w-full", isDrawing(list[active]) && "rounded-xl bg-white p-4")}>
+            <div className="relative h-full max-h-[80vh] w-full">
               <Image src={list[active]} alt={alt} fill sizes="100vw" className="object-contain" />
             </div>
 
@@ -145,7 +144,7 @@ export function ProductGallery({ images, alt, drawing }: ProductGalleryProps): R
                     i === active ? "border-white opacity-100" : "border-white/30 opacity-60 hover:opacity-100",
                   )}
                 >
-                  <Image src={src} alt="" fill sizes="56px" className={isDrawing(src) ? "bg-white object-contain p-1" : "object-cover"} />
+                  <Image src={src} alt="" fill sizes="56px" className="object-cover" />
                 </button>
               ))}
             </div>

@@ -8,14 +8,14 @@ import { CodeSearch } from "./CodeSearch";
 import { Wordmark } from "./Wordmark";
 import { Link } from "@/i18n/navigation";
 import { CategoryGlyph } from "@/components/illustrations/CategoryGlyph";
-import { CATEGORIES, categoryName } from "@/lib/taxonomy";
+import { categoryName, type Category } from "@/lib/taxonomy";
 import { buttonVariants } from "@/components/ui/Button";
 import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 /** Mobil navigasyon — tam ekran drawer: arama, sayfa linkleri, akordeon kategoriler, iletişim, CTA. */
-export function MobileMenu(): ReactElement {
+export function MobileMenu({ categories }: { categories: readonly Category[] }): ReactElement {
   const t = useTranslations("Nav");
   const tDl = useTranslations("Downloads");
   const tWorks = useTranslations("Works");
@@ -103,7 +103,7 @@ export function MobileMenu(): ReactElement {
             {/* kategoriler — akordeon */}
             <p className="mb-1 mt-6 font-mono text-xs uppercase tracking-wide text-muted">{t("categories")}</p>
             <ul className="border-y border-line">
-              {CATEGORIES.map((cat) => {
+              {categories.map((cat) => {
                 const isOpen = expanded === cat.slug;
                 const hasChildren = Boolean(cat.children?.length);
                 return (

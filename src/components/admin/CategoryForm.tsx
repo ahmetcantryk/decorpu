@@ -49,7 +49,7 @@ export function CategoryForm({ category, parents, defaultParentId, onDone }: Cat
         <Input name="name_tr" defaultValue={c?.name_tr ?? ""} required placeholder="Kartonpiyer" />
       </Field>
       <div className="grid grid-cols-2 gap-4">
-        <Field label="Slug *" hint="URL'de görünür: küçük harf, rakam ve tire">
+        <Field label="Slug *" hint="URL'de görünür: küçük harf, rakam ve tire. Değiştirirseniz eski adres otomatik yeni adrese yönlenir.">
           <Input
             name="slug"
             defaultValue={c?.slug ?? ""}
@@ -79,6 +79,14 @@ export function CategoryForm({ category, parents, defaultParentId, onDone }: Cat
         onChange={setImagePath}
         kind="cover"
       />
+      <p className="rounded-md border border-line bg-bg-subtle px-3 py-2 text-xs text-muted">
+        ℹ️ Öneri: kare görsel yükleyin (ör. 1200×1200). Kartlar kare olduğu için farklı oranlı görsellerin
+        kenarları kırpılabilir. Yükleme otomatik WebP formatına çevrilir.
+      </p>
+      <p className="rounded-md border border-line bg-bg-subtle px-3 py-2 text-xs text-muted">
+        ℹ️ Alt kategori açarken &quot;Üst kategori&quot;yi seçin (ör. Mertek → üst kategori: Kiriş). Ana kategori için
+        boş bırakın; yeni ana kategoriler menüde ve anasayfada otomatik görünür.
+      </p>
 
       {error ? <p className="text-sm text-accent">{error}</p> : null}
       <div className="flex items-center gap-3">

@@ -13,9 +13,10 @@ import { QuoteCartButton } from "./QuoteCartButton";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import type { Category } from "@/lib/taxonomy";
 
 /** Sticky site header — mega menu, code search, phone, theme toggle, prominent CTA. */
-export function Header(): ReactElement {
+export function Header({ categories }: { categories: readonly Category[] }): ReactElement {
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
   const tDl = useTranslations("Downloads");
@@ -73,7 +74,7 @@ export function Header(): ReactElement {
         <Wordmark />
 
         <nav className="hidden items-center gap-7 md:flex">
-          <MegaMenu />
+          <MegaMenu categories={categories} />
           <Link href="/kategoriler" className="text-sm text-ink-soft transition-colors hover:text-accent">
             {t("catalog")}
           </Link>
@@ -111,7 +112,7 @@ export function Header(): ReactElement {
         <div className="ml-auto flex items-center gap-1 md:hidden">
           <ThemeToggle />
           <QuoteCartButton />
-          <MobileMenu />
+          <MobileMenu categories={categories} />
         </div>
       </Container>
     </header>

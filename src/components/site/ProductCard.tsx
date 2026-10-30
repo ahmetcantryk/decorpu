@@ -35,7 +35,7 @@ export function ProductCard({ product }: { product: CatalogProduct }): ReactElem
             alt={t("drawingAlt", { name: product.name_tr })}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="pointer-events-none absolute inset-0 bg-white object-contain p-2 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+            className="pointer-events-none absolute inset-0 object-cover opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
           />
         ) : null}
         <span className="absolute left-2.5 top-2.5 z-10 rounded-sm bg-bg/90 px-2 py-0.5 font-mono text-[11px] text-ink shadow-soft">
