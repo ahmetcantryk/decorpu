@@ -4,7 +4,6 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
-import { CATEGORIES, categoryName } from "@/lib/taxonomy";
 import { getCategoryTree } from "@/lib/catalog";
 import type { Locale } from "@/i18n/routing";
 
@@ -15,12 +14,10 @@ export async function CategoryShowcase(): Promise<ReactElement> {
   const t = await getTranslations("Home");
   const locale = (await getLocale()) as Locale;
   const tree = await getCategoryTree();
-  const coverBySlug = new Map(tree.map((n) => [n.slug, n.cover]));
-
-  // Gerçek kapak görseli olan kategoriler başa — placeholder'lı olanlar sona (grup içi sıra korunur).
-  const withCover = CATEGORIES.filter((c) => coverBySlug.get(c.slug));
-  const withoutCover = CATEGORIES.filter((c) => !coverBySlug.get(c.slug));
-  const ordered = [...withCover, ...withoutCover];
+  // Panelden yönetilen DB ağacı (kapaklılar zaten başta) — statik taksonomi değil.
+  const ordered = tree;
+  const nameOf = (c: { name_tr: string; name_en: string | null }): string =>
+    locale === "en" ? c.name_en ?? c.name_tr : c.name_tr;
 
   return (
     <section id="kategoriler" className="scroll-mt-20 py-20">
@@ -37,7 +34,7 @@ export async function CategoryShowcase(): Promise<ReactElement> {
 
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {ordered.map((cat) => {
-            const img = coverBySlug.get(cat.slug) || PLACEHOLDER;
+            const img = cat.cover || PLACEHOLDER;
             return (
               <li key={cat.slug}>
                 <Link href={`/kategoriler/${cat.slug}`} className="group block overflow-hidden rounded-md border border-line bg-surface transition-colors hover:border-accent/60">
@@ -45,7 +42,7 @@ export async function CategoryShowcase(): Promise<ReactElement> {
                   <div className="relative aspect-square overflow-hidden bg-bg-subtle">
                     <Image
                       src={img}
-                      alt={categoryName(cat, locale)}
+                      alt={nameOf(cat)}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover"
@@ -54,7 +51,7 @@ export async function CategoryShowcase(): Promise<ReactElement> {
                   {/* isim görselin ALTINDA — turuncu ayraç + turuncu ok */}
                   <div className="flex items-center justify-between gap-2 border-t-2 border-accent px-3.5 py-3">
                     <span className="min-w-0 truncate font-display text-base font-medium text-ink transition-colors group-hover:text-accent sm:text-lg">
-                      {categoryName(cat, locale)}
+                      {nameOf(cat)}
                     </span>
                     <ArrowUpRight className="size-4 shrink-0 text-accent" />
                   </div>
