@@ -15,6 +15,7 @@ function revalidateProjects(): void {
   revalidatePath("/[locale]/(site)/calismalarimiz", "page");
   revalidatePath("/[locale]/(site)/calismalarimiz/[slug]", "page");
   revalidatePath("/sitemap.xml");
+  revalidatePath("/llms.txt");
 }
 
 export async function saveProject(id: string | null, formData: FormData): Promise<ActionResult> {

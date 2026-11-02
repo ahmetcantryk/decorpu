@@ -1,6 +1,6 @@
 /** FormData okuma yardımcıları — hizmet/proje server action'larında ortak. */
 
-export const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+export { SLUG_PATTERN } from "@/lib/url-patterns";
 
 export function readNum(v: FormDataEntryValue | null): number | null {
   if (v === null || v === "") return null;

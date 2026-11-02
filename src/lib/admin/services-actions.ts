@@ -13,6 +13,7 @@ function revalidateServices(): void {
   revalidatePath("/[locale]/(site)/hizmetler", "page");
   revalidatePath("/[locale]/(site)/hizmetler/[slug]", "page");
   revalidatePath("/sitemap.xml");
+  revalidatePath("/llms.txt");
 }
 
 export async function saveService(id: string | null, formData: FormData): Promise<ActionResult> {

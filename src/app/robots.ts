@@ -11,8 +11,21 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      // Arama, yönetim, kimlik ve test sayfaları taranmasın.
-      disallow: ["/admin", "/en/admin", "/giris", "/en/giris", "/ara", "/en/ara"],
+      // Arama, yönetim, kimlik, teklif sepeti, API ve parametreli adresler taranmasın:
+      // bunlar kanonik içerik değildir ve her biri sunucuda ayrı render + ISR girdisi üretir.
+      disallow: [
+        "/admin",
+        "/en/admin",
+        "/giris",
+        "/en/giris",
+        "/ara",
+        "/en/ara",
+        "/teklif",
+        "/en/teklif",
+        "/api/",
+        "/_next/",
+        "/*?",
+      ],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

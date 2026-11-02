@@ -11,7 +11,8 @@ import { getServices } from "@/lib/services";
 import { localizedAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
-export const revalidate = 3600;
+// 1 gün ISR (Next literal ister; bkz. lib/isr.ts). Panel kaydı revalidatePath ile anında tazeler.
+export const revalidate = 86400;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;

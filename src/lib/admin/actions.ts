@@ -3,20 +3,18 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { isAllowedImageUrl } from "@/lib/admin/image-url";
+import { PRODUCT_CODE_PATTERN as CODE_PATTERN, SLUG_PATTERN } from "@/lib/url-patterns";
 
 export type ActionResult = { ok: true } | { ok: false; error: string };
 
 const NONE = "none";
 
-/** Ürün adresi koddan üretilir (`/urun/<kod>`) — URL'i kıracak karakterler kabul edilmez. */
-const CODE_PATTERN = /^[A-Za-z0-9][A-Za-z0-9._-]*$/;
-/** Kategori adresi slug'dan üretilir (`/kategoriler/<slug>`). */
-const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 /**
  * Herkese açık sayfaların ISR önbelleğini tazeler.
- * Anasayfa ve /kategoriler `revalidate = 3600` ile önbelleklendiği için,
- * bu çağrı olmadan panelden yapılan değişiklik canlıda 1 saate kadar gecikir.
+ * Herkese açık sayfalar 1 gün ISR ile önbelleklendiği için (bkz. lib/isr.ts),
+ * bu çağrı olmadan panelden yapılan değişiklik canlıda 1 güne kadar gecikir.
+ * Tazeleme tembeldir: sayfa yalnız bir sonraki ziyarette yeniden üretilir.
  *
  * DİKKAT: Desenler route group'u (`(site)`) İÇERMEK ZORUNDA — Next etiketleri
  * app dizin yoluna göre üretiyor. `/[locale]/kategoriler` yazılırsa sessizce
@@ -29,8 +27,10 @@ function revalidatePublic(): void {
   revalidatePath("/[locale]/(site)/kategoriler", "page");
   revalidatePath("/[locale]/(site)/kategoriler/[slug]", "page");
   revalidatePath("/[locale]/(site)/urun/[code]", "page");
-  revalidatePath("/[locale]/(site)/ara", "page");
+  revalidatePath("/[locale]/(site)/calismalarimiz/[slug]", "page");
+  revalidatePath("/[locale]/(site)/hizmetler/[slug]", "page");
   revalidatePath("/sitemap.xml");
+  revalidatePath("/llms.txt");
 }
 
 function num(v: FormDataEntryValue | null): number | null {
