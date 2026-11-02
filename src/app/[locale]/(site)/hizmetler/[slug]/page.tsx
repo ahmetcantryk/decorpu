@@ -11,15 +11,25 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/Button";
 import { getServiceBySlug, getServices } from "@/lib/services";
+import { withLocales } from "@/lib/isr";
+import { isValidSlug } from "@/lib/url-patterns";
 import { localizedAlternates, clampDescription, clampTitle } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-export const revalidate = 3600;
+// 1 gün ISR (Next literal ister; bkz. lib/isr.ts). Panel kaydı revalidatePath ile anında tazeler.
+export const revalidate = 86400;
+export const dynamicParams = true;
+
+export async function generateStaticParams(): Promise<{ locale: Locale; slug: string }[]> {
+  const services = await getServices();
+  return withLocales(services.map((s) => ({ slug: s.slug })));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
+  if (!isValidSlug(slug)) return {};
   const s = await getServiceBySlug(slug);
   if (!s) {
     const t = await getTranslations({ locale });
@@ -42,6 +52,7 @@ export default async function ServiceDetailPage({
   params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<ReactElement> {
   const { locale, slug } = await params;
+  if (!isValidSlug(slug)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const s = await getServiceBySlug(slug);

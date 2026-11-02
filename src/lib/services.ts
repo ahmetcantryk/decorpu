@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { createPublicClient } from "@/lib/supabase/public";
 import type { CatalogProduct } from "@/lib/catalog";
 
@@ -24,7 +25,7 @@ function primaryImage(imgs?: { url: string; is_primary: boolean }[] | null): str
   return imgs.find((i) => i.is_primary)?.url ?? imgs[0].url;
 }
 
-export async function getServices(): Promise<Service[]> {
+export const getServices = cache(async (): Promise<Service[]> => {
   const supabase = createPublicClient();
   const { data } = await supabase
     .from("services")
@@ -32,9 +33,9 @@ export async function getServices(): Promise<Service[]> {
     .eq("is_active", true)
     .order("sort_order");
   return data ?? [];
-}
+});
 
-export async function getServiceBySlug(slug: string): Promise<ServiceDetail | null> {
+export const getServiceBySlug = cache(async (slug: string): Promise<ServiceDetail | null> => {
   const supabase = createPublicClient();
   const { data } = await supabase
     .from("services")
@@ -66,4 +67,4 @@ export async function getServiceBySlug(slug: string): Promise<ServiceDetail | nu
     seo_description: data.seo_description,
     products,
   };
-}
+});

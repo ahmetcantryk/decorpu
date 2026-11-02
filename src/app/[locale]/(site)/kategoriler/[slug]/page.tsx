@@ -14,14 +14,25 @@ import { buttonVariants } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { getCategoryBySlug, getProductsInCategory, getCategoryTree, resolveRenamedCategorySlug } from "@/lib/catalog";
+import { getCategoryBySlug, getProductsInCategory, getCategoryTree, resolveRenamedCategorySlug, getAllCategories } from "@/lib/catalog";
+import { withLocales } from "@/lib/isr";
+import { isValidSlug } from "@/lib/url-patterns";
 import { localizedAlternates, clampDescription, clampTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
-export const revalidate = 3600;
+// 1 gün ISR (Next literal ister; bkz. lib/isr.ts). Panel kaydı revalidatePath ile anında tazeler.
+export const revalidate = 86400;
+export const dynamicParams = true;
+
+/** Tüm aktif kategoriler × 2 dil build'de statik üretilir; sonrası ISR. */
+export async function generateStaticParams(): Promise<{ locale: Locale; slug: string }[]> {
+  const categories = await getAllCategories();
+  return withLocales(categories.map((c) => ({ slug: c.slug })));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
+  if (!isValidSlug(slug)) return {};
   const t = await getTranslations({ locale });
   const found = await getCategoryBySlug(slug);
   if (!found) return { title: t("Category.notFound") };
@@ -43,6 +54,8 @@ export default async function CategoryDetailPage({
   params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<ReactElement> {
   const { locale, slug } = await params;
+  // biçimsiz slug (bot/bozuk link): sorgu yapmadan 404
+  if (!isValidSlug(slug)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const catName = (c: { name_tr: string; name_en: string | null }): string =>

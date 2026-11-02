@@ -3,7 +3,8 @@ import { getServices } from "@/lib/services";
 import { SITE_URL } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
-export const revalidate = 3600;
+// 1 gün ISR (Next literal ister; bkz. lib/isr.ts). Panel kaydı revalidatePath ile anında tazeler.
+export const revalidate = 86400;
 
 /**
  * /llms.txt — llmstxt.org spesifikasyonu (Lighthouse "Agentic Browsing" uyumlu):

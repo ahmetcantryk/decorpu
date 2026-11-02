@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
@@ -8,15 +8,39 @@ import { Breadcrumbs, type Crumb } from "@/components/site/Breadcrumbs";
 import { ProductGallery } from "@/components/site/ProductGallery";
 import { AddToQuoteButton } from "@/components/site/AddToQuoteButton";
 import { ProductCard } from "@/components/site/ProductCard";
-import { getProductByCode, getRelatedProducts } from "@/lib/catalog";
+import { getProductByCode, getRelatedProducts, getActiveProductCodes } from "@/lib/catalog";
+import { withLocales } from "@/lib/isr";
+import { canonicalProductPath, isValidProductCode } from "@/lib/url-patterns";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { localizedAlternates, clampDescription, clampTitle, breadcrumbSchema } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
-export const revalidate = 3600;
+// 1 gün ISR (Next literal ister; bkz. lib/isr.ts). Panel kaydı revalidatePath ile anında tazeler.
+export const revalidate = 86400;
+/** Build'de bilinmeyen (sonradan eklenen) kodlar ilk istekte üretilip önbelleğe alınır. */
+export const dynamicParams = true;
+
+/** Tüm aktif ürünler × 2 dil build'de statik üretilir; sonrası ISR. */
+export async function generateStaticParams(): Promise<{ locale: Locale; code: string }[]> {
+  const codes = await getActiveProductCodes();
+  return withLocales(codes.map((code) => ({ code })));
+}
+
+/**
+ * Adres parametresini DB'ye gitmeden doğrular ve kanonik hale getirir.
+ * - Biçimsiz kod (bot/bozuk link) → 404, sorgu yok, ISR girdisi yok.
+ * - Büyük harfli kod (`/urun/PU-1024`) → küçük harfli kanonik adrese 301; böylece
+ *   aynı ürün için tek önbellek girdisi oluşur.
+ */
+function assertCanonicalCode(locale: Locale, code: string): void {
+  if (!isValidProductCode(code)) notFound();
+  const canonical = canonicalProductPath(code);
+  if (canonical !== code) permanentRedirect(`${locale === "en" ? "/en" : ""}/urun/${canonical}`);
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale; code: string }> }): Promise<Metadata> {
   const { locale, code } = await params;
+  if (!isValidProductCode(code)) return {};
   const product = await getProductByCode(code);
   if (!product) {
     const t = await getTranslations({ locale });
@@ -50,6 +74,7 @@ export default async function ProductDetailPage({
   params: Promise<{ locale: Locale; code: string }>;
 }): Promise<ReactElement> {
   const { locale, code } = await params;
+  assertCanonicalCode(locale, code);
   setRequestLocale(locale);
   const t = await getTranslations();
   const catName = (c: { name_tr: string; name_en: string | null }): string =>

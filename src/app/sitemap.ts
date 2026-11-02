@@ -20,7 +20,8 @@ function entry(
   };
 }
 
-export const revalidate = 3600;
+// 1 gün ISR (Next literal ister; bkz. lib/isr.ts). Panel kaydı revalidatePath ile anında tazeler.
+export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [products, categories, projects, services] = await Promise.all([

@@ -7,14 +7,24 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ProductGallery } from "@/components/site/ProductGallery";
 import { ProductCard } from "@/components/site/ProductCard";
-import { getProjectBySlug } from "@/lib/projects";
+import { getProjectBySlug, getProjects } from "@/lib/projects";
+import { withLocales } from "@/lib/isr";
+import { isValidSlug } from "@/lib/url-patterns";
 import { localizedAlternates, clampDescription, clampTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
-export const revalidate = 3600;
+// 1 gün ISR (Next literal ister; bkz. lib/isr.ts). Panel kaydı revalidatePath ile anında tazeler.
+export const revalidate = 86400;
+export const dynamicParams = true;
+
+export async function generateStaticParams(): Promise<{ locale: Locale; slug: string }[]> {
+  const projects = await getProjects();
+  return withLocales(projects.map((p) => ({ slug: p.slug })));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
+  if (!isValidSlug(slug)) return {};
   const w = await getProjectBySlug(slug);
   if (!w) {
     const t = await getTranslations({ locale });
@@ -38,6 +48,7 @@ export default async function WorkDetailPage({
   params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<ReactElement> {
   const { locale, slug } = await params;
+  if (!isValidSlug(slug)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const w = await getProjectBySlug(slug);

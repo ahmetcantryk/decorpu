@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { createPublicClient } from "@/lib/supabase/public";
 import type { CatalogProduct } from "@/lib/catalog";
 
@@ -22,7 +23,7 @@ function primaryImage(imgs?: { url: string; is_primary: boolean }[] | null): str
   return imgs.find((i) => i.is_primary)?.url ?? imgs[0].url;
 }
 
-export async function getProjects(): Promise<Project[]> {
+export const getProjects = cache(async (): Promise<Project[]> => {
   const supabase = createPublicClient();
   const { data } = await supabase
     .from("projects")
@@ -30,9 +31,9 @@ export async function getProjects(): Promise<Project[]> {
     .eq("is_active", true)
     .order("sort_order");
   return data ?? [];
-}
+});
 
-export async function getProjectBySlug(slug: string): Promise<ProjectDetail | null> {
+export const getProjectBySlug = cache(async (slug: string): Promise<ProjectDetail | null> => {
   const supabase = createPublicClient();
   const { data } = await supabase
     .from("projects")
@@ -67,4 +68,4 @@ export async function getProjectBySlug(slug: string): Promise<ProjectDetail | nu
     images: images.length ? images : data.cover_url ? [data.cover_url] : [],
     products,
   };
-}
+});

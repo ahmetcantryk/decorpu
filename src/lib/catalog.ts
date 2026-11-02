@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { createPublicClient } from "@/lib/supabase/public";
 
 export interface CatalogCategory {
@@ -51,8 +52,11 @@ export async function resolveRenamedCategorySlug(oldSlug: string): Promise<strin
   return (Array.isArray(cat) ? cat[0]?.slug : cat?.slug) ?? null;
 }
 
-/** All categories (flat). */
-export async function getAllCategories(): Promise<CatalogCategory[]> {
+/**
+ * All categories (flat). `cache()`: aynı render içinde (layout menüsü,
+ * generateMetadata, sayfa gövdesi) tek DB sorgusu.
+ */
+export const getAllCategories = cache(async (): Promise<CatalogCategory[]> => {
   const supabase = createPublicClient();
   const { data } = await supabase
     .from("categories")
@@ -60,6 +64,13 @@ export async function getAllCategories(): Promise<CatalogCategory[]> {
     .eq("is_active", true)
     .order("sort_order");
   return data ?? [];
+});
+
+/** Aktif ürün kodları — generateStaticParams için (adres kanonik küçük harf). */
+export async function getActiveProductCodes(): Promise<string[]> {
+  const supabase = createPublicClient();
+  const { data } = await supabase.from("products").select("code").eq("is_active", true).order("code");
+  return (data ?? []).map((p) => p.code.toLowerCase());
 }
 
 /** Active product codes + last-modified for the sitemap. */
@@ -74,7 +85,7 @@ export async function getSitemapProducts(): Promise<{ code: string; updated_at: 
 }
 
 /** Main categories enriched with descendant product counts + a cover image. */
-export async function getCategoryTree(): Promise<CategoryNode[]> {
+export const getCategoryTree = cache(async (): Promise<CategoryNode[]> => {
   const supabase = createPublicClient();
   const [{ data: cats }, { data: prods }] = await Promise.all([
     supabase
@@ -119,7 +130,7 @@ export async function getCategoryTree(): Promise<CategoryNode[]> {
 
   // Gerçek kapak görseli olanlar başa (boş görünüm engellenir); grup içi sort_order korunur.
   return [...nodes.filter((n) => n.cover), ...nodes.filter((n) => !n.cover)];
-}
+});
 
 /** A single category with its parent + sibling subcategories. */
 export async function getCategoryBySlug(
@@ -168,8 +179,8 @@ export interface ProductDetail extends CatalogProduct {
   parent: CatalogCategory | null;
 }
 
-/** Full product detail by code, with image list + category chain. */
-export async function getProductByCode(code: string): Promise<ProductDetail | null> {
+/** Full product detail by code, with image list + category chain. `cache()`: metadata + sayfa tek sorgu. */
+export const getProductByCode = cache(async (code: string): Promise<ProductDetail | null> => {
   const supabase = createPublicClient();
   const { data } = await supabase
     .from("products")
@@ -219,7 +230,7 @@ export async function getProductByCode(code: string): Promise<ProductDetail | nu
     category,
     parent,
   };
-}
+});
 
 /** Related products in the same category (excluding the given code). */
 export async function getRelatedProducts(categoryId: string | null, excludeCode: string, limit = 8): Promise<CatalogProduct[]> {
